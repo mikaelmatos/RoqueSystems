@@ -109,7 +109,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 12px rgba(59,130,246,0.4);
+             -webkit-box-shadow: 0px 0px 15px 0px #3B82F6;
+            box-shadow: 0px 0px 2px 0px #3B82F6;
         }
         .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
 
@@ -509,28 +510,10 @@
 
     <!-- Navbar -->
     <header class="navbar">
-        <a href="#" class="logo">
-            <div class="logo-icon">
-                <!-- Fallback initials if logo.png not available -->
-                <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="36" height="36" rx="10" fill="url(#lg)"/>
-                    <text x="18" y="25" text-anchor="middle" font-family="Space Grotesk" font-weight="800" font-size="16" fill="#080a0f">R</text>
-                    <defs>
-                        <linearGradient id="lg" x1="0" y1="0" x2="36" y2="36">
-                            <stop offset="0%" stop-color="#22d3ee"/>
-                            <stop offset="100%" stop-color="#3b82f6"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-            </div>
-            <span class="logo-text">Roque<span>Systems</span></span>
+        <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="logo roque systems"></div>
+                <span class="logo-text">Roque<span>Systems</span></span>
         </a>
-
-        <div class="nav-social">
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
     </header>
 
     <!-- Main -->
@@ -623,7 +606,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-copy">© 2026 Roque Systems. Todos os direitos reservados.</div>
+        <div class="footer-copy">CNPJ: 65.566.587.0001.46 - © 2026 Roque Systems. Todos os direitos reservados.</div>
         <div class="footer-links">
             <a href="mailto:contato@roquesystems.com.br">contato@roquesystems.com.br</a>
             <a href="#">(11) 99999-9999</a>
