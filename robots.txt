@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Bloquear áreas internas (caso existam)
+Disallow: /admin/
+Disallow: /login/
+Disallow: /painel/
+Disallow: /api/
+Disallow: /privado/
+
+# Evitar URLs com parâmetros
+Disallow: /*?
+
+# Sitemap
+Sitemap: https://roquesystems.com/sitemap.xml
