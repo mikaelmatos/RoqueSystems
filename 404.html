@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>404 — Página não encontrada | Roque Systems</title>
+    <meta name="description" content="Página não encontrada — Roque Systems">
+    <meta name="theme-color" content="#080a0f">
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        :root {
+            --cyan: #22d3ee;
+            --cyan-dim: rgba(34,211,238,0.1);
+            --cyan-glow: rgba(34,211,238,0.35);
+            --blue: #3b82f6;
+            --bg: #080a0f;
+            --surface: rgba(255,255,255,0.03);
+            --border: rgba(255,255,255,0.08);
+            --text: #e4e8f0;
+            --muted: #64748b;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100svh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #bg-canvas {
+            position: fixed; inset: 0;
+            width: 100%; height: 100%;
+            opacity: 0.4; pointer-events: none; z-index: 0;
+        }
+
+        .grid-bg {
+            position: fixed; inset: 0;
+            background-image:
+                linear-gradient(rgba(34,211,238,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34,211,238,0.035) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 75%);
+            pointer-events: none; z-index: 0;
+        }
+
+        .glow-top {
+            position: fixed; top: -20%; left: 50%; transform: translateX(-50%);
+            width: min(800px, 110vw); height: min(600px, 80vw);
+            background: radial-gradient(ellipse, rgba(34,211,238,0.07) 0%, transparent 65%);
+            pointer-events: none; z-index: 0;
+        }
+        .glow-bottom {
+            position: fixed; bottom: -20%; right: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 65%);
+            pointer-events: none; z-index: 0;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: relative; z-index: 10;
+            padding: 1.5rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .logo-icon {
+            width: 36px; height: 36px; border-radius: 10px; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0px 0px 2px 0px #3B82F6;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700; font-size: 1.25rem; letter-spacing: -0.03em; color: var(--text);
+        }
+        .logo-text span { color: var(--cyan); }
+
+        /* ── MAIN ── */
+        main {
+            flex: 1; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            position: relative; z-index: 2;
+            padding: 3rem 1.5rem; text-align: center;
+        }
+
+        /* ── 404 NUMBER ── */
+        .error-number-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0;
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .error-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(7rem, 22vw, 15rem);
+            font-weight: 800;
+            letter-spacing: -0.06em;
+            line-height: 1;
+            background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 2;
+            user-select: none;
+        }
+
+        /* Ghost depth layer */
+        .error-number-ghost {
+            position: absolute; inset: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(7rem, 22vw, 15rem);
+            font-weight: 800;
+            letter-spacing: -0.06em;
+            line-height: 1;
+            -webkit-text-stroke: 1.5px rgba(34,211,238,0.12);
+            -webkit-text-fill-color: transparent;
+            transform: translate(4px, 4px);
+            z-index: 1;
+            animation: glitch 5s infinite;
+            user-select: none;
+        }
+
+        @keyframes glitch {
+            0%,88%,100% { transform: translate(4px,4px); opacity:0.12; }
+            90% { transform: translate(-4px, 2px); opacity:0.25; }
+            92% { transform: translate(6px,-3px); opacity:0.08; }
+            94% { transform: translate(-3px,4px); opacity:0.2; }
+            96% { transform: translate(4px,4px); opacity:0.12; }
+        }
+
+        /* Scan line over the number */
+        .scan-line {
+            position: absolute; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(34,211,238,0.55), transparent);
+            animation: scan 3.5s ease-in-out infinite;
+            z-index: 3; pointer-events: none;
+        }
+        @keyframes scan {
+            0%   { top: 5%;  opacity: 0; }
+            8%   { opacity: 1; }
+            92%  { opacity: 1; }
+            100% { top: 95%; opacity: 0; }
+        }
+
+        /* ── BADGE ── */
+        .badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(239,68,68,0.08);
+            border: 1px solid rgba(239,68,68,0.2);
+            padding: 0.4rem 1.1rem; border-radius: 100px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+            color: #f87171;
+            margin-bottom: 1.5rem; margin-top: 1.75rem;
+            animation: fadeUp 0.7s 0.1s ease both;
+        }
+        .badge i { font-size: 0.65rem; }
+
+        /* ── HEADLINE ── */
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            font-weight: 700; letter-spacing: -0.03em;
+            color: var(--text); margin-bottom: 1rem;
+            animation: fadeUp 0.7s 0.2s ease both;
+        }
+
+        .sub {
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+            color: var(--muted); max-width: 440px;
+            line-height: 1.75; margin-bottom: 2.5rem;
+            animation: fadeUp 0.7s 0.3s ease both;
+        }
+
+        /* ── ACTIONS ── */
+        .actions {
+            display: flex; gap: 0.75rem;
+            flex-wrap: wrap; justify-content: center;
+            animation: fadeUp 0.7s 0.4s ease both;
+            margin-bottom: 3rem;
+        }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.8rem 1.6rem;
+            background: linear-gradient(135deg, var(--cyan), var(--blue));
+            border: none; border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em;
+            color: #080a0f; text-decoration: none; cursor: pointer;
+            transition: all 0.25s;
+        }
+        .btn-primary:hover {
+            filter: brightness(1.12); transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(34,211,238,0.3);
+        }
+        .btn-primary:active { transform: translateY(0); }
+
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.8rem 1.6rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem; font-weight: 600;
+            color: var(--muted); text-decoration: none; transition: all 0.25s;
+        }
+        .btn-ghost:hover {
+            border-color: rgba(34,211,238,0.35); color: var(--cyan);
+            background: var(--cyan-dim);
+        }
+
+        /* ── QUICK LINKS ── */
+        .quick-label {
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
+            color: var(--muted); text-transform: uppercase;
+            margin-bottom: 1rem;
+            animation: fadeUp 0.7s 0.5s ease both;
+        }
+        .quick-links {
+            display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center;
+            animation: fadeUp 0.7s 0.55s ease both;
+        }
+        .quick-link {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.75rem; font-weight: 500;
+            color: var(--muted); text-decoration: none; transition: all 0.2s;
+        }
+        .quick-link:hover {
+            border-color: rgba(34,211,238,0.3);
+            color: var(--cyan); background: var(--cyan-dim);
+        }
+        .quick-link i { font-size: 0.65rem; }
+
+        /* ── FOOTER ── */
+        footer {
+            position: relative; z-index: 2;
+            padding: 1.75rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex; justify-content: space-between;
+            align-items: center; flex-wrap: wrap; gap: 1rem;
+        }
+        .footer-copy { font-size: 0.72rem; color: #334155; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a {
+            font-size: 0.72rem; color: #475569;
+            text-decoration: none; transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--cyan); }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .navbar { padding: 1.25rem; }
+            footer { flex-direction: column; align-items: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+    <div class="grid-bg"></div>
+    <div class="glow-top"></div>
+    <div class="glow-bottom"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><img src="logo.png" alt="logo roque systems"></div>
+            <span class="logo-text">Roque<span>Systems</span></span>
+        </a>
+    </header>
+
+    <main>
+
+        <div class="error-number-wrap">
+            <div class="scan-line"></div>
+            <div class="error-number-ghost">404</div>
+            <div class="error-number">404</div>
+        </div>
+
+        <div class="badge">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            PÁGINA NÃO ENCONTRADA
+        </div>
+
+        <h1 class="headline">Você se perdeu no espaço</h1>
+
+        <p class="sub">
+            A página que você está procurando não existe, foi movida ou nunca existiu por aqui. Mas não se preocupe — vamos te colocar de volta nos trilhos.
+        </p>
+
+        <div class="actions">
+            <a href="index.html" class="btn-primary">
+                <i class="fa-solid fa-house" style="font-size:0.75rem"></i>
+                Voltar ao início
+            </a>
+            <a href="mailto:contato@roquesystems.com" class="btn-ghost">
+                <i class="fa-solid fa-envelope" style="font-size:0.75rem"></i>
+                Falar conosco
+            </a>
+        </div>
+
+        <div class="quick-label">Talvez você esteja procurando</div>
+        <div class="quick-links">
+            <a href="index.html" class="quick-link">
+                <i class="fa-solid fa-clock"></i> Em Breve
+            </a>
+            <a href="mailto:contato@roquesystems.com" class="quick-link">
+                <i class="fa-solid fa-envelope"></i> Contato
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-copy">CNPJ: 65.566.587/0001-46 - © 2026 Roque Systems. Todos os direitos reservados.</div>
+        <div class="footer-links">
+            <a href="mailto:contato@roquesystems.com">contato@roquesystems.com</a>
+            <a href="#">(11) 99999-9999</a>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [], W, H;
+
+        function resize() {
+            W = canvas.width = canvas.offsetWidth;
+            H = canvas.height = canvas.offsetHeight;
+            particles = Array.from({ length: Math.min(80, Math.floor(W * H / 14000)) }, () => ({
+                x: Math.random() * W, y: Math.random() * H,
+                r: Math.random() * 1.8 + 0.4,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                o: Math.random() * 0.45 + 0.15
+            }));
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > W) p.vx *= -1;
+                if (p.y < 0 || p.y > H) p.vy *= -1;
+                ctx.save();
+                ctx.globalAlpha = p.o;
+                ctx.shadowBlur = 8; ctx.shadowColor = '#67e8f9';
+                ctx.fillStyle = '#67e8f9';
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            });
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const d = Math.sqrt(dx*dx + dy*dy);
+                    if (d < 120) {
+                        ctx.strokeStyle = `rgba(103,232,249,${0.12 * (1 - d/120)})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', resize, { passive: true });
+        resize(); draw();
+    })();
+    </script>
+
+</body>
+</html>
