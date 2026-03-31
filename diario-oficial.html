@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-S3SR94Q09E');
     </script>
     <meta name="google-adsense-account" content="ca-pub-1255461454064940">
@@ -15,753 +14,867 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <title>Em Breve | Roque Systems</title>
-    <meta name="description" content="Algo extraordinário está chegando. Roque Systems — Automação, IA e Desenvolvimento de Software.">
-    <meta name="theme-color" content="#080a0f">
+    <title>Diário Oficial Municipal | Roque Systems</title>
+    <meta name="description" content="Conheça o sistema de Diário Oficial Municipal desenvolvido pela Roque Systems: publicação, busca e gestão de atos públicos para prefeituras modernas.">
+    <meta name="theme-color" content="#080a0fd9">
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --cyan: #22d3ee;
-            --cyan-dim: rgba(34,211,238,0.1);
-            --cyan-glow: rgba(34,211,238,0.35);
-            --blue: #3b82f6;
+            --cyan-dim: rgba(34,211,238,0.10);
+            --cyan-glow: rgba(34,211,238,0.30);
             --bg: #080a0f;
-            --surface: rgba(255,255,255,0.03);
-            --border: rgba(255,255,255,0.08);
-            --text: #e4e8f0;
-            --muted: #64748b;
+            --bg-2: #0c0e14;
+            --border: rgba(255,255,255,0.07);
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+        *, *::before, *::after { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: 'Lora', Georgia, serif;
             background: var(--bg);
-            color: var(--text);
-            min-height: 100svh;
+            color: #e4e8f0;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
         }
 
-        /* ── CANVAS ── */
-        #bg-canvas {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ── GRID BG ── */
-        .grid-bg {
-            position: fixed;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(34,211,238,0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(34,211,238,0.035) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 75%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ── GLOWS ── */
-        .glow-top {
-            position: fixed;
-            top: -20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(800px, 110vw);
-            height: min(600px, 80vw);
-            background: radial-gradient(ellipse, rgba(34,211,238,0.07) 0%, transparent 65%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .glow-bottom {
-            position: fixed;
-            bottom: -20%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 65%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ── NAVBAR ── */
+        /* ─── NAVBAR ─── */
         .navbar {
-            position: relative;
-            z-index: 10;
-            padding: 1.5rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(8,10,15,0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
+        .navbar.scrolled { background: rgba(8,10,15,0.97); }
+        .nav-inner {
+            max-width: 1400px; margin: 0 auto; padding: 0 1.5rem;
+            height: 68px; display: flex; align-items: center; justify-content: space-between;
         }
-
+        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; flex-shrink: 0; }
         .logo-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-             -webkit-box-shadow: 0px 0px 15px 0px #3B82F6;
-            box-shadow: 0px 0px 2px 0px #3B82F6;
+            width: 36px; height: 36px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 2px 0 #3B82F6;
         }
-        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
-
-        .logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.03em;
-            color: var(--text);
-        }
+        .logo-icon img { width: 36px; height: 36px; border-radius: 10px; }
+        .logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.3rem; letter-spacing: -0.03em; color: #e4e8f0; }
         .logo-text span { color: var(--cyan); }
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
+        .nav-links a { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 500; color: #94a3b8; text-decoration: none; position: relative; transition: color 0.2s; letter-spacing: 0.02em; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 100%; height: 1.5px; background: var(--cyan); transition: right 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .nav-links a:hover { color: #fff; }
+        .nav-links a:hover::after { right: 0; }
+        .nav-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1.4rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 500; color: #e4e8f0; text-decoration: none; transition: all 0.25s; white-space: nowrap; }
+        .nav-cta:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(34,211,238,0.06); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: #e4e8f0; border-radius: 2px; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: #080a0f; padding-top: 68px; flex-direction: column; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu nav { padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+        .mobile-menu nav a { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: #94a3b8; text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+        .mobile-menu nav a:hover { color: var(--cyan); }
+        .mobile-menu-footer { padding: 2rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; background: #e4e8f0; color: #080a0f; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.95rem; border-radius: 100px; text-decoration: none; transition: all 0.25s; white-space: nowrap; }
+        .btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(34,211,238,0.25); }
 
-        .nav-social {
-            display: flex;
-            gap: 1rem;
+        /* ─── HERO DO ARTIGO ─── */
+        .article-hero {
+            padding-top: 68px;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-2);
+            border-bottom: 1px solid var(--border);
         }
-        .nav-social a {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
+
+        .hero-grid-bg {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(34,211,238,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 80%);
+        }
+
+        .hero-glow {
+            position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+            width: min(600px, 90vw); height: min(600px, 90vw);
+            background: radial-gradient(circle, rgba(34,211,238,0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .article-hero-inner {
+            position: relative; z-index: 2;
+            max-width: 900px; margin: 0 auto;
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.5rem; margin-bottom: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+            color: #475569; text-transform: uppercase;
+        }
+        .breadcrumb a { color: #475569; text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--cyan); }
+        .breadcrumb .sep { color: #2d3748; }
+        .breadcrumb .current { color: var(--cyan); }
+
+        .article-tag {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2);
+            padding: 0.35rem 1rem; border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.12em; color: var(--cyan); margin-bottom: 1.75rem;
+            animation: fadeSlideUp 0.6s ease both;
+        }
+        .article-tag .dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: pulse 2s infinite; }
+
+        .article-hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            font-weight: 800; line-height: 1.05; letter-spacing: -0.04em;
+            margin-bottom: 1.25rem;
+            animation: fadeSlideUp 0.7s 0.1s ease both;
+        }
+        .article-hero-title .accent {
+            background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .article-hero-sub {
+            font-family: 'Lora', serif; font-size: clamp(1rem, 2vw, 1.15rem);
+            color: #64748b; max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.8;
+            animation: fadeSlideUp 0.7s 0.2s ease both;
+        }
+
+        .article-meta {
+            display: flex; align-items: center; justify-content: center;
+            flex-wrap: wrap; gap: 1.25rem 2rem;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem;
+            color: #475569; border-top: 1px solid var(--border);
+            padding-top: 2rem; margin-top: 0;
+            animation: fadeSlideUp 0.7s 0.3s ease both;
+        }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { color: var(--cyan); font-size: 0.75rem; }
+        .meta-author { display: flex; align-items: center; gap: 0.6rem; }
+        .meta-avatar {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(59,130,246,0.15));
+            border: 1px solid rgba(34,211,238,0.2);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 0.85rem; color: var(--cyan);
+        }
+
+        /* ─── FEATURED IMAGE ─── */
+        .featured-image-wrap {
+            max-width: 1100px; margin: 0 auto;
+            padding: 0 1.5rem 5rem;
+            position: relative; z-index: 2;
+        }
+        .featured-image {
+            width: 100%; aspect-ratio: 16/7; object-fit: cover;
+            border-radius: 20px;
             border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--muted);
-            font-size: 0.85rem;
-            text-decoration: none;
+            display: block;
+            background: linear-gradient(135deg, #0f1520, #1a2035);
+        }
+        .featured-image-placeholder {
+            width: 100%; aspect-ratio: 16/7;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: linear-gradient(135deg, #0f1520, #1a2035);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 1rem;
+        }
+        .featured-image-placeholder i { font-size: 4rem; color: rgba(34,211,238,0.2); }
+        .featured-image-placeholder span { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; color: #334155; }
+        .featured-image-caption {
+            text-align: center; margin-top: 1rem;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem;
+            color: #334155; letter-spacing: 0.05em;
+        }
+
+        /* ─── CORPO DO ARTIGO ─── */
+        .article-layout {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 1.5rem 6rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        /* ─── SIDEBAR ─── */
+        .sidebar {
+            position: sticky; top: 88px;
+            display: flex; flex-direction: column; gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.5rem;
+        }
+
+        .sidebar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
+            color: var(--cyan); text-transform: uppercase; margin-bottom: 1.25rem;
+        }
+
+        .toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+        .toc-list a {
+            display: block; padding: 0.45rem 0.75rem;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem;
+            color: #475569; text-decoration: none; border-radius: 8px;
+            transition: all 0.2s; border-left: 2px solid transparent;
+        }
+        .toc-list a:hover, .toc-list a.active {
+            color: var(--cyan); background: rgba(34,211,238,0.06);
+            border-left-color: var(--cyan);
+        }
+
+        .stat-mini { display: flex; flex-direction: column; gap: 0.85rem; }
+        .stat-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding-bottom: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .stat-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .stat-row-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: #475569; }
+        .stat-row-val { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--cyan); }
+
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag-chip {
+            padding: 0.3rem 0.75rem; background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border); border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem;
+            color: #94a3b8; cursor: default; transition: all 0.2s;
+        }
+        .tag-chip:hover { border-color: rgba(34,211,238,0.3); color: var(--cyan); background: rgba(34,211,238,0.05); }
+
+        .cta-sidebar {
+            background: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(59,130,246,0.08));
+            border: 1px solid rgba(34,211,238,0.2);
+            border-radius: 18px; padding: 1.75rem;
+            text-align: center;
+        }
+        .cta-sidebar-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .cta-sidebar-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+        .cta-sidebar-sub { font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; color: #64748b; line-height: 1.6; margin-bottom: 1.25rem; }
+        .cta-sidebar-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            width: 100%; padding: 0.7rem 1.25rem;
+            background: linear-gradient(135deg, #22d3ee, #3b82f6);
+            border: none; border-radius: 10px;
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; font-weight: 700;
+            color: #080a0f; cursor: pointer; text-decoration: none;
+            transition: all 0.25s;
+        }
+        .cta-sidebar-btn:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(34,211,238,0.25); }
+
+        /* ─── ARTICLE BODY ─── */
+        .article-body { min-width: 0; }
+
+        .article-lead {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: #cbd5e1; line-height: 1.85;
+            border-left: 3px solid var(--cyan);
+            padding-left: 1.5rem; margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .article-body h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            color: #e4e8f0; margin: 3.5rem 0 1.25rem;
+            padding-top: 1rem;
+            scroll-margin-top: 90px;
+        }
+        .article-body h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em;
+            color: #cbd5e1; margin: 2.5rem 0 1rem;
+            scroll-margin-top: 90px;
+        }
+
+        .article-body p {
+            font-family: 'Lora', serif;
+            font-size: 1.05rem; line-height: 1.9; color: #94a3b8;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .article-body strong { color: #e4e8f0; font-weight: 600; }
+
+        .article-divider {
+            border: none; border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .highlight-box {
+            background: rgba(34,211,238,0.05);
+            border: 1px solid rgba(34,211,238,0.15);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
+        }
+        .highlight-box-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+            color: var(--cyan); text-transform: uppercase; margin-bottom: 0.85rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .highlight-box p { color: #94a3b8; margin-bottom: 0; font-size: 0.95rem; margin-top: 0; }
+
+        .feature-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1rem; margin: 2rem 0;
+        }
+        .feature-item {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid var(--border);
+            border-radius: 14px; padding: 1.25rem;
+            transition: all 0.3s;
+        }
+        .feature-item:hover {
+            border-color: rgba(34,211,238,0.2);
+            background: rgba(34,211,238,0.03);
+            transform: translateY(-3px);
+        }
+        .feature-item-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; margin-bottom: 0.85rem;
+        }
+        .feature-item-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; color: #e4e8f0; }
+        .feature-item-desc { font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; color: #475569; line-height: 1.6; }
+
+        .pull-quote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 700; line-height: 1.35; letter-spacing: -0.02em;
+            color: #e4e8f0;
+            border-left: 4px solid var(--cyan);
+            padding: 1.5rem 2rem;
+            margin: 3rem 0;
+            background: rgba(34,211,238,0.04);
+            border-radius: 0 16px 16px 0;
+        }
+        .pull-quote span { color: var(--cyan); }
+
+        /* ─── EDITION MOCKUP ─── */
+        .edition-mockup {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        .edition-mockup-header {
+            background: rgba(34,211,238,0.06);
+            border-bottom: 1px solid rgba(34,211,238,0.1);
+            padding: 1rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
+        }
+        .edition-mockup-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.88rem; color: #e4e8f0; }
+        .edition-mockup-meta { font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; color: #475569; }
+        .edition-mockup-body { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+        .edition-row {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.04);
+            background: rgba(255,255,255,0.015);
             transition: all 0.2s;
         }
-        .nav-social a:hover {
-            border-color: rgba(34,211,238,0.35);
-            color: var(--cyan);
-            background: var(--cyan-dim);
-        }
+        .edition-row:hover { border-color: rgba(34,211,238,0.15); background: rgba(34,211,238,0.03); }
+        .edition-row-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; }
+        .edition-row-info { flex: 1; min-width: 0; }
+        .edition-row-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; font-weight: 600; color: #cbd5e1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .edition-row-sub { font-family: 'Space Grotesk', sans-serif; font-size: 0.7rem; color: #475569; }
+        .edition-badge { padding: 0.2rem 0.6rem; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; flex-shrink: 0; }
+        .badge-green { background: rgba(16,185,129,0.1); color: #34d399; border: 1px solid rgba(16,185,129,0.2); }
+        .badge-yellow { background: rgba(245,158,11,0.1); color: #fbbf24; border: 1px solid rgba(245,158,11,0.2); }
+        .badge-blue { background: rgba(59,130,246,0.1); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); }
 
-        /* ── MAIN ── */
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-            padding: 3rem 1.5rem;
-            text-align: center;
+        /* Author box */
+        .author-box {
+            display: flex; gap: 1.5rem; align-items: flex-start;
+            background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+            border-radius: 18px; padding: 1.75rem; margin-top: 4rem;
         }
-
-        /* ── BADGE ── */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(34,211,238,0.07);
+        .author-box-avatar {
+            width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(59,130,246,0.15));
             border: 1px solid rgba(34,211,238,0.2);
-            padding: 0.4rem 1.1rem;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            color: var(--cyan);
-            margin-bottom: 2rem;
-            animation: fadeUp 0.6s ease both;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--cyan);
         }
-        .badge .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--cyan);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
+        .author-box-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
+        .author-box-role { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: var(--cyan); margin-bottom: 0.65rem; }
+        .author-box-bio { font-family: 'Space Grotesk', sans-serif; font-size: 0.83rem; color: #64748b; line-height: 1.65; }
 
-        @keyframes pulse {
-            0%,100% { opacity:1; transform:scale(1); }
-            50% { opacity:0.4; transform:scale(0.8); }
+        .share-bar {
+            display: flex; align-items: center; gap: 1rem;
+            flex-wrap: wrap; margin-top: 2.5rem; padding-top: 2rem;
+            border-top: 1px solid var(--border);
         }
+        .share-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; color: #475569; font-weight: 600; letter-spacing: 0.05em; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.45rem 1rem; border: 1px solid var(--border);
+            border-radius: 100px; font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem; color: #94a3b8; text-decoration: none;
+            transition: all 0.2s; background: none; cursor: pointer;
+        }
+        .share-btn:hover { border-color: rgba(34,211,238,0.3); color: var(--cyan); background: rgba(34,211,238,0.05); }
 
-        /* ── HEADLINE ── */
-        .headline {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.8rem, 8vw, 6rem);
-            font-weight: 800;
-            line-height: 1.0;
-            letter-spacing: -0.045em;
-            margin-bottom: 1.5rem;
-            animation: fadeUp 0.7s 0.1s ease both;
-        }
-
-        .headline .line1 { display: block; color: var(--text); }
-        .headline .line2 {
-            display: block;
-            background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .sub {
-            font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-            color: var(--muted);
-            max-width: 480px;
-            line-height: 1.75;
-            margin-bottom: 3.5rem;
-            animation: fadeUp 0.7s 0.2s ease both;
-        }
-
-        /* ── COUNTDOWN ── */
-        .countdown-wrap {
-            animation: fadeUp 0.7s 0.3s ease both;
-            margin-bottom: 3.5rem;
-        }
-
-        .countdown-label {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            color: var(--muted);
-            text-transform: uppercase;
-            margin-bottom: 1.25rem;
-        }
-
-        .countdown {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cd-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .cd-num {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.8rem, 7vw, 5rem);
-            font-weight: 800;
-            letter-spacing: -0.05em;
-            line-height: 1;
-            color: var(--text);
-            min-width: clamp(80px, 12vw, 130px);
-            text-align: center;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1rem 0.5rem 0.8rem;
-            position: relative;
-            transition: border-color 0.3s;
-        }
-        .cd-num.tick {
-            border-color: rgba(34,211,238,0.35);
-        }
-        .cd-num::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 16px;
-            background: linear-gradient(180deg, rgba(34,211,238,0.03) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .cd-unit {
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            color: var(--muted);
-            text-transform: uppercase;
-        }
-
-        .cd-sep {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            color: rgba(34,211,238,0.3);
-            line-height: 1;
-            margin-top: clamp(1rem, 3vw, 1.6rem);
-            animation: blink 1.2s step-start infinite;
-        }
-        @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0.2} }
-
-        /* ── NOTIFY FORM ── */
-        .notify-wrap {
-            animation: fadeUp 0.7s 0.4s ease both;
-            width: 100%;
-            max-width: 480px;
-        }
-
-        .notify-label {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            color: var(--muted);
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .notify-form {
-            display: flex;
-            gap: 0.6rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            padding: 0.35rem 0.35rem 0.35rem 1.4rem;
-            transition: border-color 0.2s;
-        }
-        .notify-form:focus-within {
-            border-color: rgba(34,211,238,0.4);
-            background: rgba(34,211,238,0.03);
-        }
-
-        .notify-input {
-            flex: 1;
-            background: none;
-            border: none;
-            outline: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text);
-            min-width: 0;
-        }
-        .notify-input::placeholder { color: #3d4f66; }
-
-        .notify-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.4rem;
-            background: linear-gradient(135deg, var(--cyan), var(--blue));
-            border: none;
-            border-radius: 100px;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            color: #080a0f;
-            cursor: pointer;
-            transition: all 0.25s;
-            white-space: nowrap;
-        }
-        .notify-btn:hover {
-            filter: brightness(1.12);
-            transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(34,211,238,0.3);
-        }
-        .notify-btn:active { transform: translateY(0); }
-        .notify-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-
-        .notify-hint {
-            font-size: 0.72rem;
-            color: #334155;
-            margin-top: 0.85rem;
-        }
-
-        /* Success state */
-        .success-msg {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            color: #34d399;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            padding: 0.85rem;
-            background: rgba(16,185,129,0.07);
-            border: 1px solid rgba(16,185,129,0.2);
-            border-radius: 12px;
-        }
-        .success-msg.show { display: flex; }
-
-        /* ── FEATURES ROW ── */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem 1.5rem;
-            margin-top: 3.5rem;
-            animation: fadeUp 0.7s 0.5s ease both;
-        }
-
-        .feat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.78rem;
-            color: #475569;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-        }
-        .feat-item i {
-            color: var(--cyan);
-            font-size: 0.75rem;
-        }
-
-        /* ── PROGRESS ── */
-        .progress-wrap {
-            width: 100%;
-            max-width: 380px;
-            margin-top: 3rem;
-            animation: fadeUp 0.7s 0.55s ease both;
-        }
-
-        .progress-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.7rem;
-            color: var(--muted);
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.6rem;
-        }
-        .progress-row .pct { color: var(--cyan); }
-
-        .progress-bar-bg {
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.07);
-            border-radius: 100px;
-            overflow: hidden;
-        }
-        .progress-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--cyan), var(--blue));
-            border-radius: 100px;
-            transition: width 2s cubic-bezier(0.34,1.56,0.64,1);
-            box-shadow: 0 0 12px rgba(34,211,238,0.5);
-        }
-
-        /* ── FOOTER ── */
-        footer {
-            position: relative;
-            z-index: 2;
-            padding: 1.75rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .footer-copy {
-            font-size: 0.72rem;
-            color: #334155;
-        }
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        .footer-links a {
-            font-size: 0.72rem;
-            color: #475569;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+        /* ─── FOOTER ─── */
+        footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; }
+        .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
+        .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+        .footer-links a { font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; color: #94a3b8; text-decoration: none; transition: color 0.2s; font-weight: 400; }
         .footer-links a:hover { color: var(--cyan); }
+        .footer-copy { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: #94a3b8; font-weight: 400; }
 
-        /* ── ANIMATIONS ── */
-        @keyframes fadeUp {
-            from { opacity:0; transform:translateY(24px); }
-            to { opacity:1; transform:translateY(0); }
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ─── PROGRESS BAR ─── */
+        .read-progress {
+            position: fixed; top: 68px; left: 0; right: 0; height: 2px;
+            background: rgba(255,255,255,0.04); z-index: 99;
+        }
+        .read-progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #22d3ee, #3b82f6);
+            width: 0%; transition: width 0.1s linear;
         }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 600px) {
-            .navbar { padding: 1.25rem 1.25rem; }
-            .headline { font-size: 2.8rem; }
-            .countdown { gap: 0.5rem; }
-            .cd-num { min-width: 72px; font-size: 2.4rem; padding: 0.75rem 0.4rem; }
-            .notify-form { border-radius: 14px; padding: 0.4rem; flex-direction: column; }
-            .notify-input { padding: 0.6rem 0.8rem; }
-            .notify-btn { width: 100%; justify-content: center; border-radius: 10px; }
-            footer { flex-direction: column; align-items: center; text-align: center; }
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1000px) {
+            .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .sidebar { position: static; }
         }
-
-        /* spinner */
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .spinner {
-            width: 14px; height: 14px;
-            border: 2px solid rgba(8,10,15,0.3);
-            border-top-color: #080a0f;
-            border-radius: 50%;
-            animation: spin 0.7s linear infinite;
+        @media (max-width: 800px) {
+            .nav-links, .nav-cta { display: none !important; }
+            .hamburger { display: flex; }
+            .feature-grid { grid-template-columns: 1fr; }
         }
+        @media (max-width: 800px) { .read-progress { top: 68px; } }
     </style>
 </head>
 <body>
 
-    <!-- Background layers -->
-    <canvas id="bg-canvas"></canvas>
-    <div class="grid-bg"></div>
-    <div class="glow-top"></div>
-    <div class="glow-bottom"></div>
+    <!-- READING PROGRESS -->
+    <div class="read-progress"><div class="read-progress-bar" id="progress-bar"></div></div>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="logo.png" alt="logo roque systems"></div>
+    <!-- ── NAVBAR ── -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="logo roque systems" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#22d3ee,#3b82f6)';this.parentElement.innerHTML='<span style=\'font-family:Space Grotesk,sans-serif;font-weight:800;color:#080a0f;font-size:1.1rem\'>R</span>'"></div>
                 <span class="logo-text">Roque<span>Systems</span></span>
-        </a>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
+            </ul>
+            <a href="index.html#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <!-- Main -->
-    <main>
-
-        <div class="badge">
-            <div class="dot"></div>
-            EM DESENVOLVIMENTO
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav>
+            <a href="index.html#sobre" class="mobile-link">Sobre</a>
+            <a href="index.html#servicos" class="mobile-link">Serviços</a>
+            <a href="index.html#projetos" class="mobile-link">Projetos</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="index.html#contato" class="btn-primary" style="width:100%;justify-content:center;border-radius:12px;">
+                Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.8rem"></i>
+            </a>
         </div>
+    </div>
 
-        <h1 class="headline">
-            <span class="line1">Algo grande</span>
-            <span class="line2">está chegando</span>
-        </h1>
+    <!-- ── HERO DO ARTIGO ── -->
+    <div class="article-hero">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-glow"></div>
+        <div class="article-hero-inner">
+            <div class="breadcrumb">
+                <a href="index.html">Início</a>
+                <span class="sep">/</span>
+                <a href="index.html#projetos">Projetos</a>
+                <span class="sep">/</span>
+                <span class="current">Diário Oficial Municipal</span>
+            </div>
 
-        <p class="sub">
-            Estamos construindo algo extraordinário. Uma nova solução que vai transformar a forma como empresas usam tecnologia.
-        </p>
+            <div class="article-tag">
+                <div class="dot"></div>
+                PROJETO · SETOR PÚBLICO
+            </div>
 
-        <!-- Countdown -->
-        <div class="countdown-wrap">
-            <div class="countdown-label">Lançamento em</div>
-            <div class="countdown" id="countdown">
-                <div class="cd-block">
-                    <div class="cd-num" id="cd-days">00</div>
-                    <div class="cd-unit">dias</div>
+            <h1 class="article-hero-title">
+                Sistema de<br>
+                <span class="accent">Diário Oficial Municipal</span>
+            </h1>
+
+            <p class="article-hero-sub">
+                Uma plataforma web para prefeituras publicarem, gerenciarem e disponibilizarem atos oficiais ao público — com busca inteligente, histórico completo e conformidade legal.
+            </p>
+
+            <div class="article-meta">
+                <div class="meta-item meta-author">
+                    <div class="meta-avatar">M</div>
+                    <div>
+                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;color:#e4e8f0;">Mikael Roque</div>
+                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;color:#475569;">Fundador & CEO</div>
+                    </div>
                 </div>
-                <div class="cd-sep">:</div>
-                <div class="cd-block">
-                    <div class="cd-num" id="cd-hours">00</div>
-                    <div class="cd-unit">horas</div>
-                </div>
-                <div class="cd-sep">:</div>
-                <div class="cd-block">
-                    <div class="cd-num" id="cd-minutes">00</div>
-                    <div class="cd-unit">minutos</div>
-                </div>
-                <div class="cd-sep">:</div>
-                <div class="cd-block">
-                    <div class="cd-num" id="cd-seconds">00</div>
-                    <div class="cd-unit">segundos</div>
-                </div>
+                <div class="meta-item"><i class="fa-regular fa-calendar"></i> Março de 2026</div>
+                <div class="meta-item"><i class="fa-regular fa-clock"></i> 7 min de leitura</div>
+                <div class="meta-item"><i class="fa-solid fa-location-dot"></i> Fortaleza, CE</div>
             </div>
         </div>
 
-        <!-- Email capture -->
-        <div class="notify-wrap">
-            <div class="notify-label">Seja o primeiro a saber</div>
-            <form class="notify-form" id="notify-form" novalidate>
-                <input
-                    type="email"
-                    class="notify-input"
-                    id="notify-email"
-                    placeholder="seu@email.com"
-                    required
-                    autocomplete="email"
-                >
-                <button type="submit" class="notify-btn" id="notify-btn">
-                    Avisar-me <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i>
-                </button>
-            </form>
-            <div class="success-msg" id="success-msg">
-                <i class="fa-solid fa-circle-check"></i>
-                Ótimo! Vamos te avisar assim que lançarmos.
+        <div class="featured-image-wrap">
+            <img src="image/diario-home-print.png" alt="Sistema de Diário Oficial Municipal" class="featured-image"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="featured-image-placeholder" style="display:none;">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Tela principal do Diário Oficial Municipal</span>
             </div>
-            <div class="notify-hint">Sem spam. Apenas uma mensagem quando lançarmos.</div>
+            <div class="featured-image-caption">Tela principal do Sistema de Diário Oficial Municipal</div>
         </div>
+    </div>
 
-        <!-- Features -->
-        <div class="features">
-            <div class="feat-item"><i class="fa-solid fa-bolt"></i> Alta Performance</div>
-            <div class="feat-item"><i class="fa-solid fa-brain"></i> IA Embarcada</div>
-            <div class="feat-item"><i class="fa-solid fa-shield-halved"></i> Segurança Avançada</div>
-            <div class="feat-item"><i class="fa-solid fa-plug"></i> Fácil Integração</div>
-            <div class="feat-item"><i class="fa-solid fa-infinity"></i> Escalável</div>
+    <!-- ── ARTIGO + SIDEBAR ── -->
+    <div style="background: var(--bg);">
+        <div class="article-layout">
+
+            <!-- BODY -->
+            <article class="article-body">
+
+                <p class="article-lead reveal">
+                    A publicação dos atos oficiais do município é uma obrigação legal e um direito dos cidadãos. A Roque Systems desenvolveu o <strong>Sistema de Diário Oficial Municipal</strong> — uma plataforma web que moderniza esse processo, eliminando o papel e centralizando toda a gestão de publicações em um ambiente digital seguro e rastreável.
+                </p>
+
+                <!-- SEÇÃO 1 -->
+                <h2 id="o-que-e" class="reveal">O que é o sistema</h2>
+
+                <p class="reveal">O Sistema de Diário Oficial Municipal é uma aplicação web desenvolvida para prefeituras que precisam publicar e arquivar seus atos administrativos de forma organizada, acessível e em conformidade com a legislação de transparência pública.</p>
+
+                <p class="reveal">Por ele, a administração municipal publica decretos, portarias, editais, licitações, nomeações e demais atos oficiais. O portal público permite que qualquer cidadão consulte e faça download das edições publicadas, com busca por data, número de edição ou palavras-chave no conteúdo.</p>
+
+                <div class="highlight-box reveal">
+                    <div class="highlight-box-title"><i class="fa-solid fa-circle-info"></i> Conformidade com a legislação</div>
+                    <p>O sistema atende às exigências da <strong>Lei de Acesso à Informação (Lei nº 12.527/2011)</strong> e às diretrizes de transparência ativa previstas para municípios, garantindo que os atos sejam publicados dentro dos prazos legais e permaneçam acessíveis ao público indefinidamente.</p>
+                </div>
+
+                <!-- SEÇÃO 2 -->
+                <h2 id="funcionalidades" class="reveal">Funcionalidades</h2>
+
+                <p class="reveal">O sistema é dividido em dois ambientes: o <strong>portal público</strong>, onde qualquer pessoa pode consultar as edições, e o <strong>painel administrativo</strong>, onde os servidores gerenciam todo o ciclo de publicação.</p>
+
+                <div class="feature-grid reveal">
+                    <div class="feature-item">
+                        <div class="feature-item-icon" style="background:rgba(34,211,238,0.1);color:#22d3ee;"><i class="fa-solid fa-newspaper"></i></div>
+                        <div class="feature-item-title">Publicação de Edições</div>
+                        <div class="feature-item-desc">Criação e publicação de edições numeradas com data, sumário automático e arquivo em PDF para download.</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon" style="background:rgba(59,130,246,0.1);color:#60a5fa;"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="feature-item-title">Busca por Conteúdo</div>
+                        <div class="feature-item-desc">Pesquisa por palavras-chave, número de edição, tipo de ato ou intervalo de datas para localizar publicações rapidamente.</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon" style="background:rgba(167,139,250,0.1);color:#a78bfa;"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="feature-item-title">Categorização de Atos</div>
+                        <div class="feature-item-desc">Organização dos atos por categoria — decreto, portaria, edital, licitação, nomeação — para facilitar a navegação.</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item-icon" style="background:rgba(16,185,129,0.1);color:#34d399;"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <div class="feature-item-title">Histórico Completo</div>
+                        <div class="feature-item-desc">Acervo digital de todas as edições publicadas, acessível ao público sem prazo de expiração.</div>
+                    </div>
+                </div>
+
+                <!-- Mockup de edições -->
+                <div class="edition-mockup reveal">
+                    <div class="edition-mockup-header">
+                        <span class="edition-mockup-title"><i class="fa-solid fa-newspaper" style="color:var(--cyan);margin-right:0.5rem"></i>Últimas Edições</span>
+                        <span class="edition-mockup-meta">Portal público — visualização ilustrativa</span>
+                    </div>
+                    <div class="edition-mockup-body">
+                        <div class="edition-row">
+                            <div class="edition-row-icon" style="background:rgba(34,211,238,0.08);color:#22d3ee;"><i class="fa-solid fa-file-pdf"></i></div>
+                            <div class="edition-row-info">
+                                <div class="edition-row-name">Edição nº 1.247 — 28 de março de 2026</div>
+                                <div class="edition-row-sub">Decretos · Portarias · Licitações · 3 atos publicados</div>
+                            </div>
+                            <span class="edition-badge badge-green">Publicada</span>
+                        </div>
+                        <div class="edition-row">
+                            <div class="edition-row-icon" style="background:rgba(34,211,238,0.08);color:#22d3ee;"><i class="fa-solid fa-file-pdf"></i></div>
+                            <div class="edition-row-info">
+                                <div class="edition-row-name">Edição nº 1.246 — 25 de março de 2026</div>
+                                <div class="edition-row-sub">Nomeações · Editais · 5 atos publicados</div>
+                            </div>
+                            <span class="edition-badge badge-green">Publicada</span>
+                        </div>
+                        <div class="edition-row">
+                            <div class="edition-row-icon" style="background:rgba(245,158,11,0.08);color:#fbbf24;"><i class="fa-solid fa-file-pen"></i></div>
+                            <div class="edition-row-info">
+                                <div class="edition-row-name">Edição nº 1.248 — 31 de março de 2026</div>
+                                <div class="edition-row-sub">Em elaboração · 2 atos aguardando aprovação</div>
+                            </div>
+                            <span class="edition-badge badge-yellow">Rascunho</span>
+                        </div>
+                        <div class="edition-row">
+                            <div class="edition-row-icon" style="background:rgba(59,130,246,0.08);color:#60a5fa;"><i class="fa-solid fa-calendar-check"></i></div>
+                            <div class="edition-row-info">
+                                <div class="edition-row-name">Edição nº 1.249 — 01 de abril de 2026</div>
+                                <div class="edition-row-sub">Agendada · Publicação automática em 00:01</div>
+                            </div>
+                            <span class="edition-badge badge-blue">Agendada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="article-divider">
+
+                <!-- SEÇÃO 3 -->
+                <h2 id="portal" class="reveal">Portal Público</h2>
+
+                <p class="reveal">O portal público é o canal de acesso dos cidadãos ao Diário Oficial do município. Sem necessidade de cadastro, qualquer pessoa pode acessar pelo navegador, pesquisar edições antigas ou recentes e fazer download em PDF.</p>
+
+                <p class="reveal">A busca por <strong>palavras-chave no conteúdo</strong> é um dos diferenciais do sistema: o cidadão pode, por exemplo, pesquisar o próprio nome para verificar nomeações, ou buscar um número de contrato para acompanhar licitações — algo que edições físicas ou PDFs avulsos simplesmente não permitem.</p>
+
+                <div class="pull-quote reveal">
+                    "Qualquer cidadão encontra qualquer ato oficial em segundos. <span>Transparência real</span>, não apenas protocolar."
+                </div>
+
+                <div class="highlight-box reveal" style="background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.15);">
+                    <div class="highlight-box-title" style="color:#60a5fa;"><i class="fa-solid fa-mobile-screen"></i> Responsivo e acessível</div>
+                    <p>O portal funciona em qualquer dispositivo — computador, tablet ou celular — sem necessidade de instalação de aplicativo. O download do PDF é direto, sem barreiras de cadastro ou autenticação.</p>
+                </div>
+
+                <hr class="article-divider">
+
+                <!-- SEÇÃO 4 -->
+                <h2 id="gestao" class="reveal">Painel de Gestão</h2>
+
+                <p class="reveal">O painel administrativo é utilizado pelos servidores responsáveis pelas publicações. Nele é possível criar novas edições, redigir ou importar os atos, organizar por categoria e submeter para aprovação antes da publicação.</p>
+
+                <p class="reveal">O fluxo de aprovação garante que nenhum ato seja publicado sem a revisão de um responsável autorizado. Após a aprovação, a publicação pode ocorrer imediatamente ou ser <strong>agendada</strong> para uma data e horário específicos.</p>
+
+                <div class="highlight-box reveal" style="background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.15);">
+                    <div class="highlight-box-title" style="color:#34d399;"><i class="fa-solid fa-shield-halved"></i> Controle de acesso por perfil</div>
+                    <p>O sistema diferencia os perfis de <strong>redator</strong> (cria e edita atos), <strong>revisor</strong> (aprova antes da publicação) e <strong>administrador</strong> (gerencia usuários, categorias e configurações gerais). Cada servidor acessa apenas o que é necessário para sua função.</p>
+                </div>
+
+                <div class="highlight-box reveal" style="background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.15);">
+                    <div class="highlight-box-title" style="color:#60a5fa;"><i class="fa-solid fa-circle-info"></i> Quer implantar em sua prefeitura?</div>
+                    <p>O sistema pode ser adaptado para municípios de qualquer porte. Entre em contato e apresentamos uma proposta personalizada para a realidade da sua prefeitura.</p>
+                </div>
+
+                <!-- AUTHOR -->
+                <div class="author-box reveal">
+                    <div class="author-box-avatar">M</div>
+                    <div>
+                        <div class="author-box-name">Mikael Roque</div>
+                        <div class="author-box-role">Fundador & CEO · Roque Systems</div>
+                        <div class="author-box-bio">Engenheiro de software com mais de 8 anos de experiência em sistemas de alta disponibilidade, automação inteligente e soluções para o setor público. Apaixonado por tecnologia que faz diferença real na vida das pessoas.</div>
+                    </div>
+                </div>
+
+                <!-- SHARE -->
+                <div class="share-bar reveal">
+                    <span class="share-label">COMPARTILHAR</span>
+                    <a class="share-btn" href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a class="share-btn" href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+                    <a class="share-btn" href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <button class="share-btn" onclick="navigator.clipboard.writeText(location.href);this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copiado!'">
+                        <i class="fa-solid fa-link"></i> Copiar link
+                    </button>
+                </div>
+
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+
+                <!-- TOC -->
+                <div class="sidebar-card reveal reveal-delay-1">
+                    <div class="sidebar-title"><i class="fa-solid fa-list" style="margin-right:0.4rem"></i>Neste artigo</div>
+                    <ul class="toc-list" id="toc">
+                        <li><a href="#o-que-e">O que é o sistema</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="#portal">Portal Público</a></li>
+                        <li><a href="#gestao">Painel de Gestão</a></li>
+                    </ul>
+                </div>
+
+                <!-- Stats -->
+                <div class="sidebar-card reveal reveal-delay-2">
+                    <div class="sidebar-title"><i class="fa-solid fa-chart-simple" style="margin-right:0.4rem"></i>Números do projeto</div>
+                    <div class="stat-mini">
+                        <div class="stat-row">
+                            <span class="stat-row-label">Tipo</span>
+                            <span class="stat-row-val">Web</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-row-label">Setor</span>
+                            <span class="stat-row-val">Público</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-row-label">Perfis de acesso</span>
+                            <span class="stat-row-val">3 níveis</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-row-label">Busca por conteúdo</span>
+                            <span class="stat-row-val">Sim</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-row-label">Publicação agendada</span>
+                            <span class="stat-row-val">Sim</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-row-label">Acervo histórico</span>
+                            <span class="stat-row-val">Ilimitado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="sidebar-card reveal reveal-delay-2">
+                    <div class="sidebar-title"><i class="fa-solid fa-tags" style="margin-right:0.4rem"></i>Tecnologias</div>
+                    <div class="tag-cloud">
+                        <span class="tag-chip">Web App</span>
+                        <span class="tag-chip">Setor Público</span>
+                        <span class="tag-chip">Diário Oficial</span>
+                        <span class="tag-chip">Transparência</span>
+                        <span class="tag-chip">Gestão Municipal</span>
+                        <span class="tag-chip">LAI</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-sidebar reveal reveal-delay-3">
+                    <div class="cta-sidebar-icon">🏛️</div>
+                    <div class="cta-sidebar-title">Quer algo assim?</div>
+                    <div class="cta-sidebar-sub">Desenvolvemos soluções similares para prefeituras e órgãos públicos de qualquer porte.</div>
+                    <a href="index.html#contato" class="cta-sidebar-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Fale conosco
+                    </a>
+                </div>
+
+            </aside>
         </div>
+    </div>
 
-        <!-- Progress bar -->
-        <div class="progress-wrap">
-            <div class="progress-row">
-                <span>Progresso do desenvolvimento</span>
-                <span class="pct" id="progress-pct">0%</span>
-            </div>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill" id="progress-fill"></div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
+    <!-- ── FOOTER ── -->
     <footer>
-        <div class="footer-copy">CNPJ: 65.566.587/0001-46 - © 2026 Roque Systems. Todos os direitos reservados.</div>
-        <div class="footer-links">
-            <a href="mailto:contato@roquesystems.com">contato@roquesystems.com</a>
-            <a href="#">(11) 99999-9999</a>
+        <div class="footer-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="logo.png" alt="logo roque systems"></div>
+                <span class="logo-text">Roque<span>Systems</span></span>
+            </a>
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">X (Twitter)</a>
+            </div>
+            <div class="footer-copy">CNPJ: 65.566.587/0001-46 - © 2026 Roque Systems. Todos os direitos reservados.</div>
         </div>
     </footer>
 
-
     <script>
-    // ── PARTICLES ──────────────────────────────────────────────────
-    (function() {
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [], W, H;
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
 
-        function resize() {
-            W = canvas.width = canvas.offsetWidth;
-            H = canvas.height = canvas.offsetHeight;
-            particles = Array.from({ length: Math.min(80, Math.floor(W * H / 14000)) }, () => ({
-                x: Math.random() * W, y: Math.random() * H,
-                r: Math.random() * 1.8 + 0.4,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                o: Math.random() * 0.45 + 0.15
-            }));
-        }
-
-        function draw() {
-            ctx.clearRect(0, 0, W, H);
-            particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
-                if (p.x < 0 || p.x > W) p.vx *= -1;
-                if (p.y < 0 || p.y > H) p.vy *= -1;
-
-                ctx.save();
-                ctx.globalAlpha = p.o;
-                ctx.shadowBlur = 8; ctx.shadowColor = '#67e8f9';
-                ctx.fillStyle = '#67e8f9';
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
+        // Hamburger
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        document.querySelectorAll('.mobile-link, .mobile-menu-footer a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
             });
-
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const d = Math.sqrt(dx*dx + dy*dy);
-                    if (d < 120) {
-                        ctx.strokeStyle = `rgba(103,232,249,${0.12 * (1 - d/120)})`;
-                        ctx.lineWidth = 0.6;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
             }
-            requestAnimationFrame(draw);
-        }
+        });
 
-        window.addEventListener('resize', resize, { passive: true });
-        resize(); draw();
-    })();
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' }); }
+            });
+        });
 
-    // ── COUNTDOWN ──────────────────────────────────────────────────
-    // Defina a data de lançamento aqui ↓
-    const LAUNCH_DATE = new Date('2026-04-20T00:00:00');
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    const elDays    = document.getElementById('cd-days');
-    const elHours   = document.getElementById('cd-hours');
-    const elMinutes = document.getElementById('cd-minutes');
-    const elSeconds = document.getElementById('cd-seconds');
+        // Reading progress
+        const bar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const body = document.body, html = document.documentElement;
+            const total = Math.max(body.scrollHeight, html.scrollHeight) - html.clientHeight;
+            bar.style.width = Math.min((window.scrollY / total) * 100, 100) + '%';
+        }, { passive: true });
 
-    function pad(n) { return String(n).padStart(2, '0'); }
-
-    function tickBlink(el) {
-        el.classList.add('tick');
-        setTimeout(() => el.classList.remove('tick'), 300);
-    }
-
-    let prevSec = null;
-
-    function updateCountdown() {
-        const now  = new Date();
-        const diff = LAUNCH_DATE - now;
-
-        if (diff <= 0) {
-            elDays.textContent = elHours.textContent = elMinutes.textContent = elSeconds.textContent = '00';
-            return;
-        }
-
-        const d = Math.floor(diff / 86400000);
-        const h = Math.floor((diff % 86400000) / 3600000);
-        const m = Math.floor((diff % 3600000)  / 60000);
-        const s = Math.floor((diff % 60000)    / 1000);
-
-        elDays.textContent    = pad(d);
-        elHours.textContent   = pad(h);
-        elMinutes.textContent = pad(m);
-
-        if (s !== prevSec) {
-            elSeconds.textContent = pad(s);
-            tickBlink(elSeconds);
-            if (s === 59) tickBlink(elMinutes);
-            prevSec = s;
-        }
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 500);
-
-    // ── PROGRESS BAR ───────────────────────────────────────────────
-    const TARGET_PCT = 78; // ← ajuste aqui
-    const fill   = document.getElementById('progress-fill');
-    const pctEl  = document.getElementById('progress-pct');
-
-    let current = 0;
-    setTimeout(() => {
-        const interval = setInterval(() => {
-            current += 1;
-            fill.style.width = current + '%';
-            pctEl.textContent = current + '%';
-            if (current >= TARGET_PCT) clearInterval(interval);
-        }, 20);
-    }, 800);
-
-    // ── NOTIFY FORM ────────────────────────────────────────────────
-    document.getElementById('notify-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('notify-email').value.trim();
-        if (!email) return;
-
-        const btn = document.getElementById('notify-btn');
-        btn.disabled = true;
-        btn.innerHTML = '<div class="spinner"></div>';
-
-        setTimeout(() => {
-            this.style.display = 'none';
-            document.getElementById('success-msg').classList.add('show');
-            document.querySelector('.notify-hint').style.display = 'none';
-        }, 1200);
-    });
+        // TOC active state
+        const sections = document.querySelectorAll('h2[id], h3[id]');
+        const tocLinks = document.querySelectorAll('#toc a');
+        const tocObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(l => l.classList.remove('active'));
+                    const active = document.querySelector(`#toc a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-80px 0px -60% 0px' });
+        sections.forEach(s => tocObserver.observe(s));
     </script>
-</body>
 </html>
