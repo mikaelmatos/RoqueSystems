@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3SR94Q09E"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-S3SR94Q09E');
+        gtag('config', 'G-S3SR94Q09E');
     </script>
     <meta name="google-adsense-account" content="ca-pub-1255461454064940">
 
@@ -19,9 +20,11 @@
 
     <title>Roque Systems | Automação, Inteligência Artificial e Desenvolvimento de Software</title>
 
-    <meta name="description" content="A Roque Systems desenvolve soluções tecnológicas modernas, automação com inteligência artificial, integração de APIs e softwares sob medida para empresas e startups.">
+    <meta name="description"
+        content="A Roque Systems desenvolve soluções tecnológicas modernas, automação com inteligência artificial, integração de APIs e softwares sob medida para empresas e startups.">
 
-    <meta name="keywords" content="automação empresarial, inteligência artificial, desenvolvimento de software, software sob medida, integração de APIs, soluções tecnológicas, automação com IA, consultoria tecnológica">
+    <meta name="keywords"
+        content="automação empresarial, inteligência artificial, desenvolvimento de software, software sob medida, integração de APIs, soluções tecnológicas, automação com IA, consultoria tecnológica">
 
     <meta name="author" content="Roque Systems">
     <meta name="robots" content="index, follow">
@@ -31,7 +34,8 @@
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Roque Systems | Tecnologia e Automação Inteligente">
-    <meta property="og:description" content="Automação empresarial, inteligência artificial e desenvolvimento de software sob medida para empresas que buscam inovação e eficiência.">
+    <meta property="og:description"
+        content="Automação empresarial, inteligência artificial e desenvolvimento de software sob medida para empresas que buscam inovação e eficiência.">
     <meta property="og:url" content="https://roquesystems.com">
     <meta property="og:image" content="https://roquesystems.com/preview.png">
     <meta property="og:site_name" content="Roque Systems">
@@ -39,7 +43,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Roque Systems | Tecnologia e Automação Inteligente">
-    <meta name="twitter:description" content="Soluções tecnológicas modernas: automação, inteligência artificial e softwares personalizados.">
+    <meta name="twitter:description"
+        content="Soluções tecnológicas modernas: automação, inteligência artificial e softwares personalizados.">
     <meta name="twitter:image" content="https://roquesystems.com/preview.png">
 
     <!-- Theme Color -->
@@ -64,18 +69,22 @@
     <meta name="theme-color" content="#080a0fd9">
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
 
     <style>
         :root {
             --cyan: #22d3ee;
-            --cyan-dim: rgba(34,211,238,0.12);
-            --cyan-glow: rgba(34,211,238,0.35);
+            --cyan-dim: rgba(34, 211, 238, 0.12);
+            --cyan-glow: rgba(34, 211, 238, 0.35);
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
@@ -101,16 +110,16 @@
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(8,10,15,0.85);
+            background: rgba(8, 10, 15, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
             transition: background 0.3s;
         }
 
-            .navbar.scrolled {
-                background: rgba(8,10,15,0.97);
-            }
+        .navbar.scrolled {
+            background: rgba(8, 10, 15, 0.97);
+        }
 
         .nav-inner {
             max-width: 1400px;
@@ -132,7 +141,7 @@
 
         .logo-icon {
             width: 36px;
-            height: 36px;            
+            height: 36px;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -141,7 +150,7 @@
             font-weight: 800;
             color: #080a0f;
             font-size: 1.1rem;
-            -webkit-box-shadow: 0px 0px 15px 0px #3B82F6; 
+            -webkit-box-shadow: 0px 0px 15px 0px #3B82F6;
             box-shadow: 0px 0px 2px 0px #3B82F6;
         }
 
@@ -153,9 +162,9 @@
             color: #e4e8f0;
         }
 
-            .logo-text span {
-                color: #22d3ee;
-            }
+        .logo-text span {
+            color: #22d3ee;
+        }
 
         .nav-links {
             display: flex;
@@ -166,41 +175,41 @@
             padding: 0;
         }
 
-            .nav-links a {
-                font-size: 0.85rem;
-                font-weight: 500;
-                color: #94a3b8;
-                text-decoration: none;
-                position: relative;
-                transition: color 0.2s;
-                letter-spacing: 0.02em;
-            }
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #94a3b8;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s;
+            letter-spacing: 0.02em;
+        }
 
-                .nav-links a::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -4px;
-                    left: 0;
-                    right: 100%;
-                    height: 1.5px;
-                    background: #22d3ee;
-                    transition: right 0.3s cubic-bezier(0.4,0,0.2,1);
-                }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 100%;
+            height: 1.5px;
+            background: #22d3ee;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-                .nav-links a:hover {
-                    color: #fff;
-                }
+        .nav-links a:hover {
+            color: #fff;
+        }
 
-                    .nav-links a:hover::after {
-                        right: 0;
-                    }
+        .nav-links a:hover::after {
+            right: 0;
+        }
 
         .nav-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.55rem 1.4rem;
-            border: 1px solid rgba(255,255,255,0.25);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 500;
@@ -210,11 +219,11 @@
             white-space: nowrap;
         }
 
-            .nav-cta:hover {
-                border-color: #22d3ee;
-                color: #22d3ee;
-                background: rgba(34,211,238,0.06);
-            }
+        .nav-cta:hover {
+            border-color: #22d3ee;
+            color: #22d3ee;
+            background: rgba(34, 211, 238, 0.06);
+        }
 
         /* Hamburger */
         .hamburger {
@@ -228,27 +237,27 @@
             z-index: 200;
         }
 
-            .hamburger span {
-                display: block;
-                width: 24px;
-                height: 2px;
-                background: #e4e8f0;
-                border-radius: 2px;
-                transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-            }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #e4e8f0;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-            .hamburger.active span:nth-child(1) {
-                transform: translateY(7px) rotate(45deg);
-            }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
 
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-                transform: scaleX(0);
-            }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
 
-            .hamburger.active span:nth-child(3) {
-                transform: translateY(-7px) rotate(-45deg);
-            }
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
 
         /* Mobile menu */
         .mobile-menu {
@@ -261,36 +270,36 @@
             flex-direction: column;
         }
 
-            .mobile-menu.open {
-                display: flex;
-            }
+        .mobile-menu.open {
+            display: flex;
+        }
 
-            .mobile-menu nav {
-                padding: 2rem 1.5rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-                flex: 1;
-            }
+        .mobile-menu nav {
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
 
-                .mobile-menu nav a {
-                    font-family: 'Space Grotesk', sans-serif;
-                    font-size: 1.8rem;
-                    font-weight: 700;
-                    color: #94a3b8;
-                    text-decoration: none;
-                    padding: 0.75rem 0;
-                    border-bottom: 1px solid rgba(255,255,255,0.06);
-                    transition: color 0.2s;
-                }
+        .mobile-menu nav a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: color 0.2s;
+        }
 
-                    .mobile-menu nav a:hover {
-                        color: #22d3ee;
-                    }
+        .mobile-menu nav a:hover {
+            color: #22d3ee;
+        }
 
         .mobile-menu-footer {
             padding: 2rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         /* ── HERO ─────────────────────────────── */
@@ -306,7 +315,7 @@
         .hero-grid-bg {
             position: absolute;
             inset: 0;
-            background-image: linear-gradient(rgba(34,211,238,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.04) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 80%);
         }
@@ -318,7 +327,7 @@
             transform: translateX(-50%);
             width: min(700px, 90vw);
             height: min(700px, 90vw);
-            background: radial-gradient(circle, rgba(34,211,238,0.08) 0%, transparent 65%);
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, transparent 65%);
             pointer-events: none;
         }
 
@@ -344,8 +353,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(34,211,238,0.08);
-            border: 1px solid rgba(34,211,238,0.2);
+            background: rgba(34, 211, 238, 0.08);
+            border: 1px solid rgba(34, 211, 238, 0.2);
             padding: 0.4rem 1rem;
             border-radius: 100px;
             font-size: 0.72rem;
@@ -356,16 +365,18 @@
             animation: fadeSlideUp 0.6s ease both;
         }
 
-            .hero-badge .dot {
-                width: 6px;
-                height: 6px;
-                background: #22d3ee;
-                border-radius: 50%;
-                animation: pulse 2s infinite;
-            }
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: #22d3ee;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 transform: scale(1);
             }
@@ -386,13 +397,13 @@
             animation: fadeSlideUp 0.7s 0.1s ease both;
         }
 
-            .hero-title .accent {
-                background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                display: block;
-            }
+        .hero-title .accent {
+            background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
 
         .hero-sub {
             font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -426,18 +437,18 @@
             white-space: nowrap;
         }
 
-            .btn-primary:hover {
-                background: #fff;
-                transform: translateY(-2px);
-                box-shadow: 0 12px 30px rgba(34,211,238,0.25);
-            }
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(34, 211, 238, 0.25);
+        }
 
         .btn-ghost {
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
             padding: 0.9rem 2rem;
-            border: 1.5px solid rgba(255,255,255,0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
             color: #e4e8f0;
             font-weight: 500;
             font-size: 0.95rem;
@@ -447,10 +458,10 @@
             white-space: nowrap;
         }
 
-            .btn-ghost:hover {
-                border-color: rgba(255,255,255,0.5);
-                background: rgba(255,255,255,0.05);
-            }
+        .btn-ghost:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
         .hero-trust {
             display: flex;
@@ -465,11 +476,11 @@
             animation: fadeSlideUp 0.7s 0.4s ease both;
         }
 
-            .hero-trust .item {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
+        .hero-trust .item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
         .scroll-hint {
             position: absolute;
@@ -486,15 +497,17 @@
             z-index: 2;
         }
 
-            .scroll-hint .line {
-                width: 1px;
-                height: 40px;
-                background: linear-gradient(to bottom, transparent, #475569, transparent);
-                animation: scrollLine 2s ease-in-out infinite;
-            }
+        .scroll-hint .line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, #475569, transparent);
+            animation: scrollLine 2s ease-in-out infinite;
+        }
 
         @keyframes scrollLine {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.3;
             }
 
@@ -581,20 +594,20 @@
         }
 
         .quote-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
             padding: 2.5rem;
             backdrop-filter: blur(10px);
         }
 
-            .quote-card blockquote {
-                font-size: clamp(1rem, 2vw, 1.2rem);
-                line-height: 1.75;
-                color: #cbd5e1;
-                font-style: italic;
-                margin: 0 0 2rem;
-            }
+        .quote-card blockquote {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.75;
+            color: #cbd5e1;
+            font-style: italic;
+            margin: 0 0 2rem;
+        }
 
         .quote-author {
             display: flex;
@@ -606,7 +619,7 @@
             width: 48px;
             height: 48px;
             background: linear-gradient(135deg, #22d3ee22, #3b82f622);
-            border: 1px solid rgba(34,211,238,0.2);
+            border: 1px solid rgba(34, 211, 238, 0.2);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -636,18 +649,18 @@
         }
 
         .valor-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 16px;
             padding: 1.5rem;
             transition: all 0.3s;
         }
 
-            .valor-card:hover {
-                background: rgba(255,255,255,0.055);
-                border-color: rgba(34,211,238,0.2);
-                transform: translateY(-4px);
-            }
+        .valor-card:hover {
+            background: rgba(255, 255, 255, 0.055);
+            border-color: rgba(34, 211, 238, 0.2);
+            transform: translateY(-4px);
+        }
 
         .valor-icon {
             width: 42px;
@@ -690,8 +703,8 @@
         }
 
         .service-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 20px;
             padding: 2rem;
             transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -699,12 +712,12 @@
             flex-direction: column;
         }
 
-            .service-card:hover {
-                transform: translateY(-10px);
-                border-color: rgba(34,211,238,0.3);
-                box-shadow: 0 20px 40px rgba(34,211,238,0.1);
-                background: rgba(34,211,238,0.04);
-            }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(34, 211, 238, 0.3);
+            box-shadow: 0 20px 40px rgba(34, 211, 238, 0.1);
+            background: rgba(34, 211, 238, 0.04);
+        }
 
         .service-icon {
             width: 54px;
@@ -744,9 +757,9 @@
             transition: gap 0.2s;
         }
 
-            .service-link:hover {
-                gap: 0.7rem;
-            }
+        .service-link:hover {
+            gap: 0.7rem;
+        }
 
         /* ── PROJETOS ─────────────────────────── */
         #projetos {
@@ -773,21 +786,21 @@
             white-space: nowrap;
         }
 
-            .ver-todos:hover {
-                color: #22d3ee;
-            }
+        .ver-todos:hover {
+            color: #22d3ee;
+        }
 
-            .ver-todos .bar {
-                display: inline-block;
-                width: 28px;
-                height: 1px;
-                background: currentColor;
-                transition: width 0.3s;
-            }
+        .ver-todos .bar {
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s;
+        }
 
-            .ver-todos:hover .bar {
-                width: 44px;
-            }
+        .ver-todos:hover .bar {
+            width: 44px;
+        }
 
         .projects-grid {
             display: grid;
@@ -797,16 +810,16 @@
 
         .project-card {
             background: #0e1118;
-            border: 1px solid rgba(255,255,255,0.07);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 20px;
             overflow: hidden;
             transition: border-color 0.3s, transform 0.3s;
         }
 
-            .project-card:hover {
-                border-color: rgba(34,211,238,0.25);
-                transform: translateY(-5px);
-            }
+        .project-card:hover {
+            border-color: rgba(34, 211, 238, 0.25);
+            transform: translateY(-5px);
+        }
 
         .project-img {
             aspect-ratio: 16/10;
@@ -814,12 +827,12 @@
             position: relative;
         }
 
-            .project-img img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.6s cubic-bezier(0.34,1.56,0.64,1);
-            }
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
         .project-card:hover .project-img img {
             transform: scale(1.08);
@@ -828,7 +841,7 @@
         .project-img-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(14,17,24,0.9) 0%, rgba(14,17,24,0.15) 60%, transparent 100%);
+            background: linear-gradient(to top, rgba(14, 17, 24, 0.9) 0%, rgba(14, 17, 24, 0.15) 60%, transparent 100%);
         }
 
         .project-tag {
@@ -839,9 +852,9 @@
             font-weight: 600;
             letter-spacing: 0.06em;
             padding: 0.3rem 0.75rem;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 100px;
             color: #94a3b8;
         }
@@ -880,17 +893,17 @@
         }
 
         .depo-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 20px;
             padding: 2rem;
             transition: border-color 0.3s, transform 0.3s;
         }
 
-            .depo-card:hover {
-                border-color: rgba(34,211,238,0.2);
-                transform: translateY(-4px);
-            }
+        .depo-card:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+            transform: translateY(-4px);
+        }
 
         .stars {
             display: flex;
@@ -934,7 +947,7 @@
         /* ── CONTATO ─────────────────────────── */
         #contato {
             background: #0c0e14;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .contato-grid {
@@ -953,9 +966,9 @@
             margin-bottom: 1rem;
         }
 
-            .contato-title span {
-                color: #22d3ee;
-            }
+        .contato-title span {
+            color: #22d3ee;
+        }
 
         .contato-sub {
             font-size: 0.9rem;
@@ -981,8 +994,8 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(34,211,238,0.08);
-            border: 1px solid rgba(34,211,238,0.15);
+            background: rgba(34, 211, 238, 0.08);
+            border: 1px solid rgba(34, 211, 238, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1005,14 +1018,14 @@
             margin-top: 2px;
         }
 
-            .info-val a {
-                color: inherit;
-                text-decoration: none;
-            }
+        .info-val a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-                .info-val a:hover {
-                    color: #22d3ee;
-                }
+        .info-val a:hover {
+            color: #22d3ee;
+        }
 
         /* Form */
         .form-grid {
@@ -1027,9 +1040,9 @@
             gap: 0.5rem;
         }
 
-            .form-group.full {
-                grid-column: 1 / -1;
-            }
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
 
         label.form-label {
             font-size: 0.7rem;
@@ -1039,10 +1052,11 @@
             text-transform: uppercase;
         }
 
-        .form-input, .form-textarea {
+        .form-input,
+        .form-textarea {
             width: 100%;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 0.85rem 1.1rem;
             font-family: 'Inter', sans-serif;
@@ -1053,10 +1067,11 @@
             -webkit-appearance: none;
         }
 
-            .form-input:focus, .form-textarea:focus {
-                border-color: #22d3ee;
-                background: rgba(34,211,238,0.04);
-            }
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.04);
+        }
 
         .form-textarea {
             resize: vertical;
@@ -1083,26 +1098,26 @@
             margin-top: 0.5rem;
         }
 
-            .btn-submit:hover {
-                filter: brightness(1.1);
-                transform: translateY(-2px);
-                box-shadow: 0 10px 30px rgba(34,211,238,0.25);
-            }
+        .btn-submit:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.25);
+        }
 
-            .btn-submit:active {
-                transform: translateY(0);
-            }
+        .btn-submit:active {
+            transform: translateY(0);
+        }
 
-            .btn-submit:disabled {
-                opacity: 0.7;
-                cursor: not-allowed;
-                transform: none;
-            }
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
 
         /* ── FOOTER ─────────────────────────── */
         footer {
             background: #080a0f;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
             padding: 2.5rem 1.5rem;
         }
 
@@ -1122,35 +1137,35 @@
             flex-wrap: wrap;
         }
 
-            .footer-links a {
-                font-size: 0.82rem;
-                color: #94a3b8;
-                text-decoration: none;
-                transition: color 0.2s;
-		font-weight: 400;
-            }
+        .footer-links a {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 400;
+        }
 
-                .footer-links a:hover {
-                    color: #22d3ee;
-                }
+        .footer-links a:hover {
+            color: #22d3ee;
+        }
 
         .footer-copy {
             font-size: 0.75rem;
             color: #94a3b8;
-	    font-weight: 400;	    
+            font-weight: 400;
         }
 
         /* ── ANIMATIONS ─────────────────────── */
         .reveal {
             opacity: 0;
             transform: translateY(28px);
-            transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1);
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-            .reveal.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .reveal-delay-1 {
             transition-delay: 0.1s;
@@ -1181,7 +1196,9 @@
         }
 
         @media (max-width: 800px) {
-            .nav-links, .nav-cta {
+
+            .nav-links,
+            .nav-cta {
                 display: none !important;
             }
 
@@ -1239,7 +1256,8 @@
                 align-items: center;
             }
 
-            .btn-primary, .btn-ghost {
+            .btn-primary,
+            .btn-ghost {
                 width: 100%;
                 justify-content: center;
             }
@@ -1268,12 +1286,13 @@
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            border: 2px solid rgba(8,10,15,0.3);
+            border: 2px solid rgba(8, 10, 15, 0.3);
             border-top-color: #080a0f;
             animation: spin 0.7s linear infinite;
         }
     </style>
 </head>
+
 <body>
 
     <!-- ── NAVBAR ────────────────────────────────────────────────── -->
@@ -1291,7 +1310,8 @@
                 <!-- <li><a href="#clientes">Clientes</a></li> -->
             </ul>
 
-            <a href="#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+            <a href="#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right"
+                    style="font-size:0.7rem"></i></a>
 
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -1308,7 +1328,8 @@
             <!-- <a href="#clientes" class="mobile-link">Clientes</a> -->
         </nav>
         <div class="mobile-menu-footer">
-            <a href="#contato" class="btn-primary" style="width:100%;justify-content:center;border-radius:12px;text-decoration:none;">
+            <a href="#contato" class="btn-primary"
+                style="width:100%;justify-content:center;border-radius:12px;text-decoration:none;">
                 Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.8rem"></i>
             </a>
         </div>
@@ -1333,7 +1354,8 @@
             </h1>
 
             <p class="hero-sub">
-                Desenvolvemos sistemas inteligentes, automações e soluções sob medida para empresas que não aceitam o comum.
+                Desenvolvemos sistemas inteligentes, automações e soluções sob medida para empresas que não aceitam o
+                comum.
             </p>
 
             <div class="hero-actions">
@@ -1360,7 +1382,7 @@
     </section>
 
 
-    
+
     <!-- ── PROJETOS ───────────────────────────────────────────────── -->
     <section id="projetos">
         <div class="section-inner">
@@ -1382,7 +1404,8 @@
                     <div class="project-info">
                         <div class="project-title">Ouvidoria Municipal & e-SIC</div>
                         <div class="project-desc">
-                            Uma plataforma desenvolvida para prefeituras gerenciarem manifestações de cidadãos de forma organizada e rastreável.<br/>
+                            Uma plataforma desenvolvida para prefeituras gerenciarem manifestações de cidadãos de forma
+                            organizada e rastreável.<br />
                             <span class="btn-saiba-mais"><b><u>Saber mais</u></b></span>
                         </div>
                     </div>
@@ -1397,7 +1420,7 @@
                     <div class="project-info">
                         <div class="project-title">Carta de Serviços ao Cidadão</div>
                         <div class="project-desc">
-                            A Carta de Serviços ao Cidadão reúne os serviços prestados pela Prefeitura Municipal.<br/>
+                            A Carta de Serviços ao Cidadão reúne os serviços prestados pela Prefeitura Municipal.<br />
                             <span class="btn-saiba-mais"><b><u>Saber mais</u></b></span>
                         </div>
                     </div>
@@ -1412,13 +1435,14 @@
                     <div class="project-info">
                         <div class="project-title">Diário Oficial Municipal</div>
                         <div class="project-desc">
-                            O Diário Oficial Municipal é o veículo de publicação dos atos oficiais da administração pública.<br/>
+                            O Diário Oficial Municipal é o veículo de publicação dos atos oficiais da administração
+                            pública.<br />
                             <span class="btn-saiba-mais"><b><u>Saber mais</u></b></span>
                         </div>
                     </div>
-                </a> 
-                
-                
+                </a>
+
+
 
 
 
@@ -1432,11 +1456,12 @@
                     <div class="project-info">
                         <div class="project-title">Site Institucional Municipal</div>
                         <div class="project-desc">
-                            Site oficial da prefeitura que reúne informações sobre sua estrutura, serviços e atuação para a população.<br/>
+                            Site oficial da prefeitura que reúne informações sobre sua estrutura, serviços e atuação
+                            para a população.<br />
                             <span class="btn-saiba-mais"><b><u>Saber mais</u></b></span>
                         </div>
                     </div>
-                </a> 
+                </a>
                 <a href="em-breve.html" class="project-card reveal reveal-delay-1">
                     <div class="project-img">
                         <img src="image/almoxarifado-home-print.png" alt="Almoxarifado Municipal" loading="lazy">
@@ -1446,11 +1471,12 @@
                     <div class="project-info">
                         <div class="project-title">Almoxarifado Municipal</div>
                         <div class="project-desc">
-                            Sistema de controle de estoque da prefeitura, responsável por gerenciar materiais, entradas, saídas e distribuição interna.<br/>
+                            Sistema de controle de estoque da prefeitura, responsável por gerenciar materiais, entradas,
+                            saídas e distribuição interna.<br />
                             <span class="btn-saiba-mais"><b><u>Saber mais</u></b></span>
                         </div>
                     </div>
-                </a> 
+                </a>
                 <a href="em-breve.html" class="project-card reveal reveal-delay-1">
                     <div class="project-img">
                         <img src="image/transparencia-home-print.png" alt="Portal de Transparência" loading="lazy">
@@ -1460,15 +1486,16 @@
                     <div class="project-info">
                         <div class="project-title">Portal da Transparência Municipal</div>
                         <div class="project-desc">
-                            Onde a prefeitura divulga receitas, despesas e outras informações para garantir transparência à população.<br/>
+                            Onde a prefeitura divulga receitas, despesas e outras informações para garantir
+                            transparência à população.<br />
                             <span class="btn-saiba-mais"><b><u>Saber mais</u></b></span>
                         </div>
                     </div>
-                </a> 
+                </a>
 
 
 
-            </div>            
+            </div>
         </div>
     </section>
 
@@ -1483,45 +1510,57 @@
 
             <div class="services-grid">
                 <div class="service-card reveal">
-                    <div class="service-icon" style="background:linear-gradient(135deg,#3b82f622,#22d3ee22);color:#60a5fa;">
+                    <div class="service-icon"
+                        style="background:linear-gradient(135deg,#3b82f622,#22d3ee22);color:#60a5fa;">
                         <i class="fa-solid fa-code"></i>
                     </div>
                     <div class="service-title">Desenvolvimento de Software</div>
-                    <div class="service-desc">Aplicações web, mobile e desktop sob medida, construídas com as melhores práticas de arquitetura e código limpo.</div>
-                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+                    <div class="service-desc">Aplicações web, mobile e desktop sob medida, construídas com as melhores
+                        práticas de arquitetura e código limpo.</div>
+                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right"
+                            style="font-size:0.7rem"></i></a>
                 </div>
 
                 <div class="service-card reveal reveal-delay-1">
-                    <div class="service-icon" style="background:linear-gradient(135deg,#8b5cf622,#a78bfa22);color:#a78bfa;">
+                    <div class="service-icon"
+                        style="background:linear-gradient(135deg,#8b5cf622,#a78bfa22);color:#a78bfa;">
                         <i class="fa-solid fa-robot"></i>
                     </div>
                     <div class="service-title">Automação Empresarial</div>
-                    <div class="service-desc">Robôs inteligentes que eliminam tarefas repetitivas e aumentam a produtividade da sua equipe em até 70%.</div>
-                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+                    <div class="service-desc">Robôs inteligentes que eliminam tarefas repetitivas e aumentam a
+                        produtividade da sua equipe em até 70%.</div>
+                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right"
+                            style="font-size:0.7rem"></i></a>
                 </div>
 
                 <div class="service-card reveal reveal-delay-2">
-                    <div class="service-icon" style="background:linear-gradient(135deg,#10b98122,#34d39922);color:#34d399;">
+                    <div class="service-icon"
+                        style="background:linear-gradient(135deg,#10b98122,#34d39922);color:#34d399;">
                         <i class="fa-solid fa-brain"></i>
                     </div>
                     <div class="service-title">Integrações com IA</div>
-                    <div class="service-desc">Chatbots, visão computacional, predição e automação cognitiva integradas aos seus sistemas existentes.</div>
-                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+                    <div class="service-desc">Chatbots, visão computacional, predição e automação cognitiva integradas
+                        aos seus sistemas existentes.</div>
+                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right"
+                            style="font-size:0.7rem"></i></a>
                 </div>
 
                 <div class="service-card reveal reveal-delay-3">
-                    <div class="service-icon" style="background:linear-gradient(135deg,#f4366422,#fb718522);color:#fb7185;">
+                    <div class="service-icon"
+                        style="background:linear-gradient(135deg,#f4366422,#fb718522);color:#fb7185;">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <div class="service-title">Consultoria em Sistemas</div>
-                    <div class="service-desc">Auditoria, migração para nuvem, arquitetura de software e estratégia tecnológica de longo prazo.</div>
-                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+                    <div class="service-desc">Auditoria, migração para nuvem, arquitetura de software e estratégia
+                        tecnológica de longo prazo.</div>
+                    <a href="#contato" class="service-link">Saiba mais <i class="fa-solid fa-arrow-right"
+                            style="font-size:0.7rem"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- ── SOBRE ─────────────────────────────────────────────────── -->
+    <!-- ── SOBRE ─────────────────────────────────────────────────── -->
     <section id="sobre">
         <div class="section-inner">
             <div class="sobre-grid">
@@ -1572,32 +1611,40 @@
 
                     <div class="valores-grid" style="margin-top:1.25rem;">
                         <div class="valor-card reveal reveal-delay-1">
-                            <div class="valor-icon" style="background:linear-gradient(135deg,#22d3ee22,#3b82f622);color:#22d3ee;">
+                            <div class="valor-icon"
+                                style="background:linear-gradient(135deg,#22d3ee22,#3b82f622);color:#22d3ee;">
                                 <i class="fa-solid fa-lightbulb"></i>
                             </div>
                             <div class="valor-title">Inovação</div>
-                            <div class="valor-desc">Sempre um passo à frente. Usamos as tecnologias mais avançadas do mercado.</div>
+                            <div class="valor-desc">Sempre um passo à frente. Usamos as tecnologias mais avançadas do
+                                mercado.</div>
                         </div>
                         <div class="valor-card reveal reveal-delay-2">
-                            <div class="valor-icon" style="background:linear-gradient(135deg,#10b98122,#14b8a622);color:#10b981;">
+                            <div class="valor-icon"
+                                style="background:linear-gradient(135deg,#10b98122,#14b8a622);color:#10b981;">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
                             <div class="valor-title">Solidez</div>
-                            <div class="valor-desc">Sistemas que nunca param. 99,99% de uptime garantido em todos os projetos.</div>
+                            <div class="valor-desc">Sistemas que nunca param. 99,99% de uptime garantido em todos os
+                                projetos.</div>
                         </div>
                         <div class="valor-card reveal reveal-delay-2">
-                            <div class="valor-icon" style="background:linear-gradient(135deg,#f59e0b22,#f9731622);color:#f59e0b;">
+                            <div class="valor-icon"
+                                style="background:linear-gradient(135deg,#f59e0b22,#f9731622);color:#f59e0b;">
                                 <i class="fa-solid fa-gauge-high"></i>
                             </div>
                             <div class="valor-title">Performance</div>
-                            <div class="valor-desc">Velocidade extrema. Otimização obsessiva em cada linha de código escrita.</div>
+                            <div class="valor-desc">Velocidade extrema. Otimização obsessiva em cada linha de código
+                                escrita.</div>
                         </div>
                         <div class="valor-card reveal reveal-delay-3">
-                            <div class="valor-icon" style="background:linear-gradient(135deg,#f4366422,#ec489922);color:#f43664;">
+                            <div class="valor-icon"
+                                style="background:linear-gradient(135deg,#f4366422,#ec489922);color:#f43664;">
                                 <i class="fa-solid fa-lock"></i>
                             </div>
                             <div class="valor-title">Segurança</div>
-                            <div class="valor-desc">Proteção de nível avançado. Seus dados são o nosso maior patrimônio.</div>
+                            <div class="valor-desc">Proteção de nível avançado. Seus dados são o nosso maior patrimônio.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1677,14 +1724,16 @@
                         Vamos construir algo<br>
                         <span>extraordinário</span> juntos
                     </h2>
-                    <p class="contato-sub">Conte-nos sobre seu desafio. Em até 24 horas entraremos em contato com uma proposta personalizada.</p>
+                    <p class="contato-sub">Conte-nos sobre seu desafio. Em até 24 horas entraremos em contato com uma
+                        proposta personalizada.</p>
 
                     <div class="contato-info">
                         <div class="info-item">
                             <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div>
                                 <div class="info-label">E-mail</div>
-                                <div class="info-val"><a href="mailto:contato@roquesystems.com">contato@roquesystems.com</a></div>
+                                <div class="info-val"><a
+                                        href="mailto:contato@roquesystems.com">contato@roquesystems.com</a></div>
                             </div>
                         </div>
                         <div class="info-item">
@@ -1722,7 +1771,8 @@
                             </div>
                             <div class="form-group full">
                                 <label class="form-label" for="message">Como podemos ajudar?</label>
-                                <textarea id="message" class="form-textarea" placeholder="Descreva seu projeto ou desafio..." required></textarea>
+                                <textarea id="message" class="form-textarea"
+                                    placeholder="Descreva seu projeto ou desafio..." required></textarea>
                             </div>
                         </div>
                         <br />
@@ -1896,4 +1946,5 @@
         })();
     </script>
 </body>
+
 </html>

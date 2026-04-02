@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
     <title>Sobre | Roque Systems</title>
-    <meta name="description" content="Mikael Matos — Desenvolvedor .NET com mais de 8 anos de experiência. Fundador da Roque Systems.">
+    <meta name="description"
+        content="Mikael Matos — Desenvolvedor .NET com mais de 8 anos de experiência. Fundador da Roque Systems.">
     <meta name="theme-color" content="#080a0f">
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <style>
         :root {
             --cyan: #22d3ee;
-            --cyan-dim: rgba(34,211,238,0.1);
-            --cyan-glow: rgba(34,211,238,0.35);
+            --cyan-dim: rgba(34, 211, 238, 0.1);
+            --cyan-glow: rgba(34, 211, 238, 0.35);
             --blue: #3b82f6;
             --bg: #080a0f;
-            --surface: rgba(255,255,255,0.03);
-            --border: rgba(255,255,255,0.08);
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
             --text: #e4e8f0;
             --muted: #64748b;
         }
 
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
@@ -53,8 +66,8 @@
             position: fixed;
             inset: 0;
             background-image:
-                linear-gradient(rgba(34,211,238,0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(34,211,238,0.035) 1px, transparent 1px);
+                linear-gradient(rgba(34, 211, 238, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34, 211, 238, 0.035) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 0%, transparent 75%);
             pointer-events: none;
@@ -69,17 +82,18 @@
             transform: translateX(-50%);
             width: min(800px, 110vw);
             height: min(600px, 80vw);
-            background: radial-gradient(ellipse, rgba(34,211,238,0.07) 0%, transparent 65%);
+            background: radial-gradient(ellipse, rgba(34, 211, 238, 0.07) 0%, transparent 65%);
             pointer-events: none;
             z-index: 0;
         }
+
         .glow-bottom {
             position: fixed;
             bottom: -20%;
             right: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 65%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 65%);
             pointer-events: none;
             z-index: 0;
         }
@@ -111,7 +125,12 @@
             justify-content: center;
             box-shadow: 0px 0px 2px 0px #3B82F6;
         }
-        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
         .logo-text {
             font-family: 'Space Grotesk', sans-serif;
@@ -120,12 +139,16 @@
             letter-spacing: -0.03em;
             color: var(--text);
         }
-        .logo-text span { color: var(--cyan); }
+
+        .logo-text span {
+            color: var(--cyan);
+        }
 
         .nav-social {
             display: flex;
             gap: 1rem;
         }
+
         .nav-social a {
             width: 36px;
             height: 36px;
@@ -139,8 +162,9 @@
             text-decoration: none;
             transition: all 0.2s;
         }
+
         .nav-social a:hover {
-            border-color: rgba(34,211,238,0.35);
+            border-color: rgba(34, 211, 238, 0.35);
             color: var(--cyan);
             background: var(--cyan-dim);
         }
@@ -172,8 +196,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(34,211,238,0.07);
-            border: 1px solid rgba(34,211,238,0.2);
+            background: rgba(34, 211, 238, 0.07);
+            border: 1px solid rgba(34, 211, 238, 0.2);
             padding: 0.4rem 1.1rem;
             border-radius: 100px;
             font-size: 0.7rem;
@@ -182,6 +206,7 @@
             color: var(--cyan);
             margin-bottom: 1.75rem;
         }
+
         .badge .dot {
             width: 6px;
             height: 6px;
@@ -189,9 +214,19 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0%,100% { opacity:1; transform:scale(1); }
-            50% { opacity:0.4; transform:scale(0.8); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
         }
 
         .hero-name {
@@ -203,6 +238,7 @@
             margin-bottom: 0.5rem;
             color: var(--text);
         }
+
         .hero-name span {
             background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
             -webkit-background-clip: text;
@@ -251,10 +287,11 @@
             transition: all 0.25s;
             white-space: nowrap;
         }
+
         .btn-primary:hover {
             filter: brightness(1.12);
             transform: translateY(-1px);
-            box-shadow: 0 8px 24px rgba(34,211,238,0.3);
+            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.3);
         }
 
         .btn-secondary {
@@ -275,8 +312,9 @@
             transition: all 0.25s;
             white-space: nowrap;
         }
+
         .btn-secondary:hover {
-            border-color: rgba(34,211,238,0.35);
+            border-color: rgba(34, 211, 238, 0.35);
             color: var(--cyan);
             background: var(--cyan-dim);
             transform: translateY(-1px);
@@ -298,7 +336,7 @@
             position: absolute;
             inset: -2px;
             border-radius: 24px;
-            background: linear-gradient(135deg, rgba(34,211,238,0.5), rgba(59,130,246,0.3), transparent 60%);
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.5), rgba(59, 130, 246, 0.3), transparent 60%);
             z-index: 0;
         }
 
@@ -307,7 +345,7 @@
             position: absolute;
             inset: -12px;
             border-radius: 32px;
-            border: 1px solid rgba(34,211,238,0.12);
+            border: 1px solid rgba(34, 211, 238, 0.12);
             z-index: 0;
         }
 
@@ -327,7 +365,7 @@
             width: 100%;
             height: 100%;
             border-radius: 22px;
-            background: linear-gradient(135deg, rgba(34,211,238,0.08), rgba(59,130,246,0.08));
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(59, 130, 246, 0.08));
             border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
@@ -337,14 +375,18 @@
             color: var(--muted);
             font-size: 0.75rem;
         }
-        .photo-placeholder i { font-size: 2rem; color: rgba(34,211,238,0.3); }
+
+        .photo-placeholder i {
+            font-size: 2rem;
+            color: rgba(34, 211, 238, 0.3);
+        }
 
         .photo-tag {
             position: absolute;
             bottom: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(8,10,15,0.9);
+            background: rgba(8, 10, 15, 0.9);
             border: 1px solid var(--border);
             border-radius: 100px;
             padding: 0.3rem 0.9rem;
@@ -375,7 +417,10 @@
             text-align: center;
             transition: background 0.2s;
         }
-        .stat-item:hover { background: rgba(34,211,238,0.03); }
+
+        .stat-item:hover {
+            background: rgba(34, 211, 238, 0.03);
+        }
 
         .stat-number {
             font-family: 'Space Grotesk', sans-serif;
@@ -443,11 +488,13 @@
             color: #94a3b8;
             transition: all 0.2s;
         }
+
         .skill-chip:hover {
-            border-color: rgba(34,211,238,0.3);
+            border-color: rgba(34, 211, 238, 0.3);
             color: var(--text);
-            background: rgba(34,211,238,0.04);
+            background: rgba(34, 211, 238, 0.04);
         }
+
         .skill-chip i {
             color: var(--cyan);
             font-size: 0.8rem;
@@ -472,14 +519,17 @@
             top: 8px;
             bottom: 0;
             width: 1px;
-            background: linear-gradient(180deg, var(--cyan) 0%, rgba(34,211,238,0.1) 60%, transparent 100%);
+            background: linear-gradient(180deg, var(--cyan) 0%, rgba(34, 211, 238, 0.1) 60%, transparent 100%);
         }
 
         .timeline-item {
             position: relative;
             margin-bottom: 2.25rem;
         }
-        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
 
         .timeline-dot {
             position: absolute;
@@ -490,10 +540,11 @@
             border-radius: 50%;
             background: var(--cyan);
             transform: translateX(-4px);
-            box-shadow: 0 0 10px rgba(34,211,238,0.6);
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
         }
+
         .timeline-item:not(:first-child) .timeline-dot {
-            background: rgba(34,211,238,0.3);
+            background: rgba(34, 211, 238, 0.3);
             box-shadow: none;
         }
 
@@ -561,7 +612,7 @@
             left: -20%;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(34,211,238,0.05) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.05) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -597,7 +648,11 @@
             text-decoration: none;
             transition: color 0.2s;
         }
-        .contact-link:hover { color: var(--cyan); }
+
+        .contact-link:hover {
+            color: var(--cyan);
+        }
+
         .contact-link i {
             width: 32px;
             height: 32px;
@@ -610,8 +665,9 @@
             flex-shrink: 0;
             transition: all 0.2s;
         }
+
         .contact-link:hover i {
-            border-color: rgba(34,211,238,0.35);
+            border-color: rgba(34, 211, 238, 0.35);
             color: var(--cyan);
             background: var(--cyan-dim);
         }
@@ -621,51 +677,90 @@
             position: relative;
             z-index: 2;
             padding: 1.75rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
         }
+
         .footer-copy {
             font-size: 0.72rem;
             color: #334155;
         }
+
         .footer-links {
             display: flex;
             gap: 1.5rem;
         }
+
         .footer-links a {
             font-size: 0.72rem;
             color: #475569;
             text-decoration: none;
             transition: color 0.2s;
         }
-        .footer-links a:hover { color: var(--cyan); }
+
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
 
         /* ── ANIMATIONS ── */
         @keyframes fadeUp {
-            from { opacity:0; transform:translateY(24px); }
-            to { opacity:1; transform:translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 700px) {
-            .navbar { padding: 1.25rem 1.25rem; }
+            .navbar {
+                padding: 1.25rem 1.25rem;
+            }
+
             .hero {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            .hero-photo-wrap { order: -1; }
-            .photo-frame { width: 120px; height: 120px; }
-            .stats-row { grid-template-columns: repeat(3, 1fr); }
-            .stat-item { padding: 1.25rem 0.75rem; }
-            .contact-card { flex-direction: column; padding: 1.75rem; }
-            footer { flex-direction: column; align-items: center; text-align: center; }
+
+            .hero-photo-wrap {
+                order: -1;
+            }
+
+            .photo-frame {
+                width: 120px;
+                height: 120px;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .stat-item {
+                padding: 1.25rem 0.75rem;
+            }
+
+            .contact-card {
+                flex-direction: column;
+                padding: 1.75rem;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Background layers -->
@@ -681,7 +776,8 @@
             <span class="logo-text">Roque<span>Systems</span></span>
         </a>
         <nav class="nav-social">
-            <a href="https://www.linkedin.com/in/mikaelmatos" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/mikaelmatos" target="_blank" title="LinkedIn"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
             <a href="mailto:contato@roquesystems.com" title="E-mail"><i class="fa-solid fa-envelope"></i></a>
         </nav>
     </header>
@@ -699,7 +795,9 @@
                 <h1 class="hero-name">Mikael<br><span>Roque</span></h1>
                 <p class="hero-role">Desenvolvedor .NET · C# · APIs &amp; Automação</p>
                 <p class="hero-bio">
-                    Desenvolvedor .NET com mais de 8 anos de experiência construindo sistemas robustos — do back-end às integrações, passando por governo, fintechs e indústria de tecnologia. Na Roque Systems, combino essa bagagem técnica com agilidade de quem resolve problemas de ponta a ponta.
+                    Desenvolvedor .NET com mais de 8 anos de experiência construindo sistemas robustos — do back-end às
+                    integrações, passando por governo, fintechs e indústria de tecnologia. Na Roque Systems, combino
+                    essa bagagem técnica com agilidade de quem resolve problemas de ponta a ponta.
                 </p>
                 <div class="hero-ctas">
                     <a href="mailto:contato@roquesystems.com" class="btn-primary">
@@ -716,7 +814,7 @@
             <div class="hero-photo-wrap">
                 <div class="photo-frame">
                     <img src="mikael_roque.png" alt="Mikael Matos"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="photo-placeholder" style="display:none;">
                         <i class="fa-solid fa-user"></i>
                         <span>Mikael Matos</span>
@@ -772,11 +870,14 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="tl-header">
-                        <span class="tl-company">Vortex Tecnológico <span style="color:var(--muted);font-weight:400;font-size:0.82rem">→ ICI / Prefeitura de Curitiba</span></span>
+                        <span class="tl-company">Vortex Tecnológico <span
+                                style="color:var(--muted);font-weight:400;font-size:0.82rem">→ ICI / Prefeitura de
+                                Curitiba</span></span>
                         <span class="tl-period">mar 2026 – atual</span>
                     </div>
                     <div class="tl-role">Desenvolvedor .NET</div>
-                    <p class="tl-desc">Atuação no Instituto das Cidades Inteligentes a serviço da Prefeitura de Curitiba, desenvolvendo soluções de tecnologia para gestão pública.</p>
+                    <p class="tl-desc">Atuação no Instituto das Cidades Inteligentes a serviço da Prefeitura de
+                        Curitiba, desenvolvendo soluções de tecnologia para gestão pública.</p>
                 </div>
 
                 <div class="timeline-item">
@@ -786,37 +887,46 @@
                         <span class="tl-period">jul 2024 – ago 2025</span>
                     </div>
                     <div class="tl-role">Desenvolvedor .NET · Tech Lead</div>
-                    <p class="tl-desc">Responsável pela área de tecnologia. Desenvolvimento e manutenção de sistemas em C# MVC e SQL Server, gestão de APIs e bancos de dados, além de coordenação do time de desenvolvimento com revisão de código e organização de demandas.</p>
+                    <p class="tl-desc">Responsável pela área de tecnologia. Desenvolvimento e manutenção de sistemas em
+                        C# MVC e SQL Server, gestão de APIs e bancos de dados, além de coordenação do time de
+                        desenvolvimento com revisão de código e organização de demandas.</p>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="tl-header">
-                        <span class="tl-company">Wipro <span style="color:var(--muted);font-weight:400;font-size:0.82rem">→ Sefaz-CE</span></span>
+                        <span class="tl-company">Wipro <span
+                                style="color:var(--muted);font-weight:400;font-size:0.82rem">→ Sefaz-CE</span></span>
                         <span class="tl-period">fev 2023 – jun 2024</span>
                     </div>
                     <div class="tl-role">Desenvolvedor .NET</div>
-                    <p class="tl-desc">Manutenção de sistemas internos para relatórios fiscais e migração de sistema legado VB6 para .NET Core, com uso de SQL Server e Oracle.</p>
+                    <p class="tl-desc">Manutenção de sistemas internos para relatórios fiscais e migração de sistema
+                        legado VB6 para .NET Core, com uso de SQL Server e Oracle.</p>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="tl-header">
-                        <span class="tl-company">G&amp;P / Best.Projects <span style="color:var(--muted);font-weight:400;font-size:0.82rem">→ Prodesp</span></span>
+                        <span class="tl-company">G&amp;P / Best.Projects <span
+                                style="color:var(--muted);font-weight:400;font-size:0.82rem">→ Prodesp</span></span>
                         <span class="tl-period">nov 2021 – fev 2023</span>
                     </div>
                     <div class="tl-role">Desenvolvedor de Software</div>
-                    <p class="tl-desc">Desenvolvimento do sistema "Bolsa do Povo" do Governo do Estado de São Paulo — solução de grande escala para benefícios sociais.</p>
+                    <p class="tl-desc">Desenvolvimento do sistema "Bolsa do Povo" do Governo do Estado de São Paulo —
+                        solução de grande escala para benefícios sociais.</p>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="tl-header">
-                        <span class="tl-company">Labsit <span style="color:var(--muted);font-weight:400;font-size:0.82rem">→ Credz · Conductor · Finaud</span></span>
+                        <span class="tl-company">Labsit <span
+                                style="color:var(--muted);font-weight:400;font-size:0.82rem">→ Credz · Conductor ·
+                                Finaud</span></span>
                         <span class="tl-period">nov 2020 – nov 2021</span>
                     </div>
                     <div class="tl-role">Programador de Sistemas</div>
-                    <p class="tl-desc">Desenvolvimento de novas funcionalidades no APP VestCasa (React), migração de sistema legado para Go Lang e ajustes de front-end e back-end em C# MVC.</p>
+                    <p class="tl-desc">Desenvolvimento de novas funcionalidades no APP VestCasa (React), migração de
+                        sistema legado para Go Lang e ajustes de front-end e back-end em C# MVC.</p>
                 </div>
 
                 <div class="timeline-item">
@@ -826,7 +936,9 @@
                         <span class="tl-period">nov 2019 – set 2020</span>
                     </div>
                     <div class="tl-role">Desenvolvedor Pleno</div>
-                    <p class="tl-desc">Sistema de inscrições e atendimento via WhatsApp. Integrações bancárias com Cielo, Santander, Banco do Brasil e ArgosBank. Desenvolvimento de protótipo de cadeado inteligente.</p>
+                    <p class="tl-desc">Sistema de inscrições e atendimento via WhatsApp. Integrações bancárias com
+                        Cielo, Santander, Banco do Brasil e ArgosBank. Desenvolvimento de protótipo de cadeado
+                        inteligente.</p>
                 </div>
 
                 <div class="timeline-item">
@@ -836,7 +948,9 @@
                         <span class="tl-period">fev 2017 – fev 2019</span>
                     </div>
                     <div class="tl-role">Desenvolvedor / Estagiário</div>
-                    <p class="tl-desc">Automação de processos, comissionamento (C#), sistema omnichannel (PHP/Laravel) e sistema de negociação digital. Início de carreira com foco em regra de negócios e SQL Server.</p>
+                    <p class="tl-desc">Automação de processos, comissionamento (C#), sistema omnichannel (PHP/Laravel) e
+                        sistema de negociação digital. Início de carreira com foco em regra de negócios e SQL Server.
+                    </p>
                 </div>
 
             </div>
@@ -847,7 +961,8 @@
             <div class="contact-card">
                 <div class="contact-text">
                     <h3 class="contact-title">Vamos trabalhar juntos?</h3>
-                    <p class="contact-sub">Se você precisa de um sistema robusto, uma API bem projetada ou automação de processos, estou aqui para ajudar.</p>
+                    <p class="contact-sub">Se você precisa de um sistema robusto, uma API bem projetada ou automação de
+                        processos, estou aqui para ajudar.</p>
                 </div>
                 <div class="contact-links">
                     <a href="mailto:contato@roquesystems.com" class="contact-link">
@@ -873,62 +988,63 @@
     </footer>
 
     <script>
-    // ── PARTICLES ──────────────────────────────────────────────────
-    (function() {
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [], W, H;
+        // ── PARTICLES ──────────────────────────────────────────────────
+        (function () {
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [], W, H;
 
-        function resize() {
-            W = canvas.width = canvas.offsetWidth;
-            H = canvas.height = canvas.offsetHeight;
-            particles = Array.from({ length: Math.min(80, Math.floor(W * H / 14000)) }, () => ({
-                x: Math.random() * W, y: Math.random() * H,
-                r: Math.random() * 1.8 + 0.4,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                o: Math.random() * 0.45 + 0.15
-            }));
-        }
+            function resize() {
+                W = canvas.width = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+                particles = Array.from({ length: Math.min(80, Math.floor(W * H / 14000)) }, () => ({
+                    x: Math.random() * W, y: Math.random() * H,
+                    r: Math.random() * 1.8 + 0.4,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    o: Math.random() * 0.45 + 0.15
+                }));
+            }
 
-        function draw() {
-            ctx.clearRect(0, 0, W, H);
-            particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
-                if (p.x < 0 || p.x > W) p.vx *= -1;
-                if (p.y < 0 || p.y > H) p.vy *= -1;
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                particles.forEach(p => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > W) p.vx *= -1;
+                    if (p.y < 0 || p.y > H) p.vy *= -1;
 
-                ctx.save();
-                ctx.globalAlpha = p.o;
-                ctx.shadowBlur = 8; ctx.shadowColor = '#67e8f9';
-                ctx.fillStyle = '#67e8f9';
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.restore();
-            });
+                    ctx.save();
+                    ctx.globalAlpha = p.o;
+                    ctx.shadowBlur = 8; ctx.shadowColor = '#67e8f9';
+                    ctx.fillStyle = '#67e8f9';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                });
 
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const d = Math.sqrt(dx*dx + dy*dy);
-                    if (d < 120) {
-                        ctx.strokeStyle = `rgba(103,232,249,${0.12 * (1 - d/120)})`;
-                        ctx.lineWidth = 0.6;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const d = Math.sqrt(dx * dx + dy * dy);
+                        if (d < 120) {
+                            ctx.strokeStyle = `rgba(103,232,249,${0.12 * (1 - d / 120)})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
                     }
                 }
+                requestAnimationFrame(draw);
             }
-            requestAnimationFrame(draw);
-        }
 
-        window.addEventListener('resize', resize, { passive: true });
-        resize(); draw();
-    })();
+            window.addEventListener('resize', resize, { passive: true });
+            resize(); draw();
+        })();
     </script>
 </body>
+
 </html>

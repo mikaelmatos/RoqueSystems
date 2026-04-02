@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3SR94Q09E"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-S3SR94Q09E');
+        gtag('config', 'G-S3SR94Q09E');
     </script>
     <meta name="google-adsense-account" content="ca-pub-1255461454064940">
 
@@ -16,25 +17,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
     <title>Ouvidoria Municipal Inteligente | Roque Systems</title>
-    <meta name="description" content="Conheça o sistema de Ouvidoria Municipal desenvolvido pela Roque Systems: gestão de manifestações, IA embarcada e transparência para prefeituras modernas.">
+    <meta name="description"
+        content="Conheça o sistema de Ouvidoria Municipal desenvolvido pela Roque Systems: gestão de manifestações, IA embarcada e transparência para prefeituras modernas.">
     <meta name="theme-color" content="#080a0fd9">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
             --cyan: #22d3ee;
-            --cyan-dim: rgba(34,211,238,0.10);
-            --cyan-glow: rgba(34,211,238,0.30);
+            --cyan-dim: rgba(34, 211, 238, 0.10);
+            --cyan-glow: rgba(34, 211, 238, 0.30);
             --bg: #080a0f;
             --bg-2: #0c0e14;
-            --border: rgba(255,255,255,0.07);
+            --border: rgba(255, 255, 255, 0.07);
         }
 
-        *, *::before, *::after { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Lora', Georgia, serif;
@@ -45,47 +56,225 @@
 
         /* ─── NAVBAR (idêntica ao site) ─── */
         .navbar {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(8,10,15,0.85);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(8, 10, 15, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             transition: background 0.3s;
         }
-        .navbar.scrolled { background: rgba(8,10,15,0.97); }
-        .nav-inner {
-            max-width: 1400px; margin: 0 auto; padding: 0 1.5rem;
-            height: 68px; display: flex; align-items: center; justify-content: space-between;
+
+        .navbar.scrolled {
+            background: rgba(8, 10, 15, 0.97);
         }
-        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; flex-shrink: 0; }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
         .logo-icon {
-            width: 36px; height: 36px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: 0 0 2px 0 #3B82F6;
         }
-        .logo-icon img { width: 36px; height: 36px; border-radius: 10px; }
-        .logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.3rem; letter-spacing: -0.03em; color: #e4e8f0; }
-        .logo-text span { color: var(--cyan); }
-        .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
-        .nav-links a { font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 500; color: #94a3b8; text-decoration: none; position: relative; transition: color 0.2s; letter-spacing: 0.02em; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 100%; height: 1.5px; background: var(--cyan); transition: right 0.3s cubic-bezier(0.4,0,0.2,1); }
-        .nav-links a:hover { color: #fff; }
-        .nav-links a:hover::after { right: 0; }
-        .nav-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1.4rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 500; color: #e4e8f0; text-decoration: none; transition: all 0.25s; white-space: nowrap; }
-        .nav-cta:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(34,211,238,0.06); }
-        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
-        .hamburger span { display: block; width: 24px; height: 2px; background: #e4e8f0; border-radius: 2px; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
-        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: #080a0f; padding-top: 68px; flex-direction: column; }
-        .mobile-menu.open { display: flex; }
-        .mobile-menu nav { padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-        .mobile-menu nav a { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: #94a3b8; text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
-        .mobile-menu nav a:hover { color: var(--cyan); }
-        .mobile-menu-footer { padding: 2rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
-        .btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; background: #e4e8f0; color: #080a0f; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.95rem; border-radius: 100px; text-decoration: none; transition: all 0.25s; white-space: nowrap; }
-        .btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(34,211,238,0.25); }
+
+        .logo-icon img {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: -0.03em;
+            color: #e4e8f0;
+        }
+
+        .logo-text span {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #94a3b8;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 100%;
+            height: 1.5px;
+            background: var(--cyan);
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a:hover::after {
+            right: 0;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #e4e8f0;
+            text-decoration: none;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            background: rgba(34, 211, 238, 0.06);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 200;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #e4e8f0;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99;
+            background: #080a0f;
+            padding-top: 68px;
+            flex-direction: column;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu nav {
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .mobile-menu nav a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: color 0.2s;
+        }
+
+        .mobile-menu nav a:hover {
+            color: var(--cyan);
+        }
+
+        .mobile-menu-footer {
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.9rem 2rem;
+            background: #e4e8f0;
+            color: #080a0f;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.25s;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(34, 211, 238, 0.25);
+        }
 
         /* ─── HERO DO ARTIGO ─── */
         .article-hero {
@@ -98,106 +287,195 @@
         }
 
         .hero-grid-bg {
-            position: absolute; inset: 0;
-            background-image: linear-gradient(rgba(34,211,238,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.04) 1px, transparent 1px);
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 80%);
         }
 
         .hero-glow {
-            position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
-            width: min(600px, 90vw); height: min(600px, 90vw);
-            background: radial-gradient(circle, rgba(34,211,238,0.07) 0%, transparent 65%);
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(600px, 90vw);
+            height: min(600px, 90vw);
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.07) 0%, transparent 65%);
             pointer-events: none;
         }
 
         .article-hero-inner {
-            position: relative; z-index: 2;
-            max-width: 900px; margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 5rem 1.5rem 4rem;
             text-align: center;
         }
 
         .breadcrumb {
-            display: flex; align-items: center; justify-content: center;
-            gap: 0.5rem; margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
-            color: #475569; text-transform: uppercase;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: #475569;
+            text-transform: uppercase;
         }
-        .breadcrumb a { color: #475569; text-decoration: none; transition: color 0.2s; }
-        .breadcrumb a:hover { color: var(--cyan); }
-        .breadcrumb .sep { color: #2d3748; }
-        .breadcrumb .current { color: var(--cyan); }
+
+        .breadcrumb a {
+            color: #475569;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--cyan);
+        }
+
+        .breadcrumb .sep {
+            color: #2d3748;
+        }
+
+        .breadcrumb .current {
+            color: var(--cyan);
+        }
 
         .article-tag {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2);
-            padding: 0.35rem 1rem; border-radius: 100px;
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 700;
-            letter-spacing: 0.12em; color: var(--cyan); margin-bottom: 1.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 211, 238, 0.08);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--cyan);
+            margin-bottom: 1.75rem;
             animation: fadeSlideUp 0.6s ease both;
         }
-        .article-tag .dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: pulse 2s infinite; }
+
+        .article-tag .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--cyan);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
 
         .article-hero-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(2.2rem, 5.5vw, 4rem);
-            font-weight: 800; line-height: 1.05; letter-spacing: -0.04em;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
             margin-bottom: 1.25rem;
             animation: fadeSlideUp 0.7s 0.1s ease both;
         }
+
         .article-hero-title .accent {
             background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
-            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .article-hero-sub {
-            font-family: 'Lora', serif; font-size: clamp(1rem, 2vw, 1.15rem);
-            color: #64748b; max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.8;
+            font-family: 'Lora', serif;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: #64748b;
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
             animation: fadeSlideUp 0.7s 0.2s ease both;
         }
 
         .article-meta {
-            display: flex; align-items: center; justify-content: center;
-            flex-wrap: wrap; gap: 1.25rem 2rem;
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem;
-            color: #475569; border-top: 1px solid var(--border);
-            padding-top: 2rem; margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.25rem 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #475569;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            margin-top: 0;
             animation: fadeSlideUp 0.7s 0.3s ease both;
         }
-        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
-        .meta-item i { color: var(--cyan); font-size: 0.75rem; }
-        .meta-author { display: flex; align-items: center; gap: 0.6rem; }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-item i {
+            color: var(--cyan);
+            font-size: 0.75rem;
+        }
+
+        .meta-author {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
         .meta-avatar {
-            width: 32px; height: 32px; border-radius: 8px;
-            background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(59,130,246,0.15));
-            border: 1px solid rgba(34,211,238,0.2);
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 0.85rem; color: var(--cyan);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(59, 130, 246, 0.15));
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--cyan);
         }
 
         /* ─── FEATURED IMAGE ─── */
         .featured-image-wrap {
-            max-width: 1100px; margin: 0 auto;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 0 1.5rem 5rem;
-            position: relative; z-index: 2;
+            position: relative;
+            z-index: 2;
         }
+
         .featured-image {
-            width: 100%; aspect-ratio: 16/7; object-fit: cover;
+            width: 100%;
+            aspect-ratio: 16/7;
+            object-fit: cover;
             border-radius: 20px;
             border: 1px solid var(--border);
             display: block;
         }
+
         .featured-image-caption {
-            text-align: center; margin-top: 1rem;
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem;
-            color: #334155; letter-spacing: 0.05em;
+            text-align: center;
+            margin-top: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            color: #334155;
+            letter-spacing: 0.05em;
         }
 
         /* ─── CORPO DO ARTIGO ─── */
         .article-layout {
-            max-width: 1200px; margin: 0 auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 1.5rem 6rem;
             display: grid;
             grid-template-columns: 1fr 300px;
@@ -207,12 +485,15 @@
 
         /* ─── SIDEBAR ─── */
         .sidebar {
-            position: sticky; top: 88px;
-            display: flex; flex-direction: column; gap: 1.5rem;
+            position: sticky;
+            top: 88px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         .sidebar-card {
-            background: rgba(255,255,255,0.025);
+            background: rgba(255, 255, 255, 0.025);
             border: 1px solid var(--border);
             border-radius: 18px;
             padding: 1.5rem;
@@ -220,70 +501,169 @@
 
         .sidebar-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em;
-            color: var(--cyan); text-transform: uppercase; margin-bottom: 1.25rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
         }
 
-        .toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.1rem; }
-        .toc-list a {
-            display: block; padding: 0.45rem 0.75rem;
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.8rem;
-            color: #475569; text-decoration: none; border-radius: 8px;
-            transition: all 0.2s; border-left: 2px solid transparent;
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
         }
-        .toc-list a:hover, .toc-list a.active {
-            color: var(--cyan); background: rgba(34,211,238,0.06);
+
+        .toc-list a {
+            display: block;
+            padding: 0.45rem 0.75rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            color: #475569;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+
+        .toc-list a:hover,
+        .toc-list a.active {
+            color: var(--cyan);
+            background: rgba(34, 211, 238, 0.06);
             border-left-color: var(--cyan);
         }
-        .toc-list .sub { padding-left: 1.5rem; font-size: 0.75rem; }
 
-        .stat-mini { display: flex; flex-direction: column; gap: 0.85rem; }
+        .toc-list .sub {
+            padding-left: 1.5rem;
+            font-size: 0.75rem;
+        }
+
+        .stat-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
         .stat-row {
-            display: flex; align-items: center; justify-content: space-between;
-            padding-bottom: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .stat-row:last-child { border-bottom: none; padding-bottom: 0; }
-        .stat-row-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: #475569; }
-        .stat-row-val { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--cyan); }
 
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .tag-chip {
-            padding: 0.3rem 0.75rem; background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border); border-radius: 100px;
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem;
-            color: #94a3b8; cursor: default; transition: all 0.2s;
+        .stat-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
         }
-        .tag-chip:hover { border-color: rgba(34,211,238,0.3); color: var(--cyan); background: rgba(34,211,238,0.05); }
+
+        .stat-row-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            color: #475569;
+        }
+
+        .stat-row-val {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag-chip {
+            padding: 0.3rem 0.75rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            color: #94a3b8;
+            cursor: default;
+            transition: all 0.2s;
+        }
+
+        .tag-chip:hover {
+            border-color: rgba(34, 211, 238, 0.3);
+            color: var(--cyan);
+            background: rgba(34, 211, 238, 0.05);
+        }
 
         .cta-sidebar {
-            background: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(59,130,246,0.08));
-            border: 1px solid rgba(34,211,238,0.2);
-            border-radius: 18px; padding: 1.75rem;
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(59, 130, 246, 0.08));
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            border-radius: 18px;
+            padding: 1.75rem;
             text-align: center;
         }
-        .cta-sidebar-icon { font-size: 2rem; margin-bottom: 1rem; }
-        .cta-sidebar-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
-        .cta-sidebar-sub { font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; color: #64748b; line-height: 1.6; margin-bottom: 1.25rem; }
+
+        .cta-sidebar-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-sidebar-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-sidebar-sub {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
         .cta-sidebar-btn {
-            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            width: 100%; padding: 0.7rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.7rem 1.25rem;
             background: linear-gradient(135deg, #22d3ee, #3b82f6);
-            border: none; border-radius: 10px;
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; font-weight: 700;
-            color: #080a0f; cursor: pointer; text-decoration: none;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #080a0f;
+            cursor: pointer;
+            text-decoration: none;
             transition: all 0.25s;
         }
-        .cta-sidebar-btn:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(34,211,238,0.25); }
+
+        .cta-sidebar-btn:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(34, 211, 238, 0.25);
+        }
 
         /* ─── ARTICLE BODY ─── */
-        .article-body { min-width: 0; }
+        .article-body {
+            min-width: 0;
+        }
 
         /* Lead */
         .article-lead {
             font-size: clamp(1.1rem, 2vw, 1.25rem);
-            color: #cbd5e1; line-height: 1.85;
+            color: #cbd5e1;
+            line-height: 1.85;
             border-left: 3px solid var(--cyan);
-            padding-left: 1.5rem; margin-bottom: 3rem;
+            padding-left: 1.5rem;
+            margin-bottom: 3rem;
             font-style: italic;
         }
 
@@ -291,252 +671,676 @@
         .article-body h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 800; letter-spacing: -0.03em;
-            color: #e4e8f0; margin: 3.5rem 0 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #e4e8f0;
+            margin: 3.5rem 0 1.25rem;
             padding-top: 1rem;
             scroll-margin-top: 90px;
         }
+
         .article-body h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em;
-            color: #cbd5e1; margin: 2.5rem 0 1rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #cbd5e1;
+            margin: 2.5rem 0 1rem;
             scroll-margin-top: 90px;
         }
 
         /* Paragraphs */
         .article-body p {
             font-family: 'Lora', serif;
-            font-size: 1.05rem; line-height: 1.9; color: #94a3b8;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #94a3b8;
             margin-bottom: 1.5rem;
             margin-top: 1.5rem;
         }
-        .article-body strong { color: #e4e8f0; font-weight: 600; }
+
+        .article-body strong {
+            color: #e4e8f0;
+            font-weight: 600;
+        }
 
         /* Divider */
         .article-divider {
-            border: none; border-top: 1px solid var(--border);
+            border: none;
+            border-top: 1px solid var(--border);
             margin: 3rem 0;
         }
 
         /* Highlight boxes */
         .highlight-box {
-            background: rgba(34,211,238,0.05);
-            border: 1px solid rgba(34,211,238,0.15);
+            background: rgba(34, 211, 238, 0.05);
+            border: 1px solid rgba(34, 211, 238, 0.15);
             border-radius: 16px;
             padding: 1.75rem 2rem;
             margin: 2.5rem 0;
         }
+
         .highlight-box-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-            color: var(--cyan); text-transform: uppercase; margin-bottom: 0.85rem;
-            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .highlight-box p { color: #94a3b8; margin-bottom: 0; font-size: 0.95rem; }
+
+        .highlight-box p {
+            color: #94a3b8;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
 
         /* Feature grid */
         .feature-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 1rem; margin: 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
         }
+
         .feature-item {
-            background: rgba(255,255,255,0.025);
+            background: rgba(255, 255, 255, 0.025);
             border: 1px solid var(--border);
-            border-radius: 14px; padding: 1.25rem;
+            border-radius: 14px;
+            padding: 1.25rem;
             transition: all 0.3s;
         }
+
         .feature-item:hover {
-            border-color: rgba(34,211,238,0.2);
-            background: rgba(34,211,238,0.03);
+            border-color: rgba(34, 211, 238, 0.2);
+            background: rgba(34, 211, 238, 0.03);
             transform: translateY(-3px);
         }
+
         .feature-item-icon {
-            width: 40px; height: 40px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1rem; margin-bottom: 0.85rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            margin-bottom: 0.85rem;
         }
-        .feature-item-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; color: #e4e8f0; }
-        .feature-item-desc { font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; color: #475569; line-height: 1.6; }
+
+        .feature-item-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            color: #e4e8f0;
+        }
+
+        .feature-item-desc {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #475569;
+            line-height: 1.6;
+        }
 
         /* Stats band */
         .stats-band {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 1px; margin: 2.5rem 0;
-            border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            margin: 2.5rem 0;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
         }
+
         .stats-band-item {
-            background: rgba(255,255,255,0.025);
-            padding: 1.75rem 1.25rem; text-align: center;
+            background: rgba(255, 255, 255, 0.025);
+            padding: 1.75rem 1.25rem;
+            text-align: center;
         }
-        .stats-band-num { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--cyan); line-height: 1; margin-bottom: 0.4rem; }
-        .stats-band-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: #475569; }
+
+        .stats-band-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--cyan);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stats-band-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            color: #475569;
+        }
 
         /* Quote pull */
         .pull-quote {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            font-weight: 700; line-height: 1.35; letter-spacing: -0.02em;
+            font-weight: 700;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
             color: #e4e8f0;
             border-left: 4px solid var(--cyan);
             padding: 1.5rem 2rem;
             margin: 3rem 0;
-            background: rgba(34,211,238,0.04);
+            background: rgba(34, 211, 238, 0.04);
             border-radius: 0 16px 16px 0;
         }
-        .pull-quote span { color: var(--cyan); }
+
+        .pull-quote span {
+            color: var(--cyan);
+        }
 
         /* Code / terminal block */
         .terminal-block {
-            background: #0a0d14; border: 1px solid rgba(34,211,238,0.15);
-            border-radius: 14px; overflow: hidden; margin: 2rem 0;
+            background: #0a0d14;
+            border: 1px solid rgba(34, 211, 238, 0.15);
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 2rem 0;
         }
+
         .terminal-header {
-            background: rgba(34,211,238,0.06); padding: 0.75rem 1.25rem;
-            display: flex; align-items: center; gap: 0.75rem;
-            border-bottom: 1px solid rgba(34,211,238,0.1);
+            background: rgba(34, 211, 238, 0.06);
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(34, 211, 238, 0.1);
         }
-        .terminal-dots { display: flex; gap: 6px; }
-        .terminal-dots span { width: 10px; height: 10px; border-radius: 50%; }
-        .terminal-dots .d1 { background: #ff5f57; }
-        .terminal-dots .d2 { background: #febc2e; }
-        .terminal-dots .d3 { background: #28c840; }
-        .terminal-label { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #475569; margin-left: auto; }
-        .terminal-body { padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; line-height: 1.8; color: #64748b; }
-        .terminal-body .cmd { color: #22d3ee; }
-        .terminal-body .str { color: #34d399; }
-        .terminal-body .key { color: #a78bfa; }
-        .terminal-body .comment { color: #334155; }
+
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .terminal-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dots .d1 {
+            background: #ff5f57;
+        }
+
+        .terminal-dots .d2 {
+            background: #febc2e;
+        }
+
+        .terminal-dots .d3 {
+            background: #28c840;
+        }
+
+        .terminal-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: #475569;
+            margin-left: auto;
+        }
+
+        .terminal-body {
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            line-height: 1.8;
+            color: #64748b;
+        }
+
+        .terminal-body .cmd {
+            color: #22d3ee;
+        }
+
+        .terminal-body .str {
+            color: #34d399;
+        }
+
+        .terminal-body .key {
+            color: #a78bfa;
+        }
+
+        .terminal-body .comment {
+            color: #334155;
+        }
 
         /* Timeline */
-        .timeline { position: relative; padding-left: 2rem; margin: 2rem 0; }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
         .timeline::before {
-            content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
-            width: 1px; background: linear-gradient(to bottom, var(--cyan), rgba(34,211,238,0.1));
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--cyan), rgba(34, 211, 238, 0.1));
         }
-        .timeline-item { position: relative; margin-bottom: 2rem; }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
         .timeline-item::before {
-            content: ''; position: absolute; left: -2.4rem; top: 6px;
-            width: 10px; height: 10px; border-radius: 50%;
-            background: var(--bg-2); border: 2px solid var(--cyan);
-            box-shadow: 0 0 8px rgba(34,211,238,0.4);
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--bg-2);
+            border: 2px solid var(--cyan);
+            box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
         }
-        .timeline-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--cyan); text-transform: uppercase; margin-bottom: 0.4rem; }
-        .timeline-title { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; color: #e4e8f0; margin-bottom: 0.4rem; }
-        .timeline-desc { font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; color: #475569; line-height: 1.6; }
+
+        .timeline-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e4e8f0;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-desc {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.82rem;
+            color: #475569;
+            line-height: 1.6;
+        }
 
         /* Author box */
         .author-box {
-            display: flex; gap: 1.5rem; align-items: flex-start;
-            background: rgba(255,255,255,0.025); border: 1px solid var(--border);
-            border-radius: 18px; padding: 1.75rem; margin-top: 4rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.75rem;
+            margin-top: 4rem;
         }
+
         .author-box-avatar {
-            width: 60px; height: 60px; border-radius: 14px; flex-shrink: 0;
-            background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(59,130,246,0.15));
-            border: 1px solid rgba(34,211,238,0.2);
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--cyan);
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(59, 130, 246, 0.15));
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--cyan);
         }
-        .author-box-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
-        .author-box-role { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: var(--cyan); margin-bottom: 0.65rem; }
-        .author-box-bio { font-family: 'Space Grotesk', sans-serif; font-size: 0.83rem; color: #64748b; line-height: 1.65; }
+
+        .author-box-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-box-role {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            color: var(--cyan);
+            margin-bottom: 0.65rem;
+        }
+
+        .author-box-bio {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.83rem;
+            color: #64748b;
+            line-height: 1.65;
+        }
 
         /* Share */
         .share-bar {
-            display: flex; align-items: center; gap: 1rem;
-            flex-wrap: wrap; margin-top: 2.5rem; padding-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
             border-top: 1px solid var(--border);
         }
-        .share-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; color: #475569; font-weight: 600; letter-spacing: 0.05em; }
-        .share-btn {
-            display: inline-flex; align-items: center; gap: 0.4rem;
-            padding: 0.45rem 1rem; border: 1px solid var(--border);
-            border-radius: 100px; font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.78rem; color: #94a3b8; text-decoration: none;
-            transition: all 0.2s; background: none; cursor: pointer;
+
+        .share-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #475569;
+            font-weight: 600;
+            letter-spacing: 0.05em;
         }
-        .share-btn:hover { border-color: rgba(34,211,238,0.3); color: var(--cyan); background: rgba(34,211,238,0.05); }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: none;
+            cursor: pointer;
+        }
+
+        .share-btn:hover {
+            border-color: rgba(34, 211, 238, 0.3);
+            color: var(--cyan);
+            background: rgba(34, 211, 238, 0.05);
+        }
 
         /* ─── RELATED ─── */
         .related-section {
-            background: var(--bg-2); border-top: 1px solid var(--border);
+            background: var(--bg-2);
+            border-top: 1px solid var(--border);
             padding: 5rem 1.5rem;
         }
-        .related-inner { max-width: 1100px; margin: 0 auto; }
-        .related-label { font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; color: var(--cyan); text-transform: uppercase; margin-bottom: 0.75rem; }
-        .related-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 2.5rem; }
-        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-        .related-card { background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; transition: all 0.3s; text-decoration: none; display: block; }
-        .related-card:hover { border-color: rgba(34,211,238,0.25); transform: translateY(-4px); }
-        .related-card-img { aspect-ratio: 16/9; background: linear-gradient(135deg, #0f1520, #1a2035); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
-        .related-card-body { padding: 1.25rem; }
-        .related-card-tag { font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: var(--cyan); text-transform: uppercase; margin-bottom: 0.5rem; }
-        .related-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; color: #e4e8f0; line-height: 1.4; margin-bottom: 0.4rem; }
-        .related-card-meta { font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; color: #475569; }
+
+        .related-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .related-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .related-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 2.5rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .related-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .related-card:hover {
+            border-color: rgba(34, 211, 238, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .related-card-img {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #0f1520, #1a2035);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .related-card-body {
+            padding: 1.25rem;
+        }
+
+        .related-card-tag {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #e4e8f0;
+            line-height: 1.4;
+            margin-bottom: 0.4rem;
+        }
+
+        .related-card-meta {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            color: #475569;
+        }
 
         /* ─── FOOTER ─── */
-        footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; }
-        .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
-        .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
-        .footer-links a { font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; color: #94a3b8; text-decoration: none; transition: color 0.2s; font-weight: 400; }
-        .footer-links a:hover { color: var(--cyan); }
-        .footer-copy { font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; color: #94a3b8; font-weight: 400; }
+        footer {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.75rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.82rem;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 400;
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-copy {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
 
         /* ─── ANIMATIONS ─── */
-        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
 
         /* ─── PROGRESS BAR ─── */
         .read-progress {
-            position: fixed; top: 68px; left: 0; right: 0; height: 2px;
-            background: rgba(255,255,255,0.04); z-index: 99;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.04);
+            z-index: 99;
         }
+
         .read-progress-bar {
             height: 100%;
             background: linear-gradient(to right, #22d3ee, #3b82f6);
-            width: 0%; transition: width 0.1s linear;
+            width: 0%;
+            transition: width 0.1s linear;
         }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1000px) {
-            .article-layout { grid-template-columns: 1fr; gap: 3rem; }
-            .sidebar { position: static; }
-            .related-grid { grid-template-columns: 1fr 1fr; }
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
+
         @media (max-width: 800px) {
-            .nav-links, .nav-cta { display: none !important; }
-            .hamburger { display: flex; }
-            .feature-grid { grid-template-columns: 1fr; }
-            .stats-band { grid-template-columns: 1fr 1fr; }
-            .stats-band-item:last-child { grid-column: 1 / -1; }
-            .related-grid { grid-template-columns: 1fr; }
-            .author-box { flex-direction: column; }
+
+            .nav-links,
+            .nav-cta {
+                display: none !important;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-band {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-band-item:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .author-box {
+                flex-direction: column;
+            }
         }
+
         @media (max-width: 520px) {
-            .stats-band { grid-template-columns: 1fr; }
-            .stats-band-item { grid-column: 1; }
+            .stats-band {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-band-item {
+                grid-column: 1;
+            }
         }
 
         /* Progressbar on mobile */
-        @media (max-width: 800px) { .read-progress { top: 68px; } }
+        @media (max-width: 800px) {
+            .read-progress {
+                top: 68px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- READING PROGRESS -->
-    <div class="read-progress"><div class="read-progress-bar" id="progress-bar"></div></div>
+    <div class="read-progress">
+        <div class="read-progress-bar" id="progress-bar"></div>
+    </div>
 
     <!-- ── NAVBAR ── -->
     <header class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="index.html" class="logo">
-                <div class="logo-icon"><img src="logo.png" alt="logo roque systems" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#22d3ee,#3b82f6)';this.parentElement.innerHTML='<span style=\'font-family:Space Grotesk,sans-serif;font-weight:800;color:#080a0f;font-size:1.1rem\'>R</span>'"></div>
+                <div class="logo-icon"><img src="logo.png" alt="logo roque systems"
+                        onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#22d3ee,#3b82f6)';this.parentElement.innerHTML='<span style=\'font-family:Space Grotesk,sans-serif;font-weight:800;color:#080a0f;font-size:1.1rem\'>R</span>'">
+                </div>
                 <span class="logo-text">Roque<span>Systems</span></span>
             </a>
             <ul class="nav-links">
@@ -545,7 +1349,8 @@
                 <li><a href="index.html#projetos">Projetos</a></li>
                 <!-- <li><a href="index.html#clientes">Clientes</a></li> -->
             </ul>
-            <a href="index.html#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+            <a href="index.html#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right"
+                    style="font-size:0.7rem"></i></a>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -561,7 +1366,8 @@
             <!-- <a href="index.html#clientes" class="mobile-link">Clientes</a> -->
         </nav>
         <div class="mobile-menu-footer">
-            <a href="index.html#contato" class="btn-primary" style="width:100%;justify-content:center;border-radius:12px;">
+            <a href="index.html#contato" class="btn-primary"
+                style="width:100%;justify-content:center;border-radius:12px;">
                 Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.8rem"></i>
             </a>
         </div>
@@ -591,15 +1397,19 @@
             </h1>
 
             <p class="article-hero-sub">
-                Uma plataforma web desenvolvida para prefeituras gerenciarem manifestações de cidadãos — reclamações, sugestões, elogios e denúncias — de forma organizada e rastreável.
+                Uma plataforma web desenvolvida para prefeituras gerenciarem manifestações de cidadãos — reclamações,
+                sugestões, elogios e denúncias — de forma organizada e rastreável.
             </p>
 
             <div class="article-meta">
                 <div class="meta-item meta-author">
                     <div class="meta-avatar">M</div>
                     <div>
-                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;color:#e4e8f0;">Mikael Roque</div>
-                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;color:#475569;">Fundador & CEO</div>
+                        <div
+                            style="font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;color:#e4e8f0;">
+                            Mikael Roque</div>
+                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;color:#475569;">Fundador &
+                            CEO</div>
                     </div>
                 </div>
                 <div class="meta-item"><i class="fa-regular fa-calendar"></i> Março de 2026</div>
@@ -610,16 +1420,13 @@
 
         <div class="featured-image-wrap">
             <!-- <img src="image/ouvidoria-home-print.png" alt="Sistema de Ouvidoria Municipal" class="featured-image"> -->
-           
-            <iframe 
-            src="https://www.youtube.com/embed/KCvbLLmkpfo?si=urscGUdodtYLaYkE"
-            title="YouTube video player"
-            style="width: 100%; aspect-ratio: 16 / 9; border: 0;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
+
+            <iframe src="https://www.youtube.com/embed/KCvbLLmkpfo?si=urscGUdodtYLaYkE" title="YouTube video player"
+                style="width: 100%; aspect-ratio: 16 / 9; border: 0;"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-            
+
             <div class="featured-image-caption">Tela principal do Sistema de Ouvidoria Municipal</div>
         </div>
     </div>
@@ -632,53 +1439,77 @@
             <article class="article-body">
 
                 <p class="article-lead reveal">
-                    Prefeituras precisam de um canal formal e organizado para receber manifestações dos cidadãos. Foi com esse objetivo que a Roque Systems desenvolveu o <strong>Sistema de Ouvidoria Municipal</strong> — uma plataforma web que digitaliza e estrutura todo o fluxo de atendimento de reclamações, sugestões, elogios e denúncias.
+                    Prefeituras precisam de um canal formal e organizado para receber manifestações dos cidadãos. Foi
+                    com esse objetivo que a Roque Systems desenvolveu o <strong>Sistema de Ouvidoria Municipal</strong>
+                    — uma plataforma web que digitaliza e estrutura todo o fluxo de atendimento de reclamações,
+                    sugestões, elogios e denúncias.
                 </p>
 
                 <!-- SEÇÃO 1 -->
                 <h2 id="contexto" class="reveal">O que é o sistema</h2>
 
-                <p class="reveal">O Sistema de Ouvidoria Municipal é uma aplicação web desenvolvida sob medida para prefeituras. Ele permite que os cidadãos registrem manifestações de forma simples pelo portal, e que os servidores públicos gerenciem, acompanhem e respondam a cada uma delas através de um painel administrativo centralizado.</p>
+                <p class="reveal">O Sistema de Ouvidoria Municipal é uma aplicação web desenvolvida sob medida para
+                    prefeituras. Ele permite que os cidadãos registrem manifestações de forma simples pelo portal, e que
+                    os servidores públicos gerenciem, acompanhem e respondam a cada uma delas através de um painel
+                    administrativo centralizado.</p>
 
-                <p class="reveal">Cada manifestação recebe um <strong>número de protocolo único</strong>, permitindo que o cidadão acompanhe o andamento do seu caso a qualquer momento. Do lado da prefeitura, os gestores têm visibilidade completa sobre todas as solicitações em aberto, em andamento e concluídas.</p>
+                <p class="reveal">Cada manifestação recebe um <strong>número de protocolo único</strong>, permitindo que
+                    o cidadão acompanhe o andamento do seu caso a qualquer momento. Do lado da prefeitura, os gestores
+                    têm visibilidade completa sobre todas as solicitações em aberto, em andamento e concluídas.</p>
 
                 <div class="highlight-box reveal">
-                    <div class="highlight-box-title"><i class="fa-solid fa-circle-info"></i> Tipos de manifestação suportados</div>
-                    <p>O sistema categoriza as manifestações em quatro tipos: <strong>reclamação</strong>, <strong>sugestão</strong>, <strong>elogio</strong> e <strong>denúncia</strong> — cada uma com seu fluxo e prazo de resposta definidos conforme a legislação de ouvidoria pública.</p>
+                    <div class="highlight-box-title"><i class="fa-solid fa-circle-info"></i> Tipos de manifestação
+                        suportados</div>
+                    <p>O sistema categoriza as manifestações em quatro tipos: <strong>reclamação</strong>,
+                        <strong>solicitação</strong>, <strong>sugestão</strong>, <strong>elogio</strong> e
+                        <strong>denúncia</strong> — cada uma com seu fluxo e prazo de resposta definidos conforme a
+                        legislação de ouvidoria pública.</p>
                 </div>
 
                 <!-- SEÇÃO 2 -->
                 <h2 id="funcionalidades" class="reveal">Funcionalidades</h2>
 
-                <p class="reveal">O sistema foi pensado para atender tanto o cidadão quanto o servidor municipal, com interfaces distintas e adequadas para cada perfil.</p>
+                <p class="reveal">O sistema foi pensado para atender tanto o cidadão quanto o servidor municipal, com
+                    interfaces distintas e adequadas para cada perfil.</p>
 
                 <div class="feature-grid reveal">
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(34,211,238,0.1);color:#22d3ee;"><i class="fa-solid fa-file-pen"></i></div>
+                        <div class="feature-item-icon" style="background:rgba(34,211,238,0.1);color:#22d3ee;"><i
+                                class="fa-solid fa-file-pen"></i></div>
                         <div class="feature-item-title">Registro de Manifestações</div>
-                        <div class="feature-item-desc">Formulário web simples para o cidadão abrir qualquer tipo de manifestação com protocolo automático.</div>
+                        <div class="feature-item-desc">Formulário web simples para o cidadão abrir qualquer tipo de
+                            manifestação com protocolo automático.</div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(59,130,246,0.1);color:#60a5fa;"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="feature-item-icon" style="background:rgba(59,130,246,0.1);color:#60a5fa;"><i
+                                class="fa-solid fa-magnifying-glass"></i></div>
                         <div class="feature-item-title">Consulta por Protocolo</div>
-                        <div class="feature-item-desc">O cidadão pode acompanhar o status da sua manifestação informando apenas o número de protocolo.</div>
+                        <div class="feature-item-desc">O cidadão pode acompanhar o status da sua manifestação informando
+                            apenas o número de protocolo.</div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(167,139,250,0.1);color:#a78bfa;"><i class="fa-solid fa-list-check"></i></div>
+                        <div class="feature-item-icon" style="background:rgba(167,139,250,0.1);color:#a78bfa;"><i
+                                class="fa-solid fa-list-check"></i></div>
                         <div class="feature-item-title">Painel Administrativo</div>
-                        <div class="feature-item-desc">Interface completa para servidores visualizarem, filtrarem, responderem e encerrarem manifestações.</div>
+                        <div class="feature-item-desc">Interface completa para servidores visualizarem, filtrarem,
+                            responderem e encerrarem manifestações.</div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b;"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="feature-item-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b;"><i
+                                class="fa-solid fa-layer-group"></i></div>
                         <div class="feature-item-title">Categorização</div>
-                        <div class="feature-item-desc">Organização por tipo, assunto e setor responsável para facilitar o encaminhamento interno.</div>
+                        <div class="feature-item-desc">Organização por tipo, assunto e setor responsável para facilitar
+                            o encaminhamento interno.</div>
                     </div>
                 </div>
 
                 <!-- imagem repetida -->
                 <div class="reveal" style="margin: 2.5rem 0;">
-                    <img src="image/ouvidoria-dashboard-print.png" alt="Tela do Sistema de Ouvidoria" style="width:100%;border-radius:16px;border:1px solid var(--border);">
-                    <div class="featured-image-caption" style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">Listagem de manifestações no painel administrativo</div>
+                    <img src="image/ouvidoria-dashboard-print.png" alt="Tela do Sistema de Ouvidoria"
+                        style="width:100%;border-radius:16px;border:1px solid var(--border);">
+                    <div class="featured-image-caption"
+                        style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">
+                        Listagem de manifestações no painel administrativo</div>
                 </div>
 
                 <hr class="article-divider">
@@ -686,18 +1517,26 @@
                 <!-- SEÇÃO 3 -->
                 <h2 id="cidadao" class="reveal">Experiência do Cidadão</h2>
 
-                <p class="reveal">O portal público é acessível por qualquer navegador, sem necessidade de cadastro prévio. O cidadão preenche um formulário com seus dados de contato, escolhe o tipo de manifestação, descreve o ocorrido e envia. Em instantes recebe o número de protocolo para acompanhamento.</p>
+                <p class="reveal">O portal público é acessível por qualquer navegador, sem necessidade de cadastro
+                    prévio. O cidadão preenche um formulário com seus dados de contato, escolhe o tipo de manifestação,
+                    descreve o ocorrido e envia. Em instantes recebe o número de protocolo para acompanhamento.</p>
 
-                <p class="reveal">A consulta de protocolo funciona de forma igualmente simples: basta informar o número recebido para ver em qual etapa a manifestação se encontra e qual foi a resposta da prefeitura, quando disponível.</p>
+                <p class="reveal">A consulta de protocolo funciona de forma igualmente simples: basta informar o número
+                    recebido para ver em qual etapa a manifestação se encontra e qual foi a resposta da prefeitura,
+                    quando disponível.</p>
 
                 <div class="pull-quote reveal">
-                    "O cidadão sabe que foi ouvido. O servidor sabe o que precisa responder. <span>Transparência e organização</span> em um só lugar."
+                    "O cidadão sabe que foi ouvido. O servidor sabe o que precisa responder. <span>Transparência e
+                        organização</span> em um só lugar."
                 </div>
 
                 <!-- imagem repetida -->
                 <div class="reveal" style="margin: 2.5rem 0;">
-                    <img src="image/ouvidoria-protocolo-print.png" alt="Tela de consulta de protocolo" style="width:100%;border-radius:16px;border:1px solid var(--border);">
-                    <div class="featured-image-caption" style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">Tela de acompanhamento de manifestação</div>
+                    <img src="image/ouvidoria-protocolo-print.png" alt="Tela de consulta de protocolo"
+                        style="width:100%;border-radius:16px;border:1px solid var(--border);">
+                    <div class="featured-image-caption"
+                        style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">
+                        Tela de acompanhamento de manifestação</div>
                 </div>
 
                 <hr class="article-divider">
@@ -705,24 +1544,38 @@
                 <!-- SEÇÃO 4 -->
                 <h2 id="gestor" class="reveal">Painel de Gestão</h2>
 
-                <p class="reveal">O painel administrativo é a ferramenta dos servidores municipais. Nele é possível visualizar todas as manifestações recebidas, filtrar por status, tipo ou data, registrar respostas e encerrar atendimentos. O histórico completo de cada caso fica registrado no sistema.</p>
+                <p class="reveal">O painel administrativo é a ferramenta dos servidores municipais. Nele é possível
+                    visualizar todas as manifestações recebidas, filtrar por status, tipo ou data, registrar respostas e
+                    encerrar atendimentos. O histórico completo de cada caso fica registrado no sistema.</p>
 
-                <p class="reveal">O controle de prazos também está presente: o sistema sinaliza manifestações próximas do vencimento do prazo legal de resposta, ajudando a equipe a priorizar o atendimento e evitar descumprimento da legislação de ouvidoria.</p>
+                <p class="reveal">O controle de prazos também está presente: o sistema sinaliza manifestações próximas
+                    do vencimento do prazo legal de resposta, ajudando a equipe a priorizar o atendimento e evitar
+                    descumprimento da legislação de ouvidoria.</p>
 
-                <div class="highlight-box reveal" style="background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.15);">
-                    <div class="highlight-box-title" style="color:#34d399;"><i class="fa-solid fa-shield-halved"></i> Acesso por perfil</div>
-                    <p>O sistema conta com controle de acesso por perfil de usuário. Servidores visualizam apenas as manifestações do seu setor; gestores e administradores têm acesso amplo e podem gerar relatórios consolidados.</p>
+                <div class="highlight-box reveal"
+                    style="background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.15);">
+                    <div class="highlight-box-title" style="color:#34d399;"><i class="fa-solid fa-shield-halved"></i>
+                        Acesso por perfil</div>
+                    <p>O sistema conta com controle de acesso por perfil de usuário. Servidores visualizam apenas as
+                        manifestações do seu setor; gestores e administradores têm acesso amplo e podem gerar relatórios
+                        consolidados.</p>
                 </div>
 
                 <!-- imagem repetida -->
                 <div class="reveal" style="margin: 2.5rem 0;">
-                    <img src="image/ouvidoria-lista-de-protocolos-print.png" alt="Painel de gestão" style="width:100%;border-radius:16px;border:1px solid var(--border);">
-                    <div class="featured-image-caption" style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">Painel de gestão — visão do servidor municipal</div>
+                    <img src="image/ouvidoria-lista-de-protocolos-print.png" alt="Painel de gestão"
+                        style="width:100%;border-radius:16px;border:1px solid var(--border);">
+                    <div class="featured-image-caption"
+                        style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">
+                        Painel de gestão — visão do servidor municipal</div>
                 </div>
 
-                <div class="highlight-box reveal" style="background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.15);">
-                    <div class="highlight-box-title" style="color:#60a5fa;"><i class="fa-solid fa-circle-info"></i> Quer implantar em sua prefeitura?</div>
-                    <p>O sistema pode ser adaptado para municípios de qualquer porte. Entre em contato e apresentamos uma proposta personalizada para a realidade da sua prefeitura.</p>
+                <div class="highlight-box reveal"
+                    style="background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.15);">
+                    <div class="highlight-box-title" style="color:#60a5fa;"><i class="fa-solid fa-circle-info"></i> Quer
+                        implantar em sua prefeitura?</div>
+                    <p>O sistema pode ser adaptado para municípios de qualquer porte. Entre em contato e apresentamos
+                        uma proposta personalizada para a realidade da sua prefeitura.</p>
                 </div>
 
                 <!-- AUTHOR -->
@@ -731,7 +1584,9 @@
                     <div>
                         <div class="author-box-name">Mikael Roque</div>
                         <div class="author-box-role">Fundador & CEO · Roque Systems</div>
-                        <div class="author-box-bio">Engenheiro de software com mais de 8 anos de experiência em sistemas de alta disponibilidade, automação inteligente e soluções para o setor público. Apaixonado por tecnologia que faz diferença real na vida das pessoas.</div>
+                        <div class="author-box-bio">Engenheiro de software com mais de 8 anos de experiência em sistemas
+                            de alta disponibilidade, automação inteligente e soluções para o setor público. Apaixonado
+                            por tecnologia que faz diferença real na vida das pessoas.</div>
                     </div>
                 </div>
 
@@ -741,7 +1596,8 @@
                     <a class="share-btn" href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                     <a class="share-btn" href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
                     <a class="share-btn" href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                    <button class="share-btn" onclick="navigator.clipboard.writeText(location.href);this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copiado!'">
+                    <button class="share-btn"
+                        onclick="navigator.clipboard.writeText(location.href);this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copiado!'">
                         <i class="fa-solid fa-link"></i> Copiar link
                     </button>
                 </div>
@@ -753,7 +1609,8 @@
 
                 <!-- TOC -->
                 <div class="sidebar-card reveal reveal-delay-1">
-                    <div class="sidebar-title"><i class="fa-solid fa-list" style="margin-right:0.4rem"></i>Neste artigo</div>
+                    <div class="sidebar-title"><i class="fa-solid fa-list" style="margin-right:0.4rem"></i>Neste artigo
+                    </div>
                     <ul class="toc-list" id="toc">
                         <li><a href="#contexto">O que é o sistema</a></li>
                         <li><a href="#funcionalidades">Funcionalidades</a></li>
@@ -764,7 +1621,8 @@
 
                 <!-- Stats -->
                 <div class="sidebar-card reveal reveal-delay-2">
-                    <div class="sidebar-title"><i class="fa-solid fa-chart-simple" style="margin-right:0.4rem"></i>Números do projeto</div>
+                    <div class="sidebar-title"><i class="fa-solid fa-chart-simple"
+                            style="margin-right:0.4rem"></i>Números do projeto</div>
                     <div class="stat-mini">
                         <div class="stat-row">
                             <span class="stat-row-label">Tipo</span>
@@ -791,7 +1649,8 @@
 
                 <!-- Tags -->
                 <div class="sidebar-card reveal reveal-delay-2">
-                    <div class="sidebar-title"><i class="fa-solid fa-tags" style="margin-right:0.4rem"></i>Tecnologias</div>
+                    <div class="sidebar-title"><i class="fa-solid fa-tags" style="margin-right:0.4rem"></i>Tecnologias
+                    </div>
                     <div class="tag-cloud">
                         <span class="tag-chip">Web App</span>
                         <span class="tag-chip">Setor Público</span>
@@ -805,7 +1664,8 @@
                 <div class="cta-sidebar reveal reveal-delay-3">
                     <div class="cta-sidebar-icon">🏛️</div>
                     <div class="cta-sidebar-title">Quer algo assim?</div>
-                    <div class="cta-sidebar-sub">Desenvolvemos soluções similares para prefeituras e órgãos públicos de qualquer porte.</div>
+                    <div class="cta-sidebar-sub">Desenvolvemos soluções similares para prefeituras e órgãos públicos de
+                        qualquer porte.</div>
                     <a href="index.html#contato" class="cta-sidebar-btn">
                         <i class="fa-solid fa-paper-plane"></i> Fale conosco
                     </a>
@@ -819,7 +1679,7 @@
     <footer>
         <div class="footer-inner">
             <a href="index.html" class="logo">
-                <div class="logo-icon" ><img src="logo.png" alt="logo roque systems"></div>
+                <div class="logo-icon"><img src="logo.png" alt="logo roque systems"></div>
                 <span class="logo-text">Roque<span>Systems</span></span>
             </a>
             <div class="footer-links">
@@ -827,7 +1687,8 @@
                 <a href="#">LinkedIn</a>
                 <a href="#">X (Twitter)</a>
             </div>
-            <div class="footer-copy">CNPJ: 65.566.587/0001-46 - © 2026 Roque Systems. Todos os direitos reservados.</div>
+            <div class="footer-copy">CNPJ: 65.566.587/0001-46 - © 2026 Roque Systems. Todos os direitos reservados.
+            </div>
         </div>
     </footer>
 
@@ -895,4 +1756,5 @@
         }, { rootMargin: '-80px 0px -60% 0px' });
         sections.forEach(s => tocObserver.observe(s));
     </script>
+
 </html>

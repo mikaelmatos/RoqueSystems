@@ -1,0 +1,9 @@
+Abrir CMD como Administrador: Pressione Windows + Q, digite CMD, clique com o botão direito em "Prompt de Comando" e selecione "Executar como administrador".
+Instalar a Chave de Licença (KMS): Digite o comando abaixo (exemplo para Windows 10 Pro) e pressione Enter:
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX.
+(Nota: Chaves para outras versões podem variar).
+Definir o Servidor KMS: Digite o comando e pressione Enter:
+slmgr /skms kms.meuhub.com.br (ou outro servidor KMS ativo).
+Ativar o Windows: Digite o comando e pressione Enter:
+slmgr /ato.
+Verificar: Uma mensagem confirmando a ativação bem-sucedida deve aparecer. 
