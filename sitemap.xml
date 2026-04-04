@@ -4,8 +4,7 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+<!-- Updated for Roque Systems - AI Friendly & SEO Optimized -->
 
 <url>
   <loc>https://roquesystems.com/</loc>
@@ -13,31 +12,29 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://roquesystems.com/ouvidoria-municipal</loc>
+  <loc>https://roquesystems.com/ouvidoria-municipal/</loc>
   <lastmod>2026-04-03T15:27:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://roquesystems.com/carta-servicos</loc>
+  <loc>https://roquesystems.com/carta-servicos/</loc>
   <lastmod>2026-04-03T15:27:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://roquesystems.com/diario-oficial</loc>
+  <loc>https://roquesystems.com/diario-oficial/</loc>
   <lastmod>2026-04-03T15:27:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://roquesystems.com/em-breve</loc>
+  <loc>https://roquesystems.com/em-breve/</loc>
   <lastmod>2026-04-03T15:27:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://roquesystems.com/mikael-roque</loc>
+  <loc>https://roquesystems.com/mikael-roque/</loc>
   <lastmod>2026-04-03T15:27:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
-
 
 </urlset>

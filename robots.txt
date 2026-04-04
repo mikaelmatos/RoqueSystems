@@ -1,14 +1,14 @@
 User-agent: *
 Allow: /
 
-# Bloquear áreas internas
+# Bloquear áreas administrativas e sensíveis
 Disallow: /admin/
 Disallow: /login/
 Disallow: /painel/
 Disallow: /api/
 Disallow: /privado/
 
-# Evitar URLs com parâmetros de consulta
+# Evitar URLs com parâmetros de consulta (melhora a eficiência do rastreamento)
 Disallow: /*?
 
 # Sitemap
