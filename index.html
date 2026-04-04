@@ -12,6 +12,15 @@
         gtag('config', 'G-S3SR94Q09E');
     </script>
     <meta name="google-adsense-account" content="ca-pub-1255461454064940">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/logo.png" as="image">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Basic Meta -->
     <meta charset="UTF-8">
@@ -1063,6 +1072,7 @@
             color: #e4e8f0;
             outline: none;
             transition: border-color 0.2s, background 0.2s;
+            appearance: none;
             -webkit-appearance: none;
         }
 
@@ -1790,7 +1800,7 @@
     <footer>
         <div class="footer-inner">
             <a href="#" class="logo">
-                <div class="logo-icon"><img src="/logo.png" alt="logo roque systems"></div>
+                <div class="logo-icon"><img src="/logo.png" alt="logo roque systems" width="36" height="36"></div>
                 <span class="logo-text">Roque<span>Systems</span></span>
             </a>
 
