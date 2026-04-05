@@ -16,58 +16,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.png" type="image/png">
-    <title>Carta de Serviços Municipal | Roque Systems</title>
+    <title>Portal da Transparência Municipal Inteligente | Roque Systems</title>
     <meta name="description"
-        content="Conheça o sistema de Carta de Serviços desenvolvido pela Roque Systems: catálogo digital de serviços públicos, IA embarcada e transparência para prefeituras modernas.">
+        content="Conheça o sistema de Transparência Municipal da Roque Systems: conformidade integral com LAI e LRF, dados abertos e visualização intuitiva para cidadãos.">
     <meta name="theme-color" content="#0a0f1c">
 
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Carta de Serviços Municipal | Roque Systems">
+    <meta property="og:title" content="Portal da Transparência Municipal Inteligente | Roque Systems">
     <meta property="og:description"
-        content="Tranquilidade e agilidade para o cidadão encontrar os serviços da prefeitura em um só lugar.">
-    <meta property="og:url" content="https://roquesystems.com/carta-servicos/">
-    <meta property="og:image" content="https://roquesystems.com/image/carta-de-servicos-home-print.png">
+        content="Dados abertos, receitas, despesas e conformidade legal para uma administração pública moderna e transparente.">
+    <meta property="og:url" content="https://roquesystems.com/transparencia-municipal/">
+    <meta property="og:image" content="https://roquesystems.com/image/transparencia-home-print.png">
     <meta property="og:site_name" content="Roque Systems">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Carta de Serviços Municipal | Roque Systems">
+    <meta name="twitter:title" content="Portal da Transparência Municipal Inteligente | Roque Systems">
     <meta name="twitter:description"
-        content="Plataforma moderna de Carta de Serviços ao Cidadão com tecnologia inteligente.">
-    <meta name="twitter:image" content="https://roquesystems.com/image/carta-de-servicos-home-print.png">
+        content="Solução completa de Transparência Ativa para municípios, seguindo LAI e LRF.">
+    <meta name="twitter:image" content="https://roquesystems.com/image/transparencia-home-print.png">
 
-    <link rel="canonical" href="https://roquesystems.com/carta-servicos/">
+    <link rel="canonical" href="https://roquesystems.com/transparencia-municipal/">
 
     <!-- SEO Schema -->
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Carta de Serviços ao Cidadão Digital",
+          "name": "Portal da Transparência Municipal",
           "provider": {
             "@type": "Organization",
             "name": "Roque Systems"
           },
-          "description": "Catálogo digital de serviços públicos municipais com busca otimizada e acessibilidade.",
-          "areaServed": "Brasil"
-        }
-    </script>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://roquesystems.com/"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Carta de Serviços Municipal",
-            "item": "https://roquesystems.com/carta-servicos/"
-          }]
+          "description": "Plataforma de transparência pública e dados abertos para prefeituras e órgãos municipais.",
+          "areaServed": "Brasil",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Sistemas para Setor Público",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Transparência Ativa"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Publicação de Receitas e Despesas"
+                }
+              }
+            ]
+          }
         }
     </script>
 
@@ -104,7 +107,7 @@
             overflow-x: hidden;
         }
 
-        /* ─── NAVBAR (idêntica ao site) ─── */
+        /* ─── NAVBAR ─── */
         .navbar {
             position: fixed;
             top: 0;
@@ -506,7 +509,7 @@
 
         .featured-image {
             width: 100%;
-            aspect-ratio: 16/7;
+            aspect-ratio: 16/9;
             object-fit: cover;
             border-radius: 20px;
             border: 1px solid var(--border);
@@ -585,43 +588,6 @@
             color: var(--cyan);
             background: rgba(34, 211, 238, 0.06);
             border-left-color: var(--cyan);
-        }
-
-        .toc-list .sub {
-            padding-left: 1.5rem;
-            font-size: 0.75rem;
-        }
-
-        .stat-mini {
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-        }
-
-        .stat-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 0.85rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .stat-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .stat-row-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.75rem;
-            color: #475569;
-        }
-
-        .stat-row-val {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--cyan);
         }
 
         .tag-cloud {
@@ -706,7 +672,6 @@
             min-width: 0;
         }
 
-        /* Lead */
         .article-lead {
             font-size: clamp(1.1rem, 2vw, 1.25rem);
             color: #cbd5e1;
@@ -717,7 +682,6 @@
             font-style: italic;
         }
 
-        /* Headings */
         .article-body h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.5rem, 3vw, 2rem);
@@ -729,17 +693,6 @@
             scroll-margin-top: 90px;
         }
 
-        .article-body h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #cbd5e1;
-            margin: 2.5rem 0 1rem;
-            scroll-margin-top: 90px;
-        }
-
-        /* Paragraphs */
         .article-body p {
             font-family: 'Lora', serif;
             font-size: 1.05rem;
@@ -754,14 +707,12 @@
             font-weight: 600;
         }
 
-        /* Divider */
         .article-divider {
             border: none;
             border-top: 1px solid var(--border);
             margin: 3rem 0;
         }
 
-        /* Highlight boxes */
         .highlight-box {
             background: rgba(34, 211, 238, 0.05);
             border: 1px solid rgba(34, 211, 238, 0.15);
@@ -783,13 +734,6 @@
             gap: 0.5rem;
         }
 
-        .highlight-box p {
-            color: #94a3b8;
-            margin-bottom: 0;
-            font-size: 0.95rem;
-        }
-
-        /* Feature grid */
         .feature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -837,39 +781,6 @@
             line-height: 1.6;
         }
 
-        /* Stats band */
-        .stats-band {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            margin: 2.5rem 0;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .stats-band-item {
-            background: rgba(255, 255, 255, 0.025);
-            padding: 1.75rem 1.25rem;
-            text-align: center;
-        }
-
-        .stats-band-num {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--cyan);
-            line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-
-        .stats-band-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.75rem;
-            color: #475569;
-        }
-
-        /* Quote pull */
         .pull-quote {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.2rem, 2.5vw, 1.6rem);
@@ -888,229 +799,123 @@
             color: var(--cyan);
         }
 
-        /* Code / terminal block */
-        .terminal-block {
-            background: #0a0d14;
-            border: 1px solid rgba(34, 211, 238, 0.15);
-            border-radius: 14px;
-            overflow: hidden;
-            margin: 2rem 0;
-        }
-
-        .terminal-header {
-            background: rgba(34, 211, 238, 0.06);
-            padding: 0.75rem 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            border-bottom: 1px solid rgba(34, 211, 238, 0.1);
-        }
-
-        .terminal-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .terminal-dots span {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        .terminal-dots .d1 {
-            background: #ff5f57;
-        }
-
-        .terminal-dots .d2 {
-            background: #febc2e;
-        }
-
-        .terminal-dots .d3 {
-            background: #28c840;
-        }
-
-        .terminal-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72rem;
-            color: #475569;
-            margin-left: auto;
-        }
-
-        .terminal-body {
-            padding: 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.82rem;
-            line-height: 1.8;
-            color: #64748b;
-        }
-
-        .terminal-body .cmd {
-            color: #22d3ee;
-        }
-
-        .terminal-body .str {
-            color: #34d399;
-        }
-
-        .terminal-body .key {
-            color: #a78bfa;
-        }
-
-        .terminal-body .comment {
-            color: #334155;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-            margin: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            bottom: 8px;
-            width: 1px;
-            background: linear-gradient(to bottom, var(--cyan), rgba(34, 211, 238, 0.1));
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.4rem;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--bg-2);
-            border: 2px solid var(--cyan);
-            box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
-        }
-
-        .timeline-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            color: var(--cyan);
-            text-transform: uppercase;
-            margin-bottom: 0.4rem;
-        }
-
-        .timeline-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #e4e8f0;
-            margin-bottom: 0.4rem;
-        }
-
-        .timeline-desc {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.82rem;
-            color: #475569;
-            line-height: 1.6;
-        }
-
-        /* Author box */
-        .author-box {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 1.75rem;
-            margin-top: 4rem;
-        }
-
-        .author-box-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            flex-shrink: 0;
-            background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(59, 130, 246, 0.15));
-            border: 1px solid rgba(34, 211, 238, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--cyan);
-        }
-
-        .author-box-name {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .author-box-role {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.75rem;
-            color: var(--cyan);
-            margin-bottom: 0.65rem;
-        }
-
-        .author-box-bio {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.83rem;
-            color: #64748b;
-            line-height: 1.65;
-        }
-
-        /* Share */
-        .share-bar {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 2.5rem;
-            padding-top: 2rem;
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--bg);
             border-top: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
         }
 
-        .share-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.78rem;
-            color: #475569;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-
-        .share-btn {
-            display: inline-flex;
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.45rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 100px;
+            gap: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.75rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             color: #94a3b8;
             text-decoration: none;
-            transition: all 0.2s;
-            background: none;
-            cursor: pointer;
+            transition: color 0.2s;
+            font-weight: 400;
         }
 
-        .share-btn:hover {
-            border-color: rgba(34, 211, 238, 0.3);
+        .footer-links a:hover {
             color: var(--cyan);
-            background: rgba(34, 211, 238, 0.05);
         }
 
-        /* ─── RELATED ─── */
+        .footer-copy {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .read-progress {
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.04);
+            z-index: 99;
+        }
+
+        .read-progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #22d3ee, #3b82f6);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        @media (max-width: 1000px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .nav-links, .nav-cta {
+                display: none !important;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── RELATED PROJECTS ─── */
         .related-section {
             background: var(--bg-2);
             border-top: 1px solid var(--border);
@@ -1212,179 +1017,15 @@
             color: #475569;
         }
 
-        /* ─── FOOTER ─── */
-        footer {
-            background: var(--bg);
-            border-top: 1px solid var(--border);
-            padding: 2.5rem 1.5rem;
-        }
-
-        .footer-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.75rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.82rem;
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-weight: 400;
-        }
-
-        .footer-links a:hover {
-            color: var(--cyan);
-        }
-
-        .footer-copy {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.75rem;
-            color: #94a3b8;
-            font-weight: 400;
-        }
-
-        /* ─── ANIMATIONS ─── */
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.5;
-                transform: scale(0.85);
-            }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-
-        /* ─── PROGRESS BAR ─── */
-        .read-progress {
-            position: fixed;
-            top: 68px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.04);
-            z-index: 99;
-        }
-
-        .read-progress-bar {
-            height: 100%;
-            background: linear-gradient(to right, #22d3ee, #3b82f6);
-            width: 0%;
-            transition: width 0.1s linear;
-        }
-
-        /* ─── RESPONSIVE ─── */
         @media (max-width: 1000px) {
-            .article-layout {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .sidebar {
-                position: static;
-            }
-
             .related-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 800px) {
-
-            .nav-links,
-            .nav-cta {
-                display: none !important;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-band {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .stats-band-item:last-child {
-                grid-column: 1 / -1;
-            }
-
             .related-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .author-box {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .stats-band {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-band-item {
-                grid-column: 1;
-            }
-        }
-
-        /* Progressbar on mobile */
-        @media (max-width: 800px) {
-            .read-progress {
-                top: 68px;
             }
         }
     </style>
@@ -1410,7 +1051,6 @@
                 <li><a href="/#sobre">Sobre</a></li>
                 <li><a href="/#servicos">Serviços</a></li>
                 <li><a href="/#projetos">Projetos</a></li>
-                <!-- <li><a href="/#clientes">Clientes</a></li> -->
             </ul>
             <a href="/#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right"
                     style="font-size:0.7rem"></i></a>
@@ -1426,7 +1066,6 @@
             <a href="/#sobre" class="mobile-link">Sobre</a>
             <a href="/#servicos" class="mobile-link">Serviços</a>
             <a href="/#projetos" class="mobile-link">Projetos</a>
-            <!-- <a href="/#clientes" class="mobile-link">Clientes</a> -->
         </nav>
         <div class="mobile-menu-footer">
             <a href="/#contato" class="btn-primary"
@@ -1436,7 +1075,7 @@
         </div>
     </div>
 
-    <!-- ── HERO DO ARTIGO ── -->
+    <!-- ── HERO ── -->
     <div class="article-hero">
         <div class="hero-grid-bg"></div>
         <div class="hero-glow"></div>
@@ -1446,297 +1085,145 @@
                 <span class="sep">/</span>
                 <a href="/#projetos">Projetos</a>
                 <span class="sep">/</span>
-                <span class="current">Carta de Serviços</span>
+                <span class="current">Transparência Municipal</span>
             </div>
 
             <div class="article-tag">
                 <div class="dot"></div>
-                PROJETO · SETOR PÚBLICO
+                PROJETO · GOVERNO DIGITAL
             </div>
 
             <h1 class="article-hero-title">
-                Sistema de<br>
-                <span class="accent">Carta de Serviços</span>
+                Portal de<br>
+                <span class="accent">Transparência Municipal</span>
             </h1>
 
             <p class="article-hero-sub">
-                Uma plataforma web desenvolvida para prefeituras publicarem e gerenciarem seu catálogo de serviços
-                públicos — com informações claras, atualizadas e acessíveis para todo cidadão.
+                Uma plataforma web moderna projetada para municípios publicarem seus dados de forma ativa, 
+                garantindo conformidade integral com a LAI e LRF de maneira simples e intuitiva.
             </p>
 
             <div class="article-meta">
                 <div class="meta-item meta-author">
                     <div class="meta-avatar">M</div>
                     <div>
-                        <div
-                            style="font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;color:#e4e8f0;">
+                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.82rem;font-weight:600;color:#e4e8f0;">
                             Mikael Roque</div>
-                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;color:#475569;">Fundador &
-                            CEO</div>
+                        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;color:#475569;">Fundador & CEO</div>
                     </div>
                 </div>
-                <div class="meta-item"><i class="fa-regular fa-calendar"></i> Março de 2026</div>
-                <div class="meta-item"><i class="fa-regular fa-clock"></i> 8 min de leitura</div>
+                <div class="meta-item"><i class="fa-regular fa-calendar"></i> Abril de 2026</div>
+                <div class="meta-item"><i class="fa-regular fa-clock"></i> 6 min de leitura</div>
                 <div class="meta-item"><i class="fa-solid fa-location-dot"></i> Fortaleza, CE</div>
             </div>
         </div>
 
         <div class="featured-image-wrap">
-            <img src="/image/carta-de-servicos-home-print.png" alt="Sistema de Carta de Serviços Municipal"
-                class="featured-image">
-            <div class="featured-image-caption">Tela principal do Sistema de Carta de Serviços Municipal</div>
+            <img src="/image/transparencia-home-print.png" alt="Portal da Transparência Municipal" class="featured-image">
+            <div class="featured-image-caption">Tela principal do Portal de Transparência Municipal Inteligente</div>
         </div>
     </div>
 
-    <!-- ── ARTIGO + SIDEBAR ── -->
+    <!-- ── CONTEÚDO ── -->
     <div style="background: var(--bg);">
         <div class="article-layout">
 
-            <!-- BODY -->
             <article class="article-body">
-
                 <p class="article-lead reveal">
-                    Todo município é obrigado por lei a publicar sua Carta de Serviços ao Cidadão — um documento que
-                    descreve cada serviço prestado pela prefeitura, seus requisitos, prazos e canais de atendimento. Foi
-                    para digitalizar e simplificar esse processo que a Roque Systems desenvolveu o <strong>Sistema de
-                        Carta de Serviços Municipal</strong>.
+                    A transparência na administração pública não é apenas uma obrigação legal, mas um pilar da democracia. 
+                    O <strong>Portal de Transparência Municipal</strong> da Roque Systems foi desenvolvido para transformar 
+                    dados complexos em informações claras e acessíveis para qualquer cidadão.
                 </p>
 
-                <!-- SEÇÃO 1 -->
-                <h2 id="contexto" class="reveal">O que é o sistema</h2>
-
-                <p class="reveal">O Sistema de Carta de Serviços Municipal é uma aplicação web que centraliza e organiza
-                    o catálogo de todos os serviços públicos oferecidos pela prefeitura. Ele permite que os gestores
-                    cadastrem e mantenham atualizadas as informações de cada serviço, enquanto os cidadãos consultam o
-                    portal de forma simples e intuitiva.</p>
-
-                <p class="reveal">Cada serviço cadastrado exibe de forma clara: <strong>documentos exigidos</strong>,
-                    <strong>prazo de atendimento</strong>, <strong>etapas do processo</strong>, <strong>setor
-                        responsável</strong> e <strong>canais disponíveis</strong> — tudo em conformidade com a Lei nº
-                    13.460/2017, que regulamenta a Carta de Serviços no Brasil.</p>
+                <h2 id="sobre-o-sistema" class="reveal">O que é o sistema</h2>
+                <p class="reveal">
+                    É uma solução completa de Transparência Ativa. O sistema automatiza a publicação de receitas, despesas, 
+                    licitações e contratos, permitindo que a prefeitura cumpra rigorosamente a Lei de Acesso à Informação (LAI) 
+                    e a Lei de Responsabilidade Fiscal (LRF) sem burocracia adicional.
+                </p>
 
                 <div class="highlight-box reveal">
-                    <div class="highlight-box-title"><i class="fa-solid fa-circle-info"></i> Conformidade legal</div>
-                    <p>O sistema foi desenvolvido em conformidade com a <strong>Lei nº 13.460/2017</strong> (Lei de
-                        Defesa dos Usuários de Serviços Públicos), garantindo que o município atenda às exigências
-                        legais de transparência e publicidade dos serviços prestados.</p>
+                    <div class="highlight-box-title"><i class="fa-solid fa-shield-check"></i> Conformidade Legal</div>
+                    <p>O portal já vem configurado com todos os requisitos obrigatórios exigidos pelos tribunais de contas, 
+                        incluindo filtros de busca avançados, exportação em formatos abertos e navegação acessível.</p>
                 </div>
 
-                <!-- SEÇÃO 2 -->
-                <h2 id="funcionalidades" class="reveal">Funcionalidades</h2>
-
-                <p class="reveal">O sistema foi pensado para atender tanto o cidadão que busca informações quanto o
-                    servidor municipal responsável por manter o catálogo sempre atualizado.</p>
-
+                <h2 id="funcionalidades" class="reveal">Funcionalidades Principais</h2>
                 <div class="feature-grid reveal">
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(34,211,238,0.1);color:#22d3ee;"><i
-                                class="fa-solid fa-book-open"></i></div>
-                        <div class="feature-item-title">Catálogo de Serviços</div>
-                        <div class="feature-item-desc">Portal público com todos os serviços municipais organizados por
-                            categoria e secretaria, com busca rápida.</div>
+                        <div class="feature-item-icon" style="background:rgba(34,211,238,0.1);color:#22d3ee;"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                        <div class="feature-item-title">Receitas e Despesas</div>
+                        <div class="feature-item-desc">Acompanhamento em tempo real da execução orçamentária, com gráficos e tabelas detalhadas.</div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(59,130,246,0.1);color:#60a5fa;"><i
-                                class="fa-solid fa-file-lines"></i></div>
-                        <div class="feature-item-title">Ficha Detalhada do Serviço</div>
-                        <div class="feature-item-desc">Cada serviço exibe documentos exigidos, prazo, etapas, setor
-                            responsável e canais de atendimento.</div>
+                        <div class="feature-item-icon" style="background:rgba(59,130,246,0.1);color:#60a5fa;"><i class="fa-solid fa-gavel"></i></div>
+                        <div class="feature-item-title">Licitações e Contratos</div>
+                        <div class="feature-item-desc">Publicação de editais, resultados e contratos com anexos e histórico completo.</div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(167,139,250,0.1);color:#a78bfa;"><i
-                                class="fa-solid fa-pen-to-square"></i></div>
-                        <div class="feature-item-title">Painel Administrativo</div>
-                        <div class="feature-item-desc">Interface completa para servidores cadastrarem, editarem e
-                            publicarem serviços com controle de versão.</div>
+                        <div class="feature-item-icon" style="background:rgba(167,139,250,0.1);color:#a78bfa;"><i class="fa-solid fa-users"></i></div>
+                        <div class="feature-item-title">Folha de Pagamento</div>
+                        <div class="feature-item-desc">Consulta de servidores e remunerações de forma transparente e segura (LGPD).</div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-item-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b;"><i
-                                class="fa-solid fa-layer-group"></i></div>
-                        <div class="feature-item-title">Organização por Secretaria</div>
-                        <div class="feature-item-desc">Serviços agrupados por secretaria e área temática, facilitando a
-                            navegação e a busca do cidadão.</div>
+                        <div class="feature-item-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b;"><i class="fa-solid fa-plane"></i></div>
+                        <div class="feature-item-title">Diárias e Passagens</div>
+                        <div class="feature-item-desc">Controle e publicação de gastos com deslocamentos de servidores e agentes políticos.</div>
                     </div>
                 </div>
 
-                <!-- imagem -->
                 <div class="reveal" style="margin: 2.5rem 0;">
-                    <img src="/image/ouvidoria-dashboard-print.png" alt="Painel administrativo da Carta de Serviços"
+                    <img src="/image/transparencia-2-home-print.png" alt="Painel de Transparência"
                         style="width:100%;border-radius:16px;border:1px solid var(--border);">
-                    <div class="featured-image-caption"
-                        style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">
-                        Painel administrativo — gerenciamento do catálogo de serviços</div>
+                    <div class="featured-image-caption">Visualização de indicadores de gestão no portal</div>
                 </div>
 
-                <hr class="article-divider">
-
-                <!-- SEÇÃO 3 -->
-                <h2 id="cidadao" class="reveal">Experiência do Cidadão</h2>
-
-                <p class="reveal">O portal público é acessível por qualquer navegador, sem necessidade de cadastro. O
-                    cidadão navega pelo catálogo de serviços, filtra por categoria ou secretaria, e consulta a ficha
-                    completa do serviço desejado — encontrando tudo o que precisa saber antes de se dirigir ao
-                    atendimento presencial ou acionar o canal digital.</p>
-
-                <p class="reveal">A busca inteligente permite encontrar qualquer serviço digitando palavras-chave do
-                    cotidiano, como "alvará", "benefício", "certidão" ou "iluminação pública", sem precisar conhecer a
-                    nomenclatura técnica da administração.</p>
+                <h2 id="gestao" class="reveal">Gestão Simplificada</h2>
+                <p class="reveal">
+                    Para os gestores municipais, o sistema oferece um painel administrativo intuitivo onde os dados podem 
+                    ser importados manualmente ou integrados via API com os sistemas de contabilidade da prefeitura. 
+                    O foco é o <strong>mínimo esforço para máxima transparência</strong>.
+                </p>
 
                 <div class="pull-quote reveal">
-                    "O cidadão sabe exatamente o que precisa levar, onde ir e quanto tempo vai esperar.
-                    <span>Transparência antes do atendimento.</span>"
+                    "Uma gestão transparente fortalece a confiança entre o governo e o povo. <span>Dados abertos</span> são o combustível da cidadania."
                 </div>
-
-                <!-- imagem -->
-                <div class="reveal" style="margin: 2.5rem 0;">
-                    <img src="/image/ouvidoria-protocolo-print.png" alt="Ficha detalhada de serviço"
-                        style="width:100%;border-radius:16px;border:1px solid var(--border);">
-                    <div class="featured-image-caption"
-                        style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">
-                        Ficha detalhada de um serviço público no portal do cidadão</div>
-                </div>
-
-                <hr class="article-divider">
-
-                <!-- SEÇÃO 4 -->
-                <h2 id="gestor" class="reveal">Painel de Gestão</h2>
-
-                <p class="reveal">O painel administrativo é a ferramenta dos servidores municipais. Nele é possível
-                    cadastrar novos serviços, editar informações existentes, publicar ou despublicar serviços
-                    temporariamente e organizar o catálogo por secretaria e categoria. Todo o histórico de alterações
-                    fica registrado no sistema.</p>
-
-                <p class="reveal">O controle de publicação também está presente: o gestor pode manter serviços em
-                    rascunho para revisão interna antes de disponibilizá-los no portal público, garantindo que o cidadão
-                    acesse apenas informações validadas e atualizadas.</p>
-
-                <div class="highlight-box reveal"
-                    style="background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.15);">
-                    <div class="highlight-box-title" style="color:#34d399;"><i class="fa-solid fa-shield-halved"></i>
-                        Acesso por perfil</div>
-                    <p>O sistema conta com controle de acesso por perfil de usuário. Servidores editam apenas os
-                        serviços da sua secretaria; gestores e administradores têm acesso amplo ao catálogo completo e
-                        podem gerar relatórios de atualização e conformidade.</p>
-                </div>
-
-                <!-- imagem -->
-                <div class="reveal" style="margin: 2.5rem 0;">
-                    <img src="/image/ouvidoria-lista-de-protocolos-print.png"
-                        alt="Lista de serviços no painel administrativo"
-                        style="width:100%;border-radius:16px;border:1px solid var(--border);">
-                    <div class="featured-image-caption"
-                        style="text-align:center;margin-top:0.75rem;font-family:'Space Grotesk',sans-serif;font-size:0.72rem;color:#334155;letter-spacing:0.05em;">
-                        Lista de serviços cadastrados — visão do servidor municipal</div>
-                </div>
-
-                <div class="highlight-box reveal"
-                    style="background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.15);">
-                    <div class="highlight-box-title" style="color:#60a5fa;"><i class="fa-solid fa-circle-info"></i> Quer
-                        implantar em sua prefeitura?</div>
-                    <p>O sistema pode ser adaptado para municípios de qualquer porte. Entre em contato e apresentamos
-                        uma proposta personalizada para a realidade da sua prefeitura.</p>
-                </div>
-
-                <!-- AUTHOR -->
-                <div class="author-box reveal">
-                    <div class="author-box-avatar">M</div>
-                    <div>
-                        <div class="author-box-name">Mikael Roque</div>
-                        <div class="author-box-role">Fundador & CEO · Roque Systems</div>
-                        <div class="author-box-bio">Engenheiro de software com mais de 8 anos de experiência em sistemas
-                            de alta disponibilidade, automação inteligente e soluções para o setor público. Apaixonado
-                            por tecnologia que faz diferença real na vida das pessoas.</div>
-                    </div>
-                </div>
-
-                <!-- SHARE -->
-                <div class="share-bar reveal">
-                    <span class="share-label">COMPARTILHAR</span>
-                    <a class="share-btn" href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                    <a class="share-btn" href="#"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
-                    <a class="share-btn" href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                    <button class="share-btn"
-                        onclick="navigator.clipboard.writeText(location.href);this.innerHTML='<i class=\'fa-solid fa-check\'></i> Copiado!'">
-                        <i class="fa-solid fa-link"></i> Copiar link
-                    </button>
-                </div>
-
             </article>
 
-            <!-- SIDEBAR -->
             <aside class="sidebar">
-
-                <!-- TOC -->
-                <div class="sidebar-card reveal reveal-delay-1">
-                    <div class="sidebar-title"><i class="fa-solid fa-list" style="margin-right:0.4rem"></i>Neste artigo
-                    </div>
-                    <ul class="toc-list" id="toc">
-                        <li><a href="#contexto">O que é o sistema</a></li>
+                <div class="sidebar-card">
+                    <div class="sidebar-title">Neste Artigo</div>
+                    <ul class="toc-list">
+                        <li><a href="#sobre-o-sistema">O que é o sistema</a></li>
                         <li><a href="#funcionalidades">Funcionalidades</a></li>
-                        <li><a href="#cidadao">Experiência do Cidadão</a></li>
-                        <li><a href="#gestor">Painel de Gestão</a></li>
+                        <li><a href="#gestao">Gestão Simplificada</a></li>
                     </ul>
                 </div>
 
-                <!-- Stats -->
-                <div class="sidebar-card reveal reveal-delay-2">
-                    <div class="sidebar-title"><i class="fa-solid fa-chart-simple"
-                            style="margin-right:0.4rem"></i>Números do projeto</div>
-                    <div class="stat-mini">
-                        <div class="stat-row">
-                            <span class="stat-row-label">Tipo</span>
-                            <span class="stat-row-val">Web</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-row-label">Setor</span>
-                            <span class="stat-row-val">Público</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-row-label">Perfis de acesso</span>
-                            <span class="stat-row-val">Cidadão / Gestor</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-row-label">Conformidade legal</span>
-                            <span class="stat-row-val">Lei 13.460/2017</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-row-label">Histórico de edições</span>
-                            <span class="stat-row-val">Sim</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tags -->
-                <div class="sidebar-card reveal reveal-delay-2">
-                    <div class="sidebar-title"><i class="fa-solid fa-tags" style="margin-right:0.4rem"></i>Tecnologias
-                    </div>
+                <div class="sidebar-card">
+                    <div class="sidebar-title">Tecnologias</div>
                     <div class="tag-cloud">
-                        <span class="tag-chip">Web App</span>
-                        <span class="tag-chip">Setor Público</span>
-                        <span class="tag-chip">Carta de Serviços</span>
-                        <span class="tag-chip">Gestão Municipal</span>
-                        <span class="tag-chip">Catálogo Digital</span>
+                        <span class="tag-chip">Cloud Hosting</span>
+                        <span class="tag-chip">API Integrations</span>
+                        <span class="tag-chip">Responsive Design</span>
+                        <span class="tag-chip">Open Data</span>
                     </div>
                 </div>
 
-                <!-- CTA -->
-                <div class="cta-sidebar reveal reveal-delay-3">
-                    <div class="cta-sidebar-icon">🏛️</div>
-                    <div class="cta-sidebar-title">Quer algo assim?</div>
-                    <div class="cta-sidebar-sub">Desenvolvemos soluções similares para prefeituras e órgãos públicos de
-                        qualquer porte.</div>
-                    <a href="/#contato" class="cta-sidebar-btn">
-                        <i class="fa-solid fa-paper-plane"></i> Fale conosco
-                    </a>
+                <div class="cta-sidebar">
+                    <div class="cta-sidebar-icon">🚀</div>
+                    <div class="cta-sidebar-title">Precisa modernizar sua prefeitura?</div>
+                    <div class="cta-sidebar-sub">Implemente o Portal de Transparência e fique em conformidade total com a lei.</div>
+                    <a href="/#contato" class="cta-sidebar-btn">Solicitar Demo</a>
                 </div>
-
             </aside>
+
         </div>
     </div>
 
     <!-- ── PROJETOS RELACIONADOS ── -->
     <section class="related-section">
-        <div class="related-inner" style="max-width:1100px;margin:0 auto">
+        <div class="related-inner">
             <div class="related-label reveal">Explorar mais</div>
             <h2 class="related-title reveal">Outros sistemas municipais</h2>
             
@@ -1753,15 +1240,15 @@
                     </div>
                 </a>
 
-                <!-- TRANSPARÊNCIA -->
-                <a href="/transparencia-municipal/" class="related-card reveal">
+                <!-- CARTA DE SERVIÇOS -->
+                <a href="/carta-servicos/" class="related-card reveal">
                     <div class="related-card-img">
-                        <img src="/image/transparencia-home-print.png" alt="Portal da Transparência">
+                        <img src="/image/carta-de-servicos-home-print.png" alt="Carta de Serviços">
                     </div>
                     <div class="related-card-body">
-                        <div class="related-card-tag">Portal da Transparência Municipal</div>
-                        <h3 class="related-card-title">Portal da Transparência</h3>
-                        <p class="related-card-meta">Onde a prefeitura divulga receitas, despesas e outras informações para garantir transparência à população.</p>
+                        <div class="related-card-tag">Carta de Serviços Municipal</div>
+                        <h3 class="related-card-title">Carta de Serviços ao Cidadão</h3>
+                        <p class="related-card-meta">A Carta de Serviços ao Cidadão reúne os serviços prestados pela Prefeitura Municipal.</p>
                     </div>
                 </a>
 
@@ -1840,21 +1327,22 @@
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // Reading progress
-        const bar = document.getElementById('progress-bar');
+        const bar = document.getElementById("progress-bar");
         window.addEventListener('scroll', () => {
-            const body = document.body, html = document.documentElement;
-            const total = Math.max(body.scrollHeight, html.scrollHeight) - html.clientHeight;
-            bar.style.width = Math.min((window.scrollY / total) * 100, 100) + '%';
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (bar) bar.style.width = scrolled + "%";
         }, { passive: true });
 
-        // TOC active state
-        const sections = document.querySelectorAll('h2[id], h3[id]');
-        const tocLinks = document.querySelectorAll('#toc a');
+        // TOC active state (simple)
+        const sections = document.querySelectorAll('h2[id]');
+        const tocLinks = document.querySelectorAll('.toc-list a');
         const tocObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     tocLinks.forEach(l => l.classList.remove('active'));
-                    const active = document.querySelector(`#toc a[href="#${entry.target.id}"]`);
+                    const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
                     if (active) active.classList.add('active');
                 }
             });
