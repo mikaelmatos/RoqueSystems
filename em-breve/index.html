@@ -506,6 +506,75 @@
             to { opacity:1; transform:translateY(0); }
         }
 
+        /* ── COMING SOON ARTICLES ── */
+        .coming-soon-articles {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 3.5rem;
+            animation: fadeUp 0.7s 0.5s ease both;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .article-card:hover {
+            border-color: rgba(34, 211, 238, 0.4);
+            background: rgba(34, 211, 238, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(34, 211, 238, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .article-icon {
+            font-size: 2.5rem;
+            color: var(--cyan);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .article-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .article-card p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+
         /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             .navbar { padding: 1.25rem 1.25rem; }
@@ -516,6 +585,7 @@
             .notify-input { padding: 0.6rem 0.8rem; }
             .notify-btn { width: 100%; justify-content: center; border-radius: 10px; }
             footer { flex-direction: column; align-items: center; text-align: center; }
+            .articles-grid { grid-template-columns: 1fr; }
         }
 
         /* spinner */
@@ -609,6 +679,28 @@
                 Ótimo! Vamos te avisar assim que lançarmos.
             </div>
             <div class="notify-hint">Sem spam. Apenas uma mensagem quando lançarmos.</div>
+        </div>
+
+        <!-- Coming Soon Articles -->
+        <div class="coming-soon-articles">
+            <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; margin-bottom: 2rem; color: var(--text);">Artigos em Desenvolvimento</h2>
+            <div class="articles-grid">
+                <a href="../projetos/" class="article-card">
+                    <div class="article-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Gestão Inteligente com IA</h3>
+                    <p>Sistema avançado de Business Intelligence com análise preditiva para tomada de decisões.</p>
+                </a>
+                <a href="../projetos/" class="article-card">
+                    <div class="article-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                    <h3>Automação de Documentos</h3>
+                    <p>Robôs inteligentes para classificação, extração de dados e automação de fluxos documentais.</p>
+                </a>
+                <a href="../projetos/" class="article-card">
+                    <div class="article-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <h3>Infraestrutura em Nuvem</h3>
+                    <p>Serviços escaláveis e seguros para hospedagem de aplicações críticas com alta disponibilidade.</p>
+                </a>
+            </div>
         </div>
 
         <!-- Features -->

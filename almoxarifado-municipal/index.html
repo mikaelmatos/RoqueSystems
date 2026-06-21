@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3SR94Q09E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-S3SR94Q09E');
+    </script>
+    <meta name="google-adsense-account" content="ca-pub-1255461454064940">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <title>Almoxarifado Municipal | Roque Systems — Em Breve</title>
+    <meta name="description" content="Conheça o Almoxarifado Municipal da Roque Systems: controle completo de estoque, entradas, saídas e distribuição interna de materiais para prefeituras.">
+    <meta name="author" content="Roque Systems">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://roquesystems.com/almoxarifado-municipal/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Almoxarifado Municipal | Roque Systems">
+    <meta property="og:description" content="Sistema inteligente de controle de estoque para prefeituras. Gerencie materiais, entradas, saídas e distribuição interna com total rastreabilidade.">
+    <meta property="og:url" content="https://roquesystems.com/almoxarifado-municipal/">
+    <meta property="og:image" content="https://roquesystems.com/image/almoxarifado-home-print.png">
+
+    <meta name="theme-color" content="#080a0f">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://roquesystems.com/"},
+        {"@type":"ListItem","position":2,"name":"Projetos","item":"https://roquesystems.com/projetos/"},
+        {"@type":"ListItem","position":3,"name":"Almoxarifado Municipal","item":"https://roquesystems.com/almoxarifado-municipal/"}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        :root {
+            --green: #10b981;
+            --green-dim: rgba(16,185,129,0.1);
+            --green-glow: rgba(16,185,129,0.35);
+            --cyan: #22d3ee;
+            --cyan-dim: rgba(34,211,238,0.1);
+            --blue: #3b82f6;
+            --amber: #f59e0b;
+            --bg: #080a0f;
+            --surface: rgba(255,255,255,0.03);
+            --border: rgba(255,255,255,0.08);
+            --text: #e4e8f0;
+            --muted: #64748b;
+            --subtle: #94a3b8;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(8,10,15,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            transition: background 0.3s;
+        }
+        .navbar.scrolled { background: rgba(8,10,15,0.97); }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+            height: 68px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .logo-icon {
+            width: 36px; height: 36px; border-radius: 10px;
+            overflow: hidden; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 2px #3B82F6;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.03em; color: var(--text); }
+        .logo-text span { color: var(--cyan); }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-links a { font-size: 0.85rem; color: #94a3b8; text-decoration: none; transition: color 0.2s; font-weight: 500; }
+        .nav-links a:hover { color: #fff; }
+        .nav-cta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.55rem 1.4rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 100px;
+            font-size: 0.85rem; font-weight: 500; color: #e4e8f0; text-decoration: none; transition: all 0.25s;
+        }
+        .nav-cta:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 75vh; display: flex; align-items: center;
+            padding: 130px 1.5rem 80px; position: relative; overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 0%, rgba(16,185,129,0.08) 0%, transparent 70%),
+                radial-gradient(circle at 80% 60%, rgba(245,158,11,0.05) 0%, transparent 55%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(16,185,129,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 80%);
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+        .breadcrumb {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.75rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--green); }
+        .breadcrumb i { font-size: 0.6rem; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--green-dim); border: 1px solid rgba(16,185,129,0.25);
+            padding: 0.4rem 1rem; border-radius: 100px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; color: var(--green);
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px; background: var(--green); border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.8); } }
+
+        h1.hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 1.25rem;
+        }
+        h1.hero-title .accent {
+            background: linear-gradient(135deg, #6ee7b7 0%, #10b981 40%, #22d3ee 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--muted); max-width: 580px; line-height: 1.8; margin-bottom: 2.5rem;
+        }
+        .hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; }
+        .tag {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.35rem 0.9rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600;
+            border: 1px solid var(--border); color: var(--subtle); background: var(--surface);
+        }
+        .tag.green { border-color: rgba(16,185,129,0.3); color: var(--green); background: var(--green-dim); }
+        .tag.amber { border-color: rgba(245,158,11,0.25); color: var(--amber); background: rgba(245,158,11,0.08); }
+        .tag.blue  { border-color: rgba(59,130,246,0.25);  color: #60a5fa;  background: rgba(59,130,246,0.08); }
+
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.85rem 2rem; background: linear-gradient(135deg, var(--green), var(--cyan));
+            border: none; border-radius: 100px; font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem; font-weight: 700; color: #080a0f; text-decoration: none; cursor: pointer;
+            transition: all 0.25s;
+        }
+        .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(16,185,129,0.3); }
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.85rem 2rem; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 100px;
+            font-size: 0.9rem; font-weight: 500; color: #e4e8f0; text-decoration: none; transition: all 0.25s;
+        }
+        .btn-ghost:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+        /* ── STATS BAR ── */
+        .stats-bar {
+            background: #0c0e14; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+        }
+        .stats-bar-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+        }
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 800;
+            color: var(--green); line-height: 1; margin-bottom: 0.35rem;
+        }
+        .stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; letter-spacing: 0.04em; }
+
+        /* ── CONTAINER ── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ── OVERVIEW ── */
+        .overview { padding: 5rem 1.5rem; background: #0c0e14; }
+        .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+        .section-label {
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+            color: var(--green); text-transform: uppercase; margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.25rem;
+        }
+        .section-text { font-size: 0.95rem; color: var(--muted); line-height: 1.85; }
+        .section-text + .section-text { margin-top: 1rem; }
+
+        .feature-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.85rem; }
+        .feature-item { display: flex; align-items: flex-start; gap: 0.85rem; }
+        .feature-icon {
+            width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+            background: var(--green-dim); color: var(--green); border: 1px solid rgba(16,185,129,0.2);
+        }
+        .feature-text { font-size: 0.88rem; color: var(--subtle); line-height: 1.6; }
+        .feature-text strong { color: var(--text); display: block; margin-bottom: 0.2rem; font-size: 0.9rem; }
+
+        .img-mockup {
+            border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .img-mockup img { width: 100%; height: auto; display: block; }
+        .img-mockup-badge {
+            position: absolute; top: 1rem; left: 1rem;
+            background: rgba(8,10,15,0.85); backdrop-filter: blur(12px);
+            border: 1px solid rgba(16,185,129,0.3); border-radius: 100px;
+            padding: 0.3rem 0.8rem; font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 0.1em; color: var(--green);
+        }
+
+        /* ── FUNCIONALIDADES ── */
+        .features-section { padding: 5rem 1.5rem; background: var(--bg); }
+        .features-header { text-align: center; margin-bottom: 3.5rem; }
+        .features-header p { font-size: 0.95rem; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.75; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .feat-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2rem; transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .feat-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(16,185,129,0.25);
+            box-shadow: 0 20px 40px rgba(16,185,129,0.08);
+            background: rgba(16,185,129,0.03);
+        }
+        .feat-card-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; margin-bottom: 1.25rem;
+        }
+        .feat-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; }
+        .feat-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+
+        /* ── FLUXO ── */
+        .flow-section { padding: 5rem 1.5rem; background: #0c0e14; border-top: 1px solid var(--border); }
+        .flow-header { text-align: center; margin-bottom: 3.5rem; }
+        .flow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
+        .flow-grid::before {
+            content: '';
+            position: absolute; top: 2.2rem; left: calc(25% / 2); right: calc(25% / 2);
+            height: 1px; background: linear-gradient(90deg, transparent, rgba(16,185,129,0.3), transparent);
+            z-index: 0;
+        }
+        .flow-step {
+            position: relative; z-index: 1; text-align: center;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2rem 1.5rem; transition: all 0.3s;
+        }
+        .flow-step:hover { border-color: rgba(16,185,129,0.3); transform: translateY(-5px); }
+        .flow-num {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--green), var(--cyan));
+            color: #080a0f; font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+        .flow-step h3 { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .flow-step p { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+
+        /* ── BENEFÍCIOS ── */
+        .benefits-section { padding: 5rem 1.5rem; background: var(--bg); }
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+        .benefit-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2rem; transition: border-color 0.3s, transform 0.3s;
+        }
+        .benefit-card:hover { border-color: rgba(16,185,129,0.2); transform: translateY(-4px); }
+        .benefit-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; margin-bottom: 1.25rem;
+        }
+        .benefit-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .benefit-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+
+        /* ── COMPARATIVO ── */
+        .compare-section { padding: 5rem 1.5rem; background: #0c0e14; border-top: 1px solid var(--border); }
+        .compare-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+            margin-top: 2rem;
+        }
+        .compare-table th {
+            padding: 1rem 1.5rem; text-align: left; font-size: 0.8rem;
+            font-weight: 700; letter-spacing: 0.06em; background: rgba(255,255,255,0.04);
+            border-bottom: 1px solid var(--border); color: var(--subtle);
+        }
+        .compare-table th:first-child { color: var(--text); }
+        .compare-table th.highlight { color: var(--green); }
+        .compare-table td {
+            padding: 1rem 1.5rem; font-size: 0.85rem; color: var(--muted);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table td:first-child { color: var(--text); font-weight: 500; }
+        .compare-table td.ok { color: var(--green); font-weight: 600; }
+        .compare-table td.no { color: #ef4444; }
+        .compare-table td.partial { color: var(--amber); }
+        .compare-table tr td.highlight-col { background: rgba(16,185,129,0.04); }
+
+        /* ── TECH ── */
+        .tech-section { padding: 5rem 1.5rem; background: var(--bg); }
+        .tech-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+        .tech-pill {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 1.1rem; border: 1px solid var(--border); border-radius: 100px;
+            font-size: 0.8rem; font-weight: 500; color: var(--subtle); background: var(--surface);
+            transition: all 0.2s;
+        }
+        .tech-pill:hover { border-color: rgba(16,185,129,0.3); color: var(--green); }
+
+        /* ── CTA ── */
+        .cta-section { padding: 6rem 1.5rem; background: #0c0e14; border-top: 1px solid var(--border); text-align: center; }
+        .cta-inner {
+            max-width: 620px; margin: 0 auto;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 28px;
+            padding: 3.5rem 2.5rem;
+        }
+        .cta-inner h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem,4vw,2.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+        .cta-inner p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; }
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--bg); border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2rem 1.5rem;
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;
+        }
+        .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.82rem; color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cyan); }
+        .footer-copy { font-size: 0.75rem; color: #94a3b8; }
+
+        /* ── ANIMATIONS ── */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .flow-grid { grid-template-columns: repeat(2, 1fr); }
+            .flow-grid::before { display: none; }
+        }
+        @media (max-width: 900px) {
+            .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+            .benefits-grid { grid-template-columns: 1fr 1fr; }
+            .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+            .nav-links, .nav-cta { display: none; }
+        }
+        @media (max-width: 600px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .flow-grid { grid-template-columns: 1fr; }
+            .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+            .cta-inner { padding: 2rem 1.25rem; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="/logo.png" alt="Roque Systems"></div>
+                <span class="logo-text">Roque<span>Systems</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#sobre">Sobre</a></li>
+                <li><a href="/#servicos">Serviços</a></li>
+                <li><a href="/projetos/">Projetos</a></li>
+            </ul>
+            <a href="/#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="/projetos/">Projetos</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Almoxarifado Municipal</span>
+            </nav>
+
+            <div class="hero-badge">
+                <div class="dot"></div>
+                EM DESENVOLVIMENTO
+            </div>
+
+            <h1 class="hero-title">
+                Almoxarifado<br>
+                <span class="accent">Municipal</span>
+            </h1>
+
+            <p class="hero-sub">
+                Controle total sobre o estoque da prefeitura. Gerencie materiais, entradas, saídas e distribuição interna entre secretarias com rastreabilidade completa e relatórios em tempo real.
+            </p>
+
+            <div class="hero-tags">
+                <span class="tag green"><i class="fa-solid fa-boxes-stacked"></i> Controle de Estoque</span>
+                <span class="tag amber"><i class="fa-solid fa-truck"></i> Logística Interna</span>
+                <span class="tag blue"><i class="fa-solid fa-chart-bar"></i> Relatórios</span>
+                <span class="tag"><i class="fa-solid fa-qrcode"></i> Código de Barras / QR</span>
+                <span class="tag"><i class="fa-solid fa-rotate"></i> Requisições Online</span>
+            </div>
+
+            <div class="hero-actions">
+                <a href="/#contato" class="btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Tenho interesse
+                </a>
+                <a href="/projetos/" class="btn-ghost">
+                    <i class="fa-solid fa-arrow-left"></i> Ver todos os projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stats-bar-inner">
+            <div class="stat-item reveal">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Rastreabilidade de materiais</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-1">
+                <div class="stat-num">Zero</div>
+                <div class="stat-label">Papel no processo de requisição</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-2">
+                <div class="stat-num">+40%</div>
+                <div class="stat-label">Redução de desperdício de materiais</div>
+            </div>
+            <div class="stat-item reveal reveal-delay-3">
+                <div class="stat-num">∞</div>
+                <div class="stat-label">Secretarias e unidades integradas</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="reveal">
+                    <div class="section-label">Visão Geral</div>
+                    <h2 class="section-title">Fim ao estoque descontrolado na prefeitura</h2>
+                    <p class="section-text">
+                        O Almoxarifado Municipal da Roque Systems nasce para resolver um problema histórico das prefeituras brasileiras: materiais sem controle, requisições em papel, estoque com vencimento ignorado e distribuição interna opaca.
+                    </p>
+                    <p class="section-text">
+                        Com o sistema, cada item que entra ou sai do almoxarifado é registrado digitalmente. Secretarias fazem requisições online, o almoxarife aprova e distribui com poucos cliques, e o gestor acompanha tudo em tempo real por um painel intuitivo.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            <div class="feature-text">
+                                <strong>Controle de Estoque em Tempo Real</strong>
+                                Saldo atualizado automaticamente a cada entrada ou saída. Alertas de estoque mínimo e vencimento de materiais.
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                            <div class="feature-text">
+                                <strong>Requisições e Despachos Digitais</strong>
+                                Secretarias solicitam materiais online. Aprovação e separação pelo almoxarife sem nenhum papel.
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                            <div class="feature-text">
+                                <strong>Relatórios Gerenciais Completos</strong>
+                                Relatórios de consumo por secretaria, curva ABC, balancetes mensais e exportação para Excel/PDF.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="img-mockup">
+                        <img src="/image/almoxarifado-home-print.png" alt="Almoxarifado Municipal — Preview" loading="lazy">
+                        <span class="img-mockup-badge">EM DESENVOLVIMENTO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUNCIONALIDADES -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-header reveal">
+                <div class="section-label">Funcionalidades</div>
+                <h2 class="section-title" style="margin-bottom:0.75rem;">Do recebimento à entrega,<br>tudo sob controle</h2>
+                <p>Cobertura completa do ciclo de vida dos materiais públicos — da nota fiscal de entrada ao recibo de entrega na secretaria.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feat-card reveal">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(34,211,238,0.15));color:var(--green);">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h3>Entrada de Materiais</h3>
+                    <p>Registro de notas fiscais, lote, validade e fornecedor. Integração com PNCP e consulta de CNPJ automática. Conferência item a item.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-1">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(239,68,68,0.15));color:var(--amber);">
+                        <i class="fa-solid fa-hand-holding-box"></i>
+                    </div>
+                    <h3>Saída e Distribuição</h3>
+                    <p>Distribuição para secretarias, departamentos ou servidores específicos. Recibo digital assinado eletronicamente pelo solicitante.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-2">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(139,92,246,0.15));color:#60a5fa;">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <h3>Requisições Online</h3>
+                    <p>Secretarias solicitam materiais diretamente pelo sistema. O almoxarife analisa, aprova, separa e registra a entrega — tudo digital.</p>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(236,72,153,0.15));color:#a78bfa;">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3>Código de Barras e QR Code</h3>
+                    <p>Etiquetagem automática de itens com QR Code. Leitura via câmera do celular ou leitor físico para entrada e saída ágil de materiais.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-1">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(245,158,11,0.15));color:var(--green);">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3>Alertas Inteligentes</h3>
+                    <p>Notificações automáticas de estoque abaixo do mínimo, materiais próximos ao vencimento e itens sem movimentação há mais de 60 dias.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-2">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(34,211,238,0.15),rgba(59,130,246,0.15));color:var(--cyan);">
+                        <i class="fa-solid fa-chart-bar"></i>
+                    </div>
+                    <h3>Relatórios e Auditorias</h3>
+                    <p>Relatório de consumo por secretaria, curva ABC, balancete mensal e histórico completo de movimentações para auditorias do TCE/TCM.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLUXO DO PROCESSO -->
+    <section class="flow-section">
+        <div class="container">
+            <div class="flow-header reveal">
+                <div class="section-label">Como Funciona</div>
+                <h2 class="section-title">Um fluxo simples,<br>um controle rigoroso</h2>
+            </div>
+            <div class="flow-grid">
+                <div class="flow-step reveal">
+                    <div class="flow-num">1</div>
+                    <h3>Secretaria solicita</h3>
+                    <p>O servidor abre uma requisição online informando os materiais necessários, quantidade e justificativa.</p>
+                </div>
+                <div class="flow-step reveal reveal-delay-1">
+                    <div class="flow-num">2</div>
+                    <h3>Almoxarife aprova</h3>
+                    <p>O responsável pelo almoxarifado analisa o estoque disponível, aprova (total ou parcialmente) e separa os itens.</p>
+                </div>
+                <div class="flow-step reveal reveal-delay-2">
+                    <div class="flow-num">3</div>
+                    <h3>Entrega registrada</h3>
+                    <p>A entrega é confirmada digitalmente pelo receptor. O sistema atualiza o saldo automaticamente e emite o recibo.</p>
+                </div>
+                <div class="flow-step reveal reveal-delay-3">
+                    <div class="flow-num">4</div>
+                    <h3>Gestão visualiza</h3>
+                    <p>O gestor acessa o painel com o consumo de cada secretaria, gráficos de tendência e alertas de abastecimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Impacto Real</div>
+                <h2 class="section-title">O que muda na prática</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon" style="background:rgba(16,185,129,0.12);color:var(--green);">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3>Redução de Desperdício</h3>
+                    <p>Controle de vencimentos e alertas de estoque excessivo evitam que materiais caros sejam descartados sem uso.</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-1">
+                    <div class="benefit-icon" style="background:rgba(245,158,11,0.12);color:var(--amber);">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3>Mais Agilidade Operacional</h3>
+                    <p>Requisições digitais eliminam o trâmite físico de papéis. O que levava dias agora é resolvido em horas.</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-2">
+                    <div class="benefit-icon" style="background:rgba(59,130,246,0.12);color:#60a5fa;">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3>Auditoria Facilitada</h3>
+                    <p>Histórico imutável de todas as movimentações. O TCE ou Câmara Municipal acessa relatórios completos com um clique.</p>
+                </div>
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon" style="background:rgba(139,92,246,0.12);color:#a78bfa;">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Controle por Secretaria</h3>
+                    <p>Visualize o consumo de cada departamento e tome decisões de orçamento baseadas em dados reais de utilização.</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-1">
+                    <div class="benefit-icon" style="background:rgba(16,185,129,0.12);color:var(--green);">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Conformidade Legal</h3>
+                    <p>Atende às exigências da Lei 8.666/93 e nova Lei de Licitações (14.133/21) para controle patrimonial e de materiais.</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-2">
+                    <div class="benefit-icon" style="background:rgba(245,158,11,0.12);color:var(--amber);">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3>Acesso em Qualquer Lugar</h3>
+                    <p>Totalmente responsivo. Almoxarife pode registrar entradas e saídas diretamente pelo celular, sem depender de um PC fixo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARATIVO -->
+    <section class="compare-section">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Comparativo</div>
+                <h2 class="section-title">Por que sair das planilhas?</h2>
+            </div>
+            <table class="compare-table reveal" style="margin-top:2.5rem;">
+                <thead>
+                    <tr>
+                        <th>Recurso</th>
+                        <th>Planilha Excel</th>
+                        <th class="highlight">Almoxarifado Municipal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Atualização em tempo real</td>
+                        <td class="no"><i class="fa-solid fa-xmark"></i> Não</td>
+                        <td class="ok highlight-col"><i class="fa-solid fa-check"></i> Sim, automático</td>
+                    </tr>
+                    <tr>
+                        <td>Requisições digitais</td>
+                        <td class="no"><i class="fa-solid fa-xmark"></i> Não</td>
+                        <td class="ok highlight-col"><i class="fa-solid fa-check"></i> Sim, com fluxo de aprovação</td>
+                    </tr>
+                    <tr>
+                        <td>Alertas de estoque mínimo</td>
+                        <td class="partial"><i class="fa-solid fa-minus"></i> Manual</td>
+                        <td class="ok highlight-col"><i class="fa-solid fa-check"></i> Automático por e-mail/sistema</td>
+                    </tr>
+                    <tr>
+                        <td>Relatórios para auditoria</td>
+                        <td class="partial"><i class="fa-solid fa-minus"></i> Difícil</td>
+                        <td class="ok highlight-col"><i class="fa-solid fa-check"></i> 1 clique, exportável</td>
+                    </tr>
+                    <tr>
+                        <td>Rastreabilidade completa</td>
+                        <td class="no"><i class="fa-solid fa-xmark"></i> Não</td>
+                        <td class="ok highlight-col"><i class="fa-solid fa-check"></i> 100% rastreável</td>
+                    </tr>
+                    <tr>
+                        <td>Acesso simultâneo por múltiplos usuários</td>
+                        <td class="partial"><i class="fa-solid fa-minus"></i> Conflitos frequentes</td>
+                        <td class="ok highlight-col"><i class="fa-solid fa-check"></i> Multi-usuário nativo</td>
+                    </tr>
+                    <tr>
+                        <td>Controle de vencimento</td>
+                        <td class="no"><i class="fa-solid fa-xmark"></i> Não</td>
+                        <td class="ok highlight-col"><i class="fa-solid fa-check"></i> Sim, com alerta antecipado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- TECH -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Tecnologia</div>
+                <h2 class="section-title">Construído para escalar</h2>
+                <p style="font-size:0.9rem;color:var(--muted);max-width:520px;line-height:1.8;margin-top:0.75rem;">
+                    Arquitetura robusta que suporta desde pequenos municípios até grandes prefeituras com centenas de usuários simultâneos.
+                </p>
+            </div>
+            <div class="tech-grid reveal">
+                <span class="tech-pill"><i class="fa-brands fa-microsoft" style="color:#60a5fa;"></i> ASP.NET Core</span>
+                <span class="tech-pill"><i class="fa-solid fa-database" style="color:#34d399;"></i> PostgreSQL</span>
+                <span class="tech-pill"><i class="fa-brands fa-docker" style="color:#60a5fa;"></i> Docker</span>
+                <span class="tech-pill"><i class="fa-solid fa-qrcode" style="color:var(--green);"></i> Leitor QR / Barras</span>
+                <span class="tech-pill"><i class="fa-solid fa-bolt" style="color:var(--amber);"></i> Redis Cache</span>
+                <span class="tech-pill"><i class="fa-solid fa-file-pdf" style="color:#ef4444;"></i> Exportação PDF/Excel</span>
+                <span class="tech-pill"><i class="fa-solid fa-bell" style="color:#a78bfa;"></i> Notificações em Tempo Real</span>
+                <span class="tech-pill"><i class="fa-solid fa-shield-halved" style="color:var(--cyan);"></i> LGPD Compliant</span>
+                <span class="tech-pill"><i class="fa-solid fa-mobile-screen" style="color:var(--green);"></i> PWA — Funciona Offline</span>
+                <span class="tech-pill"><i class="fa-solid fa-chart-line" style="color:var(--cyan);"></i> BI Integrado</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <div class="section-label" style="margin-bottom:1rem;">Interessado?</div>
+                <h2>Modernize o almoxarifado<br>da sua prefeitura</h2>
+                <p>Este módulo está em desenvolvimento ativo. Entre em contato agora e garanta sua posição entre os primeiros municípios a implementar o Almoxarifado Municipal da Roque Systems.</p>
+                <div class="cta-actions">
+                    <a href="/#contato" class="btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Entrar em contato
+                    </a>
+                    <a href="/projetos/" class="btn-ghost">
+                        <i class="fa-solid fa-grid-2"></i> Ver outros projetos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="/logo.png" alt="Roque Systems"></div>
+                <span class="logo-text">Roque<span>Systems</span></span>
+            </a>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/projetos/">Projetos</a>
+                <a href="/#contato">Contato</a>
+                <a href="mailto:contato@roquesystems.com">contato@roquesystems.com</a>
+            </div>
+            <div class="footer-copy">CNPJ: 65.566.587/0001-46 — © 2026 Roque Systems. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3SR94Q09E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-S3SR94Q09E');
+    </script>
+    <meta name="google-adsense-account" content="ca-pub-1255461454064940">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <title>Site Institucional Municipal | Roque Systems — Em Breve</title>
+    <meta name="description" content="Conheça o Site Institucional Municipal da Roque Systems: um portal moderno, intuitivo e completo que coloca a prefeitura mais perto do cidadão.">
+    <meta name="author" content="Roque Systems">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://roquesystems.com/site-institucional-municipal/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Site Institucional Municipal | Roque Systems">
+    <meta property="og:description" content="Portal digital moderno para prefeituras. Integre notícias, serviços, órgãos e secretarias em um único ambiente.">
+    <meta property="og:url" content="https://roquesystems.com/site-institucional-municipal/">
+    <meta property="og:image" content="https://roquesystems.com/image/institucional-home-print.png">
+
+    <meta name="theme-color" content="#080a0f">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://roquesystems.com/"},
+        {"@type":"ListItem","position":2,"name":"Projetos","item":"https://roquesystems.com/projetos/"},
+        {"@type":"ListItem","position":3,"name":"Site Institucional Municipal","item":"https://roquesystems.com/site-institucional-municipal/"}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        :root {
+            --cyan: #22d3ee;
+            --cyan-dim: rgba(34,211,238,0.1);
+            --cyan-glow: rgba(34,211,238,0.35);
+            --blue: #3b82f6;
+            --purple: #8b5cf6;
+            --bg: #080a0f;
+            --surface: rgba(255,255,255,0.03);
+            --border: rgba(255,255,255,0.08);
+            --text: #e4e8f0;
+            --muted: #64748b;
+            --subtle: #94a3b8;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(8,10,15,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            transition: background 0.3s;
+        }
+        .navbar.scrolled { background: rgba(8,10,15,0.97); }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+            height: 68px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+        .logo-icon {
+            width: 36px; height: 36px; border-radius: 10px;
+            overflow: hidden; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 2px #3B82F6;
+        }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.03em; color: var(--text); }
+        .logo-text span { color: var(--cyan); }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-links a { font-size: 0.85rem; color: #94a3b8; text-decoration: none; transition: color 0.2s; font-weight: 500; }
+        .nav-links a:hover { color: #fff; }
+        .nav-cta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.55rem 1.4rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 100px;
+            font-size: 0.85rem; font-weight: 500; color: #e4e8f0; text-decoration: none; transition: all 0.25s;
+        }
+        .nav-cta:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 75vh; display: flex; align-items: center;
+            padding: 130px 1.5rem 80px; position: relative; overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 0%, rgba(34,211,238,0.08) 0%, transparent 70%),
+                radial-gradient(circle at 80% 60%, rgba(59,130,246,0.05) 0%, transparent 55%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(34,211,238,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 80%);
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; }
+        .breadcrumb {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.75rem; color: var(--muted); margin-bottom: 2rem;
+        }
+        .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--cyan); }
+        .breadcrumb i { font-size: 0.6rem; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--cyan-dim); border: 1px solid rgba(34,211,238,0.25);
+            padding: 0.4rem 1rem; border-radius: 100px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; color: var(--cyan);
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px; background: var(--cyan); border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.8); } }
+
+        h1.hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.4rem, 6vw, 4.5rem);
+            font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 1.25rem;
+        }
+        h1.hero-title .accent {
+            background: linear-gradient(135deg, #67e8f9 0%, #22d3ee 40%, #60a5fa 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--muted); max-width: 580px; line-height: 1.8; margin-bottom: 2.5rem;
+        }
+        .hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; }
+        .tag {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.35rem 0.9rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600;
+            border: 1px solid var(--border); color: var(--subtle); background: var(--surface);
+        }
+        .tag.cyan { border-color: rgba(34,211,238,0.25); color: var(--cyan); background: var(--cyan-dim); }
+        .tag.blue { border-color: rgba(59,130,246,0.25); color: #60a5fa; background: rgba(59,130,246,0.08); }
+        .tag.purple { border-color: rgba(139,92,246,0.25); color: #a78bfa; background: rgba(139,92,246,0.08); }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.85rem 2rem; background: linear-gradient(135deg, var(--cyan), var(--blue));
+            border: none; border-radius: 100px; font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem; font-weight: 700; color: #080a0f; text-decoration: none; cursor: pointer;
+            transition: all 0.25s;
+        }
+        .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(34,211,238,0.3); }
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 0.85rem 2rem; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 100px;
+            font-size: 0.9rem; font-weight: 500; color: #e4e8f0; text-decoration: none; transition: all 0.25s;
+        }
+        .btn-ghost:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+        /* ── CONTENT AREA ── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ── OVERVIEW ── */
+        .overview {
+            padding: 5rem 1.5rem;
+            background: #0c0e14;
+            border-top: 1px solid var(--border);
+        }
+        .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .section-label {
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+            color: var(--cyan); text-transform: uppercase; margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.25rem;
+        }
+        .section-text { font-size: 0.95rem; color: var(--muted); line-height: 1.85; }
+        .section-text + .section-text { margin-top: 1rem; }
+        .feature-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.85rem; }
+        .feature-item { display: flex; align-items: flex-start; gap: 0.85rem; }
+        .feature-icon {
+            width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+            background: var(--cyan-dim); color: var(--cyan); border: 1px solid rgba(34,211,238,0.2);
+        }
+        .feature-text { font-size: 0.88rem; color: var(--subtle); line-height: 1.6; }
+        .feature-text strong { color: var(--text); display: block; margin-bottom: 0.2rem; font-size: 0.9rem; }
+
+        .img-mockup {
+            border-radius: 20px; overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .img-mockup img { width: 100%; height: auto; display: block; }
+        .img-mockup-badge {
+            position: absolute; top: 1rem; left: 1rem;
+            background: rgba(8,10,15,0.85); backdrop-filter: blur(12px);
+            border: 1px solid var(--border); border-radius: 100px;
+            padding: 0.3rem 0.8rem; font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 0.1em; color: var(--cyan);
+        }
+
+        /* ── FUNCIONALIDADES ── */
+        .features-section { padding: 5rem 1.5rem; background: var(--bg); }
+        .features-header { text-align: center; margin-bottom: 3.5rem; }
+        .features-header .section-title { margin-bottom: 0.75rem; }
+        .features-header p { font-size: 0.95rem; color: var(--muted); max-width: 520px; margin: 0 auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .feat-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2rem; transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .feat-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(34,211,238,0.25);
+            box-shadow: 0 20px 40px rgba(34,211,238,0.08);
+            background: rgba(34,211,238,0.03);
+        }
+        .feat-card-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; margin-bottom: 1.25rem;
+        }
+        .feat-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; }
+        .feat-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+
+        /* ── BENEFÍCIOS ── */
+        .benefits-section { padding: 5rem 1.5rem; background: #0c0e14; border-top: 1px solid var(--border); }
+        .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+        .benefit-card {
+            display: flex; align-items: flex-start; gap: 1.1rem;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+            padding: 1.5rem; transition: border-color 0.3s;
+        }
+        .benefit-card:hover { border-color: rgba(34,211,238,0.2); }
+        .benefit-num {
+            font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 800;
+            color: var(--cyan); line-height: 1; flex-shrink: 0; min-width: 60px;
+        }
+        .benefit-body h4 { font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .benefit-body p { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+
+        /* ── TECH STACK ── */
+        .tech-section { padding: 5rem 1.5rem; background: var(--bg); }
+        .tech-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+        .tech-pill {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 1.1rem; border: 1px solid var(--border); border-radius: 100px;
+            font-size: 0.8rem; font-weight: 500; color: var(--subtle); background: var(--surface);
+            transition: all 0.2s;
+        }
+        .tech-pill:hover { border-color: rgba(34,211,238,0.3); color: var(--cyan); }
+        .tech-pill i { font-size: 0.85rem; }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 6rem 1.5rem;
+            background: #0c0e14;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .cta-inner {
+            max-width: 620px; margin: 0 auto;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 28px;
+            padding: 3.5rem 2.5rem;
+        }
+        .cta-inner h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem,4vw,2.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+        .cta-inner p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; }
+        .cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--bg); border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2rem 1.5rem;
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;
+        }
+        .footer-links { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.82rem; color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cyan); }
+        .footer-copy { font-size: 0.75rem; color: #94a3b8; }
+
+        /* ── ANIMATIONS ── */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .overview-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .features-grid { grid-template-columns: 1fr 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .nav-links, .nav-cta { display: none; }
+        }
+        @media (max-width: 600px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .cta-inner { padding: 2rem 1.25rem; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="/logo.png" alt="Roque Systems"></div>
+                <span class="logo-text">Roque<span>Systems</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#sobre">Sobre</a></li>
+                <li><a href="/#servicos">Serviços</a></li>
+                <li><a href="/projetos/">Projetos</a></li>
+            </ul>
+            <a href="/#contato" class="nav-cta">Fale Conosco <i class="fa-solid fa-arrow-right" style="font-size:0.7rem"></i></a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="/projetos/">Projetos</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Site Institucional Municipal</span>
+            </nav>
+
+            <div class="hero-badge">
+                <div class="dot"></div>
+                EM DESENVOLVIMENTO
+            </div>
+
+            <h1 class="hero-title">
+                Site Institucional<br>
+                <span class="accent">Municipal</span>
+            </h1>
+
+            <p class="hero-sub">
+                O portal oficial digital que conecta a prefeitura ao cidadão. Um ambiente moderno, acessível e completo para divulgação de notícias, serviços, secretarias e atos da administração pública.
+            </p>
+
+            <div class="hero-tags">
+                <span class="tag cyan"><i class="fa-solid fa-globe"></i> Presença Digital</span>
+                <span class="tag blue"><i class="fa-solid fa-city"></i> Gestão Pública</span>
+                <span class="tag purple"><i class="fa-solid fa-universal-access"></i> Acessibilidade</span>
+                <span class="tag"><i class="fa-solid fa-mobile-screen"></i> Responsivo</span>
+                <span class="tag"><i class="fa-solid fa-shield-halved"></i> LGPD Compliance</span>
+            </div>
+
+            <div class="hero-actions">
+                <a href="/#contato" class="btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Tenho interesse
+                </a>
+                <a href="/projetos/" class="btn-ghost">
+                    <i class="fa-solid fa-arrow-left"></i> Ver todos os projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <div class="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="reveal">
+                    <div class="section-label">Visão Geral</div>
+                    <h2 class="section-title">A prefeitura que o cidadão merece ver</h2>
+                    <p class="section-text">
+                        O Site Institucional Municipal da Roque Systems é muito mais do que uma simples presença na internet. É a porta de entrada digital da prefeitura — um sistema completo que reflete a identidade da cidade, facilita o acesso à informação e aproxima a gestão pública da população.
+                    </p>
+                    <p class="section-text">
+                        Desenvolvido com foco em performance, acessibilidade digital (WCAG 2.1) e otimização para mecanismos de busca, o sistema garante que qualquer cidadão — independente do dispositivo ou necessidade especial — encontre o que precisa com facilidade.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-newspaper"></i></div>
+                            <div class="feature-text">
+                                <strong>Portal de Notícias Integrado</strong>
+                                Publicação de notícias, decretos e comunicados com editor rico e agendamento automático.
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-sitemap"></i></div>
+                            <div class="feature-text">
+                                <strong>Estrutura Organizacional Completa</strong>
+                                Secretarias, departamentos, órgãos e contatos mapeados em uma hierarquia intuitiva.
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                            <div class="feature-text">
+                                <strong>Alto Desempenho</strong>
+                                Pontuação 95+ no Google PageSpeed. Carregamento ultrarrápido em qualquer conexão.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="img-mockup">
+                        <img src="/image/institucional-home-print.png" alt="Site Institucional Municipal — Preview" loading="lazy">
+                        <span class="img-mockup-badge">EM DESENVOLVIMENTO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUNCIONALIDADES -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-header reveal">
+                <div class="section-label">Funcionalidades</div>
+                <h2 class="section-title">Tudo que uma prefeitura precisa<br>em um só lugar</h2>
+                <p>Do noticiário à ouvidoria, do diário oficial ao portal de licitações — um ecossistema digital completo para a gestão municipal.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feat-card reveal">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(34,211,238,0.15),rgba(59,130,246,0.15));color:#22d3ee;">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                    <h3>Portal de Notícias</h3>
+                    <p>Editor de conteúdo rico (WYSIWYG), categorização, tags e agendamento de publicações. Suporte a vídeos, galerias e documentos.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-1">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(59,130,246,0.15));color:#a78bfa;">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3>Estrutura da Prefeitura</h3>
+                    <p>Organograma dinâmico com todas as secretarias, órgãos, endereços, telefones e horários de atendimento atualizáveis pelo gestor.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-2">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(34,211,238,0.15));color:#34d399;">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3>Portal de Serviços</h3>
+                    <p>Catálogo digital dos serviços municipais com descrição, requisitos, prazos e links para sistemas online, integrado à Carta de Serviços.</p>
+                </div>
+                <div class="feat-card reveal">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(239,68,68,0.15));color:#f59e0b;">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h3>Legislação e Licitações</h3>
+                    <p>Repositório pesquisável de leis, decretos e licitações. Upload em PDF com indexação automática para facilitar a busca do cidadão.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-1">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(236,72,153,0.15),rgba(139,92,246,0.15));color:#f472b6;">
+                        <i class="fa-solid fa-universal-access"></i>
+                    </div>
+                    <h3>Acessibilidade Digital</h3>
+                    <p>Conformidade WCAG 2.1 AA. Barra de acessibilidade com alto contraste, ajuste de fonte, VLibras (LIBRAS) e leitura de tela.</p>
+                </div>
+                <div class="feat-card reveal reveal-delay-2">
+                    <div class="feat-card-icon" style="background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(34,211,238,0.15));color:#60a5fa;">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3>Segurança e LGPD</h3>
+                    <p>SSL/TLS, proteção contra ataques DDoS e XSS, painel de cookies e políticas de privacidade em conformidade com a Lei Geral de Proteção de Dados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Impacto Real</div>
+                <h2 class="section-title">Resultados que a prefeitura<br>vai sentir no dia a dia</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-num">95%</div>
+                    <div class="benefit-body">
+                        <h4>Redução de chamados por telefone</h4>
+                        <p>Com as informações centralizadas e atualizadas online, o cidadão encontra o que precisa sem precisar ligar para a prefeitura.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal reveal-delay-1">
+                    <div class="benefit-num">100%</div>
+                    <div class="benefit-body">
+                        <h4>Gestão autônoma pelo servidor</h4>
+                        <p>Painel administrativo intuitivo. Qualquer servidor público consegue atualizar notícias e informações sem conhecimento técnico.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal reveal-delay-1">
+                    <div class="benefit-num">3×</div>
+                    <div class="benefit-body">
+                        <h4>Mais visibilidade nos buscadores</h4>
+                        <p>Otimização SEO técnica e semântica que coloca a prefeitura nas primeiras posições do Google para buscas locais.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal reveal-delay-2">
+                    <div class="benefit-num">LAI</div>
+                    <div class="benefit-body">
+                        <h4>Total conformidade com a transparência</h4>
+                        <p>Integração nativa com os módulos de Transparência, Diário Oficial e Ouvidoria para cumprir a Lei de Acesso à Informação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-label">Tecnologia</div>
+                <h2 class="section-title">Construído com o que há de melhor</h2>
+                <p style="font-size:0.9rem;color:var(--muted);max-width:520px;line-height:1.8;margin-top:0.75rem;">
+                    Uma stack moderna, escalável e de fácil manutenção — projetada para durar anos com o mínimo de esforço operacional.
+                </p>
+            </div>
+            <div class="tech-grid reveal" style="margin-top:2rem;">
+                <span class="tech-pill"><i class="fa-brands fa-microsoft" style="color:#60a5fa;"></i> ASP.NET Core</span>
+                <span class="tech-pill"><i class="fa-solid fa-database" style="color:#34d399;"></i> PostgreSQL</span>
+                <span class="tech-pill"><i class="fa-brands fa-docker" style="color:#60a5fa;"></i> Docker</span>
+                <span class="tech-pill"><i class="fa-solid fa-cloud" style="color:#a78bfa;"></i> Hospedagem em Nuvem</span>
+                <span class="tech-pill"><i class="fa-solid fa-bolt" style="color:#f59e0b;"></i> Redis Cache</span>
+                <span class="tech-pill"><i class="fa-solid fa-shield-halved" style="color:#22d3ee;"></i> SSL/TLS</span>
+                <span class="tech-pill"><i class="fa-solid fa-magnifying-glass" style="color:#f472b6;"></i> SEO Avançado</span>
+                <span class="tech-pill"><i class="fa-solid fa-universal-access" style="color:#34d399;"></i> WCAG 2.1 AA</span>
+                <span class="tech-pill"><i class="fa-brands fa-github" style="color:#94a3b8;"></i> CI/CD Automatizado</span>
+                <span class="tech-pill"><i class="fa-solid fa-chart-line" style="color:#22d3ee;"></i> Google Analytics</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner reveal">
+                <div class="section-label" style="margin-bottom:1rem;">Quer ser o primeiro?</div>
+                <h2>Leve este sistema<br>para a sua prefeitura</h2>
+                <p>Este módulo está em desenvolvimento ativo. Entre em contato agora e seja um dos primeiros municípios a implementar o Site Institucional Municipal da Roque Systems.</p>
+                <div class="cta-actions">
+                    <a href="/#contato" class="btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Entrar em contato
+                    </a>
+                    <a href="/projetos/" class="btn-ghost">
+                        <i class="fa-solid fa-grid-2"></i> Ver outros projetos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon"><img src="/logo.png" alt="Roque Systems"></div>
+                <span class="logo-text">Roque<span>Systems</span></span>
+            </a>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/projetos/">Projetos</a>
+                <a href="/#contato">Contato</a>
+                <a href="mailto:contato@roquesystems.com">contato@roquesystems.com</a>
+            </div>
+            <div class="footer-copy">CNPJ: 65.566.587/0001-46 — © 2026 Roque Systems. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
